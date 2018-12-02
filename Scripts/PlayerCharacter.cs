@@ -12,16 +12,19 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private float dashEffectWidth;
     private Vector3 lastMoveDirection;
     private PlayerCharacter_Base playerCharacterBase;
+    private Weapon weapon;
 
     private void Awake()
     {
         playerCharacterBase = GetComponent<PlayerCharacter_Base>();
+        weapon = GetComponentInChildren<Weapon>();
     }    
 
     private void FixedUpdate()
     {
         HandleMovement();
         HandleDash();
+        HandleAttack();
     }
 
     private void HandleMovement()
@@ -77,6 +80,15 @@ public class PlayerCharacter : MonoBehaviour
                     dashEffectTransform.localScale = new Vector3(dashDistance / dashEffectWidth, 1.414214f, 1f);
                 }
             }            
+        }
+    }
+
+    private void HandleAttack()
+    {
+        if(Input.GetMouseButton(0))
+        {
+            if (weapon != null)
+                weapon.Attack();
         }
     }
 

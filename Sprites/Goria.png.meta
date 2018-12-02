@@ -38,6 +38,24 @@ TextureImporter:
     21300066: Goria_33
     21300068: Goria_34
     21300070: Goria_35
+    21300072: Goria_36
+    21300074: Goria_37
+    21300076: Goria_38
+    21300078: Goria_39
+    21300080: Goria_40
+    21300082: Goria_41
+    21300084: Goria_42
+    21300086: Goria_43
+    21300088: Goria_44
+    21300090: Goria_45
+    21300092: Goria_46
+    21300094: Goria_47
+    21300096: Goria_48
+    21300098: Goria_49
+    21300100: Goria_50
+    21300102: Goria_51
+    21300104: Goria_52
+    21300106: Goria_53
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -146,9 +164,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 17
-        height: 24
+        y: 150
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,7 +174,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0d07d0bc8495344892cb9cd4d899fc2
+      spriteID: 41c30fa90cb431949b56bb416cd7d1ff
       vertices: []
       indices: 
       edges: []
@@ -165,10 +183,10 @@ TextureImporter:
       name: Goria_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 0
-        width: 17
-        height: 24
+        x: 41
+        y: 150
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,7 +194,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91dc16bf1420e734baed0ef3e037b507
+      spriteID: 9c3c146a4eb48194bb9ed1796f92f4c7
       vertices: []
       indices: 
       edges: []
@@ -185,10 +203,10 @@ TextureImporter:
       name: Goria_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 0
-        width: 17
-        height: 24
+        x: 82
+        y: 150
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,7 +214,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50d96a47ab131cd4998b199ed96bcbc0
+      spriteID: 92e84601208de404cbb40f1c5d12d471
       vertices: []
       indices: 
       edges: []
@@ -205,10 +223,10 @@ TextureImporter:
       name: Goria_3
       rect:
         serializedVersion: 2
-        x: 51
-        y: 0
-        width: 17
-        height: 24
+        x: 123
+        y: 150
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,7 +234,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 910c0396d42d726409b9bc3f5bbcb08b
+      spriteID: 6ab7f504bc378f14ca48c4cf5943f7c2
       vertices: []
       indices: 
       edges: []
@@ -225,10 +243,10 @@ TextureImporter:
       name: Goria_4
       rect:
         serializedVersion: 2
-        x: 68
-        y: 0
-        width: 17
-        height: 24
+        x: 164
+        y: 150
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,7 +254,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a7340ba668a56d478b6d8bae3332566
+      spriteID: f3814fe39e9df094e9e5bebcdc5ec67f
       vertices: []
       indices: 
       edges: []
@@ -245,10 +263,10 @@ TextureImporter:
       name: Goria_5
       rect:
         serializedVersion: 2
-        x: 85
-        y: 0
-        width: 17
-        height: 24
+        x: 205
+        y: 150
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,7 +274,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f85a3d16ead0ba945a45c9eefa18144d
+      spriteID: edb0a0e4e9b790c479ac005f6643e683
       vertices: []
       indices: 
       edges: []
@@ -265,10 +283,10 @@ TextureImporter:
       name: Goria_6
       rect:
         serializedVersion: 2
-        x: 102
-        y: 0
-        width: 17
-        height: 24
+        x: 246
+        y: 150
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,7 +294,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65d05aa201964594580985c4df473b33
+      spriteID: e03756b7c5b5714459a58503430cc62e
       vertices: []
       indices: 
       edges: []
@@ -285,10 +303,10 @@ TextureImporter:
       name: Goria_7
       rect:
         serializedVersion: 2
-        x: 119
-        y: 0
-        width: 17
-        height: 24
+        x: 287
+        y: 150
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,7 +314,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3de121214c49fbe4b93ab5ec745a9358
+      spriteID: 59f07bca0280e2f4bbb005af31985107
       vertices: []
       indices: 
       edges: []
@@ -305,10 +323,10 @@ TextureImporter:
       name: Goria_8
       rect:
         serializedVersion: 2
-        x: 136
-        y: 0
-        width: 17
-        height: 24
+        x: 328
+        y: 150
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,7 +334,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbcbe470eb3cf53458b74833950c9c6a
+      spriteID: d4db2f350a0fff64a83de13c11ea06c9
       vertices: []
       indices: 
       edges: []
@@ -325,10 +343,10 @@ TextureImporter:
       name: Goria_9
       rect:
         serializedVersion: 2
-        x: 153
-        y: 0
-        width: 17
-        height: 24
+        x: 0
+        y: 120
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,7 +354,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9ac3279d1bbe5f43b93884b460c986c
+      spriteID: 6ecb5094ff2ca9840a8e3d519dfaff7c
       vertices: []
       indices: 
       edges: []
@@ -345,10 +363,10 @@ TextureImporter:
       name: Goria_10
       rect:
         serializedVersion: 2
-        x: 170
-        y: 0
-        width: 17
-        height: 24
+        x: 41
+        y: 120
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,7 +374,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e142234a8160bb34aa366b3605d5713e
+      spriteID: 571bf5cf42542354d8b881c69dfa88fd
       vertices: []
       indices: 
       edges: []
@@ -365,10 +383,10 @@ TextureImporter:
       name: Goria_11
       rect:
         serializedVersion: 2
-        x: 187
-        y: 0
-        width: 17
-        height: 24
+        x: 82
+        y: 120
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,7 +394,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d4eee398a272024099617d865808d27
+      spriteID: 255e5ca598cc68b47a771a35d829ca1a
       vertices: []
       indices: 
       edges: []
@@ -385,10 +403,10 @@ TextureImporter:
       name: Goria_12
       rect:
         serializedVersion: 2
-        x: 204
-        y: 0
-        width: 17
-        height: 24
+        x: 123
+        y: 120
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,7 +414,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c63e3b8c1341c9141823b5842c82fc77
+      spriteID: 287a4bc99a1bee042a2ae8a8bc21b689
       vertices: []
       indices: 
       edges: []
@@ -405,10 +423,10 @@ TextureImporter:
       name: Goria_13
       rect:
         serializedVersion: 2
-        x: 221
-        y: 0
-        width: 17
-        height: 24
+        x: 164
+        y: 120
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,7 +434,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a22ca017dc83b4d429d11849d427f446
+      spriteID: 965e9e142bb758943bd86ae983afd9f6
       vertices: []
       indices: 
       edges: []
@@ -425,10 +443,10 @@ TextureImporter:
       name: Goria_14
       rect:
         serializedVersion: 2
-        x: 238
-        y: 0
-        width: 17
-        height: 24
+        x: 205
+        y: 120
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,7 +454,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 270c682462d27ca41b117fe9c07f1400
+      spriteID: 4a8abaa502cf6ad459edd25be76276d0
       vertices: []
       indices: 
       edges: []
@@ -445,10 +463,10 @@ TextureImporter:
       name: Goria_15
       rect:
         serializedVersion: 2
-        x: 255
-        y: 0
-        width: 17
-        height: 24
+        x: 246
+        y: 120
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,7 +474,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce309db5560ce9743aa1b5a3a517c24e
+      spriteID: 8c92220441956fd4d850db4acb05fcd7
       vertices: []
       indices: 
       edges: []
@@ -465,10 +483,10 @@ TextureImporter:
       name: Goria_16
       rect:
         serializedVersion: 2
-        x: 272
-        y: 0
-        width: 17
-        height: 24
+        x: 287
+        y: 120
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -476,7 +494,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 627ba8afd2dce354ca07eb373f6b8459
+      spriteID: e1a86d875cb351e49892cba17c212e82
       vertices: []
       indices: 
       edges: []
@@ -485,10 +503,10 @@ TextureImporter:
       name: Goria_17
       rect:
         serializedVersion: 2
-        x: 289
-        y: 0
-        width: 17
-        height: 24
+        x: 328
+        y: 120
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,7 +514,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d1944f44a6f20e42aa246e8c00107a0
+      spriteID: abe9e79bb7a73464d82da33c6ad0c265
       vertices: []
       indices: 
       edges: []
@@ -505,10 +523,10 @@ TextureImporter:
       name: Goria_18
       rect:
         serializedVersion: 2
-        x: 306
-        y: 0
-        width: 17
-        height: 24
+        x: 0
+        y: 90
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,7 +534,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcc14686c8e38354291b59043e36a465
+      spriteID: 25d115100b4fd4c489c43587f02a5188
       vertices: []
       indices: 
       edges: []
@@ -525,10 +543,10 @@ TextureImporter:
       name: Goria_19
       rect:
         serializedVersion: 2
-        x: 323
-        y: 0
-        width: 17
-        height: 24
+        x: 41
+        y: 90
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,7 +554,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19d7bf546fa49b447a7497ac119ecd26
+      spriteID: 43b47920452c916448bc727969386008
       vertices: []
       indices: 
       edges: []
@@ -545,10 +563,10 @@ TextureImporter:
       name: Goria_20
       rect:
         serializedVersion: 2
-        x: 340
-        y: 0
-        width: 17
-        height: 24
+        x: 82
+        y: 90
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -556,7 +574,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86f263e9b691c804998d18bee4d77c42
+      spriteID: 3786bba4dda5f674ea411342340d5f12
       vertices: []
       indices: 
       edges: []
@@ -565,10 +583,10 @@ TextureImporter:
       name: Goria_21
       rect:
         serializedVersion: 2
-        x: 357
-        y: 0
-        width: 17
-        height: 24
+        x: 123
+        y: 90
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -576,7 +594,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f6018d5c9981ab4b9de431557c26594
+      spriteID: 475de109d150907429d08fcbc9d1b89f
       vertices: []
       indices: 
       edges: []
@@ -585,10 +603,10 @@ TextureImporter:
       name: Goria_22
       rect:
         serializedVersion: 2
-        x: 374
-        y: 0
-        width: 17
-        height: 24
+        x: 164
+        y: 90
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -596,7 +614,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2ce86005899b1c47b9e4a1a1c0929a1
+      spriteID: 452e1a9b9e0e67340ad43a0940fc3dfa
       vertices: []
       indices: 
       edges: []
@@ -605,10 +623,10 @@ TextureImporter:
       name: Goria_23
       rect:
         serializedVersion: 2
-        x: 391
-        y: 0
-        width: 17
-        height: 24
+        x: 205
+        y: 90
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,7 +634,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a96ab9b1b74078c498796ed8cff0e77b
+      spriteID: dbbf0d8df181dbf47bc8882f9cdf35fe
       vertices: []
       indices: 
       edges: []
@@ -625,10 +643,10 @@ TextureImporter:
       name: Goria_24
       rect:
         serializedVersion: 2
-        x: 408
-        y: 0
-        width: 17
-        height: 24
+        x: 246
+        y: 90
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -636,7 +654,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e77fc1e5fbe733418740d8415007835
+      spriteID: 3bf2945129b00d74cad3a55a9179b197
       vertices: []
       indices: 
       edges: []
@@ -645,10 +663,10 @@ TextureImporter:
       name: Goria_25
       rect:
         serializedVersion: 2
-        x: 425
-        y: 0
-        width: 17
-        height: 24
+        x: 287
+        y: 90
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -656,7 +674,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e8bf798323eae64e8ac8db679f23f97
+      spriteID: 51efbfb265e094f42bdcdce96c4979d1
       vertices: []
       indices: 
       edges: []
@@ -665,10 +683,10 @@ TextureImporter:
       name: Goria_26
       rect:
         serializedVersion: 2
-        x: 442
-        y: 0
-        width: 17
-        height: 24
+        x: 328
+        y: 90
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -676,7 +694,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00f0756845895c746a09cff040c8189d
+      spriteID: 2d8acfb6b6a3c894eb7f2c4390ecef7e
       vertices: []
       indices: 
       edges: []
@@ -685,10 +703,10 @@ TextureImporter:
       name: Goria_27
       rect:
         serializedVersion: 2
-        x: 459
-        y: 0
-        width: 17
-        height: 24
+        x: 0
+        y: 60
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -696,7 +714,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4035b6b801ad76b4ebdcca494e4c99fa
+      spriteID: 8adb3f8551f2ea348aeff45ad8002097
       vertices: []
       indices: 
       edges: []
@@ -705,10 +723,10 @@ TextureImporter:
       name: Goria_28
       rect:
         serializedVersion: 2
-        x: 476
-        y: 0
-        width: 17
-        height: 24
+        x: 41
+        y: 60
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -716,7 +734,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df6b222ffd6b5c143b26c022b55ac455
+      spriteID: 58cb5a020f55bf74b80c616c4022aca7
       vertices: []
       indices: 
       edges: []
@@ -725,10 +743,10 @@ TextureImporter:
       name: Goria_29
       rect:
         serializedVersion: 2
-        x: 493
-        y: 0
-        width: 17
-        height: 24
+        x: 82
+        y: 60
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -736,7 +754,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94c23ff1b3588cb43955bd7ede521c39
+      spriteID: ebe58dec75b1bee4fa296bb37be39228
       vertices: []
       indices: 
       edges: []
@@ -745,10 +763,10 @@ TextureImporter:
       name: Goria_30
       rect:
         serializedVersion: 2
-        x: 510
-        y: 0
-        width: 17
-        height: 24
+        x: 123
+        y: 60
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -756,7 +774,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4da227a4fa09af247ad8b5816aeb839f
+      spriteID: 57c227756d3d2bd4f801c3e6d108cc23
       vertices: []
       indices: 
       edges: []
@@ -765,10 +783,10 @@ TextureImporter:
       name: Goria_31
       rect:
         serializedVersion: 2
-        x: 527
-        y: 0
-        width: 17
-        height: 24
+        x: 164
+        y: 60
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -776,7 +794,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bd51e17802342b4baa581dfaeb9928b
+      spriteID: 763a04cfd0310d442ab663f8d05e64ce
       vertices: []
       indices: 
       edges: []
@@ -785,10 +803,10 @@ TextureImporter:
       name: Goria_32
       rect:
         serializedVersion: 2
-        x: 544
-        y: 0
-        width: 17
-        height: 24
+        x: 205
+        y: 60
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -796,7 +814,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5a442e2598f7284c8f12c6b48a41162
+      spriteID: d37bceec4247a044392172a9a55c4fa4
       vertices: []
       indices: 
       edges: []
@@ -805,10 +823,10 @@ TextureImporter:
       name: Goria_33
       rect:
         serializedVersion: 2
-        x: 561
-        y: 0
-        width: 17
-        height: 24
+        x: 246
+        y: 60
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -816,7 +834,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8f9bc0973540be438b1e4839a7a8fd8
+      spriteID: 85ccb69448332284ca01719c6134e994
       vertices: []
       indices: 
       edges: []
@@ -825,10 +843,10 @@ TextureImporter:
       name: Goria_34
       rect:
         serializedVersion: 2
-        x: 578
-        y: 0
-        width: 17
-        height: 24
+        x: 287
+        y: 60
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -836,7 +854,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b33b561c14a34814da734389f132eb9a
+      spriteID: 9ce1648ec041522489bb90c7620e11ac
       vertices: []
       indices: 
       edges: []
@@ -845,10 +863,10 @@ TextureImporter:
       name: Goria_35
       rect:
         serializedVersion: 2
-        x: 595
-        y: 0
-        width: 17
-        height: 24
+        x: 328
+        y: 60
+        width: 41
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -856,7 +874,367 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 080e1b72d2df19643ba0691d765b24eb
+      spriteID: 91999a496de5b244d970fdc3515ee5fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e46a9e6039c3acd43b8cf7b3cf148f77
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_37
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 30
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aed766e60a0f2f4d8ed90a81d37d218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_38
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 30
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728ad346ce348bb40840e0a70f955e3c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_39
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 30
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f7e9babe6b4b24bbbb6912f8a9ee0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_40
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 30
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e2635c84f7bbd243be3231d2ff8dd1a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_41
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 30
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f5fd4c911e9df46bff7ece7e437702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_42
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 30
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba03a986c417e6343b215cefda3d6c44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_43
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 30
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65636ac4b382607489f57cff4dc818a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_44
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 30
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bad3b6bc0e85f5449d89f9ec00d5029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f549dd40c23f70d49bab96ef5774a08c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_46
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90bc086e0f396424389cf2c9f29fd018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_47
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5246cb2256acce4e9e7ee834b69a50e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_48
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8f6ddbe32e91941ad80d6686b194c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_49
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e7058d084cc764e8d60d7d8d0e0c17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_50
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf661e737fc335448f716df8cc09a1b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_51
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 0
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8da1fdd30940044834a1f91f1eb2ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_52
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 0
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ccaa655e2cdf54a8fa67b204225717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goria_53
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 41
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06063a773a03e6a438648d1da0abaa01
       vertices: []
       indices: 
       edges: []

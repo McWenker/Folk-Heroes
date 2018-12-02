@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCharacter_Base : MonoBehaviour
 {
     [SerializeField] private SpriteAnimator spriteAnim;
+    [SerializeField] private Weapon_Base weaponBase;
 
     [SerializeField] private Sprite[] idleSouthEastAnimationFrameArray;
     [SerializeField] private Sprite[] idleSouthWestAnimationFrameArray;
@@ -19,14 +20,33 @@ public class PlayerCharacter_Base : MonoBehaviour
     [SerializeField] private float idleFrameRate;
     [SerializeField] private float walkFrameRate;
 
+    private LayerMask layerMask;
+    private Vector3 mousePointInWorld;
+
+    private void Awake()
+    {
+        layerMask = LayerMask.NameToLayer("GroundPlane");
+    }
+
+    private void GetFacing()
+    {
+        RaycastHit hit;
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, layerMask))
+        {
+            mousePointInWorld = hit.point;
+            weaponBase.RotateWeapon(transform.position, mousePointInWorld);
+        }
+    }
+
     public void PlayIdleAnimation()
     {
         Sprite[] anim;
 
-        if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x >= transform.position.x)
-            anim = Camera.main.ScreenToWorldPoint(Input.mousePosition).y * 1.414214f <= transform.position.z ? idleSouthEastAnimationFrameArray : idleNorthEastAnimationFrameArray;
+        if (mousePointInWorld.x >= transform.position.x)
+            anim = mousePointInWorld.z <= transform.position.z + 1.25f ? idleSouthEastAnimationFrameArray : idleNorthEastAnimationFrameArray;
         else
-            anim = Camera.main.ScreenToWorldPoint(Input.mousePosition).y * 1.414214f <= transform.position.z ? idleSouthWestAnimationFrameArray : idleNorthWestAnimationFrameArray;
+            anim = mousePointInWorld.z <= transform.position.z + 1.25f ? idleSouthWestAnimationFrameArray : idleNorthWestAnimationFrameArray;
 
         spriteAnim.PlayAnimation(anim, idleFrameRate, false);
     }
@@ -34,17 +54,16 @@ public class PlayerCharacter_Base : MonoBehaviour
     public void PlayWalkingAnimation()
     {
         Sprite[] anim;
-        if(Camera.main.ScreenToWorldPoint(Input.mousePosition).x >= transform.position.x)
-            anim = Camera.main.ScreenToWorldPoint(Input.mousePosition).y * 1.414214f <= transform.position.z ? walkSouthEastAnimationFrameArray : walkNorthEastAnimationFrameArray;
+        if(mousePointInWorld.x >= transform.position.x)
+            anim = mousePointInWorld.z <= transform.position.z + 1.25f ? walkSouthEastAnimationFrameArray : walkNorthEastAnimationFrameArray;
         else
-            anim = Camera.main.ScreenToWorldPoint(Input.mousePosition).y * 1.414214f <= transform.position.z ? walkSouthWestAnimationFrameArray : walkNorthWestAnimationFrameArray;
+            anim = mousePointInWorld.z <= transform.position.z + 1.25f ? walkSouthWestAnimationFrameArray : walkNorthWestAnimationFrameArray;
 
         spriteAnim.PlayAnimation(anim, walkFrameRate, true);
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        if(Input.GetMouseButtonDown(0))
-            Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition).y* 1.414214f + ", " + transform.position.z);
+        GetFacing();
     }
 }

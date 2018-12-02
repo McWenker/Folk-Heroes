@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +7,21 @@ public class GameHandler : MonoBehaviour
 {
     private static GameHandler instance;
 
-    [SerializeField] private Transform goldNodeTransform;
+    [SerializeField] private Transform[] goldNodeTransformArray;
+    [SerializeField] private Transform[] ironNodeTransformArray;
+    [SerializeField] private Transform[] manaNodeTransformArray;
     [SerializeField] private Transform storageTransform;
-    
-    public static Transform GetResourceNode_Static()
+
+    private List<ResourceNode> resourceNodeList;
+
+    public static ResourceNode GetResourceNode_Static()
     {
         return instance.GetResourceNode();
+    }
+
+    public static ResourceNode GetResourceNodeNearPosition_Static(Vector3 position)
+    {
+        return instance.GetResourceNodeNearPosition(position);
     }
 
     public static Transform GetStorageNode_Static()
@@ -22,11 +32,68 @@ public class GameHandler : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        resourceNodeList = new List<ResourceNode>();
+        foreach(Transform goldNodeTransform in goldNodeTransformArray)
+        {
+            resourceNodeList.Add(new ResourceNode(goldNodeTransform));
+        }
+        foreach (Transform ironNodeTransform in ironNodeTransformArray)
+        {
+            resourceNodeList.Add(new ResourceNode(ironNodeTransform));
+        }
+        foreach (Transform manaNodeTransform in manaNodeTransformArray)
+        {
+            resourceNodeList.Add(new ResourceNode(manaNodeTransform));
+        }
+
+        ResourceNode.OnResourceNodeClicked += ResourceNode_OnResourceNodeClicked;
     }
 
-    private Transform GetResourceNode()
+    private void ResourceNode_OnResourceNodeClicked(object sender, EventArgs e)
     {
-        return goldNodeTransform;
+        ResourceNode resourceNode = sender as ResourceNode;
+    }
+
+    private ResourceNode GetResourceNode()
+    {
+        List<ResourceNode> tmpResourceNodeList = new List<ResourceNode>(resourceNodeList);
+        for (int i = 0; i < tmpResourceNodeList.Count; i++)
+        {
+            if (!tmpResourceNodeList[i].HasResources())
+            {
+                tmpResourceNodeList.RemoveAt(i);
+                i--;
+            }
+        }
+
+        if (tmpResourceNodeList.Count > 0)
+        {
+            return tmpResourceNodeList[UnityEngine.Random.Range(0, tmpResourceNodeList.Count)];
+        }
+        else
+            return null;
+    }
+
+    private ResourceNode GetResourceNodeNearPosition(Vector3 position)
+    {
+        float maxDistance = 20f;
+        List<ResourceNode> tmpResourceNodeList = new List<ResourceNode>(resourceNodeList);
+        for(int i = 0; i < tmpResourceNodeList.Count; i++)
+        {
+            if(!tmpResourceNodeList[i].HasResources() || Vector3.Distance(position, tmpResourceNodeList[i].GetPosition()) > maxDistance)
+            {
+                tmpResourceNodeList.RemoveAt(i);
+                i--;
+            }
+        }
+
+        if (tmpResourceNodeList.Count > 0)
+        {
+            return tmpResourceNodeList[UnityEngine.Random.Range(0, tmpResourceNodeList.Count)];
+        }
+        else
+            return null;
     }
 
     private Transform GetStorageNode()
