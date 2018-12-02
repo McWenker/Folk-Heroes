@@ -28,4 +28,4 @@ This project is licensed under a Creative Commons BY-NC license. Currently the p
 ## Acknowledgments
 
 * Tip of the hat to [Unity CodeMonkey](https://unitycodemonkey.com) for a useful utilities library
-* Clear inspiration: Enter the Gungeon
+* Clear inspiration: [Enter the Gungeon](http://dodgeroll.com/)
