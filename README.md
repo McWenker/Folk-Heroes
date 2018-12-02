@@ -6,7 +6,7 @@ Hello and welcome to Folk Heroes, an upcoming indie RPGenre bender designed and 
 
 Folk Heroes hopes to capture some of the basebuilding fun of classic games like Stronghold or Age of Empires, while blending it with a bullet-hell RPG that will probably never stop expanding in scope.
 
-
+![FirstDemoGif](DemoImages/GUNSdemo.gif?raw=true "Still working out some kinks, as you can see...")
 
 ## Trying the Demo Thusfar
 
