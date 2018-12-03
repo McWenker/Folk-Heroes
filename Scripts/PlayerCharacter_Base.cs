@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCharacter_Base : MonoBehaviour
 {
+    [SerializeField] private GameObject testObj;
     [SerializeField] private SpriteAnimator spriteAnim;
     [SerializeField] private Weapon_Base weaponBase;
 
@@ -30,11 +31,15 @@ public class PlayerCharacter_Base : MonoBehaviour
 
     private void GetFacing()
     {
-        RaycastHit hit;
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, layerMask))
+        Plane hPlane = new Plane(Vector3.up, new Vector3(0, 1f, 0));
+        float distance = 0;
+
+        // if the ray hits the plane...
+        if (hPlane.Raycast(ray, out distance))
         {
-            mousePointInWorld = hit.point;
+            // get the hit point:
+            mousePointInWorld = ray.GetPoint(distance);
             weaponBase.RotateWeapon(transform.position, mousePointInWorld);
         }
     }

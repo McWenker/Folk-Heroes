@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon_Base : MonoBehaviour
 {
     [SerializeField] private SpriteAnimator spriteAnim;
+    [SerializeField] private Transform attackRing;
 
     [SerializeField] private Sprite[] idleEastAnimationArray;
     [SerializeField] private Sprite[] idleWestAnimationArray;
@@ -15,7 +16,8 @@ public class Weapon_Base : MonoBehaviour
     [SerializeField] private float idleFrameRate;
     [SerializeField] private float attackFrameRate;
 
-    private Vector3 facingAngle;
+    private Vector3 spriteAngle;
+    private Vector3 attackAngle;
     private bool facingEast;
 
     public void PlayIdleAnimation()
@@ -58,15 +60,14 @@ public class Weapon_Base : MonoBehaviour
 
         float AngleRad;
         //AngleRad = Mathf.Atan2(pointToward.z - charPosition.z, pointToward.x - charPosition.x);
-        if (facingEast)
-            AngleRad = Mathf.Atan2(pointToward.z - charPosition.z, pointToward.x - charPosition.x);
-        else
-            AngleRad = Mathf.Atan2(charPosition.z - pointToward.z, charPosition.x - pointToward.x);
+        AngleRad = Mathf.Atan2(pointToward.z - charPosition.z, pointToward.x - charPosition.x);
 
         // Get Angle in Degrees
         float AngleDeg = AngleRad * Mathf.Rad2Deg;
         
-        facingAngle = new Vector3(0, 0, AngleDeg);
-        transform.rotation = Quaternion.Euler(facingAngle);
+        spriteAngle = new Vector3(0, 0, AngleDeg);
+        attackAngle = new Vector3(0, -AngleDeg, 0);
+        spriteAnim.transform.rotation = Quaternion.Euler(spriteAngle);
+        attackRing.rotation = Quaternion.Euler(attackAngle);
     }
 }

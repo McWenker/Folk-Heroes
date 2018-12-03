@@ -306,7 +306,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0
-  far clip plane: 18.4
+  far clip plane: 20
   field of view: 60
   orthographic: 1
   orthographic size: 8
@@ -377,7 +377,9 @@ MonoBehaviour:
     type: 2}
   attackSFX:
   - {fileID: 8300000, guid: afee463d4a6d23847b6256555793781e, type: 3}
+  damage: 1
   spread: 2
+  rotationTweak: 100
   cooldown: 0.1
 --- !u!114 &114182238852811254
 MonoBehaviour:
@@ -459,6 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd479fad7138004aab85c49bdbac32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 0
 --- !u!114 &114858848082083968
 MonoBehaviour:
   m_ObjectHideFlags: 1

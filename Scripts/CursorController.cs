@@ -8,7 +8,8 @@ public class CursorController : MonoBehaviour
 
     private void Start()
     {
+        Vector2 hotspot = new Vector2(reticleSprite.width / 2, reticleSprite.height / 2);
         if (reticleSprite != null)
-            Cursor.SetCursor(reticleSprite, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(reticleSprite, hotspot, CursorMode.Auto);
     }
 }

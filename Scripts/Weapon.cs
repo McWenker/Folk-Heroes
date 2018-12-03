@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
 
     private void CreateDamageObject()
     {
-        GameObject obj = Instantiate(damageObjectPrefab, new Vector3(attackPoint.position.x, 1f, attackPoint.position.z), Quaternion.Euler(0, (-transform.rotation.z * rotationTweak), 0)) as GameObject;
+        GameObject obj = Instantiate(damageObjectPrefab, attackPoint.position, attackPoint.rotation) as GameObject;
         DamageObject damObj = obj.AddComponent<DamageObject>();
         damObj.damage = damage;
     }
