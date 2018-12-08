@@ -32,7 +32,7 @@ public class PlayerCharacter_Base : MonoBehaviour
     private void GetFacing()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane hPlane = new Plane(Vector3.up, new Vector3(0, 1f, 0));
+        Plane hPlane = new Plane(Vector3.up, new Vector3(0, 1.2f, 0));
         float distance = 0;
 
         // if the ray hits the plane...
