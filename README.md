@@ -4,9 +4,9 @@ Hello and welcome to Folk Heroes, an upcoming indie RPGenre bender designed and 
 
 ## Concept
 
-Folk Heroes hopes to capture some of the basebuilding fun of classic games like Stronghold or Age of Empires, while blending it with a bullet-hell RPG that will probably never stop expanding in scope.
+Folk Heroes hopes to capture some of the basebuilding fun of classic games like Stronghold or Age of Empires, while blending it with a bullet-hell RPG that will probably never stop expanding in scope and reach (please help me).
 
-![FirstDemoGif](DemoImages/GUNSdemo.gif?raw=true "Still working out some kinks, as you can see...")
+![FirstDemoGif](DemoImages/AIswarm.gif?raw=true "Just need to add some bullets, some traps, a few more monsters...")
 
 ## Trying the Demo Thusfar
 
@@ -15,7 +15,15 @@ While I highly do not recommend you try to play the game in its current state (i
 ### Prerequisites
 
 You will need a copy of the [UnityEditor](https://unity3d.com/)
-Further instructions may be necessary here in the future...
+
+	1) Download the repository
+	2) Open your UnityEditor
+		a) locate the Unity Projects directory (or create it)
+	3) Create a new Project
+		a) title it "Folk Heroes" to ensure compatability (maybe? I have no idea if that will matter)
+	4) Replace the new Project's "Assets" folder with the repository.
+	5) ??????
+	6) Profit!
 
 ## Authors
 
