@@ -546,11 +546,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 26
       objectReference: {fileID: 0}
-    - target: {fileID: 114650014603440644, guid: 2d2a466d6840a03458777886f142adeb,
-        type: 2}
-      propertyPath: moveToPoint
-      value: 
-      objectReference: {fileID: 816039169}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
   m_IsPrefabAsset: 0
@@ -870,7 +865,7 @@ Prefab:
         type: 2}
       propertyPath: moveToPoint
       value: 
-      objectReference: {fileID: 816039169}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
   m_IsPrefabAsset: 0
@@ -1004,7 +999,7 @@ Prefab:
         type: 2}
       propertyPath: moveToPoint
       value: 
-      objectReference: {fileID: 816039169}
+      objectReference: {fileID: 0}
     - target: {fileID: 1063417736671268, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
       propertyPath: m_Name
       value: Slimm (3)
@@ -1381,8 +1376,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.5, z: 0.5857078}
-  m_Center: {x: 0, y: 0.75, z: 0.25}
+  m_Size: {x: 1.2, y: 1.4999999, z: 0.75624466}
+  m_Center: {x: 0, y: 0.74999994, z: 0.29113102}
 --- !u!114 &816039167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,7 +1465,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 816039163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5.1800003}
+  m_LocalPosition: {x: -5.9, y: 0, z: 1.44}
   m_LocalScale: {x: 1, y: 1.414214, z: 1}
   m_Children:
   - {fileID: 1110504264}
@@ -1639,7 +1634,7 @@ Prefab:
         type: 2}
       propertyPath: moveToPoint
       value: 
-      objectReference: {fileID: 816039169}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
   m_IsPrefabAsset: 0
@@ -2308,7 +2303,7 @@ Prefab:
         type: 2}
       propertyPath: moveToPoint
       value: 
-      objectReference: {fileID: 816039169}
+      objectReference: {fileID: 0}
     - target: {fileID: 1063417736671268, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
       propertyPath: m_Name
       value: Slimm (6)
@@ -2355,35 +2350,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
-    - target: {fileID: 212358920518523202, guid: 2d2a466d6840a03458777886f142adeb,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212358920518523202, guid: 2d2a466d6840a03458777886f142adeb,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212358920518523202, guid: 2d2a466d6840a03458777886f142adeb,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212358920518523202, guid: 2d2a466d6840a03458777886f142adeb,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ee27688492514964496f397938a1a7d0, type: 2}
     - target: {fileID: 1063417736671268, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
       propertyPath: m_Name
       value: Slimm (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114650014603440644, guid: 2d2a466d6840a03458777886f142adeb,
-        type: 2}
-      propertyPath: moveToPoint
-      value: 
-      objectReference: {fileID: 816039169}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
   m_IsPrefabAsset: 0
@@ -2454,7 +2424,7 @@ Prefab:
         type: 2}
       propertyPath: moveToPoint
       value: 
-      objectReference: {fileID: 816039169}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
   m_IsPrefabAsset: 0
@@ -3389,7 +3359,7 @@ Prefab:
         type: 2}
       propertyPath: moveToPoint
       value: 
-      objectReference: {fileID: 816039169}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
   m_IsPrefabAsset: 0
@@ -3692,7 +3662,7 @@ Prefab:
         type: 2}
       propertyPath: moveToPoint
       value: 
-      objectReference: {fileID: 816039169}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d2a466d6840a03458777886f142adeb, type: 2}
   m_IsPrefabAsset: 0

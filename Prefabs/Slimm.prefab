@@ -153,6 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveToPoint: {fileID: 0}
+  aggroRange: 8
+  layerMasks:
+  - serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &114671142762605526
 MonoBehaviour:
   m_ObjectHideFlags: 1
