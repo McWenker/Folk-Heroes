@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ResourceGathererUnit : MonoBehaviour, IUnit
 {
@@ -12,6 +13,7 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit
     private Vector3 lastMoveDirection;
     private float distance;
     private Action onAnimationCompleted;
+    private NavMeshAgent navAgent;
     [SerializeField] private Transform rayPoint;
     [SerializeField] private float moveSpeed;
     
@@ -63,6 +65,7 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit
     private void Awake()
     {
         AIBase = GetComponent<AI_Base>();
+        navAgent = GetComponent<NavMeshAgent>();
     }
 
     private bool CanMove(Vector3 dir, float distance)

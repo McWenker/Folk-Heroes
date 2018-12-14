@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4564848474280604}
   - component: {fileID: 212257348010087856}
   - component: {fileID: 65707700879017670}
+  - component: {fileID: 208423871759292076}
+  - component: {fileID: 114052520892798130}
   m_Layer: 11
   m_Name: House_4
   m_TagString: Untagged
@@ -35,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1173433813766438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.54, y: 0, z: 39.35}
+  m_LocalPosition: {x: -6.54, y: 0, z: -4.25}
   m_LocalScale: {x: 1, y: 1.414214, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,6 +55,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 2.1874995, z: 1.1722771}
   m_Center: {x: 0, y: 1.0411876, z: 0.48613852}
+--- !u!114 &114052520892798130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1173433813766438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61225d0e8af94b847bd81c833b0c176c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!208 &208423871759292076
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1173433813766438}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2, y: 1.09375, z: 0.5861385}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.041188, z: 0.4861385}
+  m_TimeToStationary: 0.5
 --- !u!212 &212257348010087856
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -68,7 +96,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ce9eada9e5d3dc342a91881e7b5a8c65, type: 2}
+  - {fileID: 2100000, guid: ee27688492514964496f397938a1a7d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

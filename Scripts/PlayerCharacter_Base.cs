@@ -44,6 +44,11 @@ public class PlayerCharacter_Base : MonoBehaviour
         }
     }
 
+    public void CreateTargetTestObject()
+    {
+        GameObject testBlock = Instantiate(testObj, mousePointInWorld, Quaternion.identity);
+    }
+
     public void PlayIdleAnimation()
     {
         Sprite[] anim;

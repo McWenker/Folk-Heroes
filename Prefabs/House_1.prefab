@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4629529335155022}
   - component: {fileID: 212203569449525344}
   - component: {fileID: 65878965623980750}
+  - component: {fileID: 208617713805719136}
+  - component: {fileID: 114100798923989576}
   m_Layer: 11
   m_Name: House_1
   m_TagString: Untagged
@@ -35,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474365715646598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.21, y: 0, z: 40.27}
+  m_LocalPosition: {x: 3.21, y: 0, z: -3.329998}
   m_LocalScale: {x: 1, y: 1.414214, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,6 +55,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.6698115, y: 2.333333, z: 1.252697}
   m_Center: {x: -0.15219939, y: 1.0966663, z: 0.37683678}
+--- !u!114 &114100798923989576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474365715646598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61225d0e8af94b847bd81c833b0c176c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!208 &208617713805719136
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474365715646598}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.8349055, y: 1.1666665, z: 0.6263485}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.1521994, y: 1.096666, z: 0.3768368}
+  m_TimeToStationary: 0.5
 --- !u!212 &212203569449525344
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -68,7 +96,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ce9eada9e5d3dc342a91881e7b5a8c65, type: 2}
+  - {fileID: 2100000, guid: ee27688492514964496f397938a1a7d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +121,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.35}
+  m_Size: {x: 4, y: 2.1875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

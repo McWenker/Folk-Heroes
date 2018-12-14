@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4604246235429614}
   - component: {fileID: 212317676570053920}
   - component: {fileID: 65077356150304110}
+  - component: {fileID: 208382889059324750}
+  - component: {fileID: 114971787884146924}
   m_Layer: 11
   m_Name: Oak_Tree_2
   m_TagString: Untagged
@@ -35,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816552780935808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.66, y: 0, z: 41.07}
+  m_LocalPosition: {x: -5.66, y: 0, z: -2.5299988}
   m_LocalScale: {x: 1, y: 1.414214, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,6 +55,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.77375746, y: 3.9999995, z: 0.8728752}
   m_Center: {x: 0.18618083, y: 1.9359996, z: 0.06356239}
+--- !u!114 &114971787884146924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816552780935808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61225d0e8af94b847bd81c833b0c176c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!208 &208382889059324750
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816552780935808}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.38687876, y: 2, z: 0.4364376}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.1861808, y: 1.9360001, z: 0.06356239}
+  m_TimeToStationary: 0.5
 --- !u!212 &212317676570053920
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -68,7 +96,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ce9eada9e5d3dc342a91881e7b5a8c65, type: 2}
+  - {fileID: 2100000, guid: ee27688492514964496f397938a1a7d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

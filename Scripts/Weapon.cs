@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] private Transform attackPoint;
     [SerializeField] private GameObject damageObjectPrefab;
+    [SerializeField] private GameObject targetTestObject;
     [SerializeField] private AudioClip[] attackSFX;
     [SerializeField] private int damage;
     [SerializeField] private float spread;
