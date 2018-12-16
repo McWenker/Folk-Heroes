@@ -58,8 +58,8 @@ GameObject:
   - component: {fileID: 4064457379799734}
   - component: {fileID: 114595038185600416}
   - component: {fileID: 65932786086259594}
-  - component: {fileID: 114502828328747656}
   - component: {fileID: 114743718738807380}
+  - component: {fileID: 114502828328747656}
   - component: {fileID: 114913358740330304}
   - component: {fileID: 114587574990734862}
   m_Layer: 10
@@ -68,7 +68,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1389580934984548
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1216521583813732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 40.51}
+  m_LocalPosition: {x: 0, y: 0, z: -3.0900002}
   m_LocalScale: {x: 1, y: 1.414214, z: 1}
   m_Children:
   - {fileID: 4934990775630354}
@@ -227,29 +227,8 @@ MonoBehaviour:
   - {fileID: 21300058, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
   - {fileID: 21300060, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
   - {fileID: 21300062, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  mineSouthEastAnimationFrameArray:
-  - {fileID: 21300018, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300020, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300022, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300024, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  mineSouthWestAnimationFrameArray:
-  - {fileID: 21300026, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300028, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300030, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300032, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  mineNorthEastAnimationFrameArray:
-  - {fileID: 21300064, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300066, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300068, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300070, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  mineNorthWestAnimationFrameArray:
-  - {fileID: 21300072, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300074, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300076, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  - {fileID: 21300078, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
   idleFrameRate: 0.2
   walkFrameRate: 0.15
-  mineFrameRate: 0.1
 --- !u!114 &114587574990734862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 2
+  isPlayer: 0
 --- !u!114 &114595038185600416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,11 +388,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 23654768536183124}

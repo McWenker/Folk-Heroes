@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ResourceGathererUnit : MonoBehaviour, IUnit
+public class ResourceGathererUnit : MonoBehaviour, IUnit, IGather
 {
     private bool isIdle;
     private bool finishedMining;
-    private Vector3 targetPos;
     private Vector3 targetDir;
     private Vector3 lastMoveDirection;
     private float distance;
@@ -18,6 +17,7 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit
     [SerializeField] private float moveSpeed;
     
     private AI_Base AIBase;
+    private AI_Base_Gatherer AIBaseGather;
 
     public void Idling()
     {
@@ -38,15 +38,15 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit
 
     public void MoveTo(Vector3 target, float stopDistance, Action onArrivedAtPosition)
     {
-        isIdle = false;
-        targetDir = (target - transform.position).normalized;
-        if(Vector3.Distance(transform.position, target) > stopDistance)
+        if(isIdle == true)
         {
-            if (TryMove(targetDir, stopDistance))
-                AIBase.PlayWalkingAnimation(targetDir);
-            else
-                AIBase.PlayIdleAnimation(targetDir);
-            isIdle = true;
+            isIdle = false;
+            targetDir = (target - transform.position).normalized;
+            navAgent.SetDestination(target);
+        }
+        else if (Vector3.Distance(transform.position, target) > stopDistance)
+        {
+            AIBase.PlayWalkingAnimation(targetDir);
         }
         else
         {
@@ -58,13 +58,14 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit
     public void PlayAnimationMine(Vector3 lookAtPosition, Action onAnimationCompleted)
     {
         isIdle = false;
-        AIBase.PlayMiningAnimation(lookAtPosition);
+        AIBaseGather.PlayMiningAnimation(lookAtPosition);
         this.onAnimationCompleted = onAnimationCompleted;
     }
 
     private void Awake()
     {
         AIBase = GetComponent<AI_Base>();
+        AIBaseGather = GetComponent<AI_Base_Gatherer>();
         navAgent = GetComponent<NavMeshAgent>();
     }
 

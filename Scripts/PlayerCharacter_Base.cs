@@ -20,14 +20,8 @@ public class PlayerCharacter_Base : MonoBehaviour
 
     [SerializeField] private float idleFrameRate;
     [SerializeField] private float walkFrameRate;
-
-    private LayerMask layerMask;
-    private Vector3 mousePointInWorld;
-
-    private void Awake()
-    {
-        layerMask = LayerMask.NameToLayer("GroundPlane");
-    }
+    
+    private Vector3 mousePointInWorld;    
 
     private void GetFacing()
     {

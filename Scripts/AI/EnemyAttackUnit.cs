@@ -4,40 +4,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AI_Enemy : MonoBehaviour
+public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
 {
+    private bool isIdle;
+
     [SerializeField] Transform moveToPoint;
     [SerializeField] float aggroRange;
-    Vector3 homePoint;
+    [SerializeField] float attackCooldown;
+    [SerializeField] float recoveryTime;
+    [SerializeField] float dashDistance;
+
+    private Vector3 targetDir;
+    private Vector3 lastMoveDirection;
+
+    private Action onAnimationCompleted;
     private NavMeshAgent navMeshAgent;
+    private AI_Base AIBase;
+    private AI_Base_Enemy AIBaseEnemy;
+
     private bool hasFoeCheckedRecently;
     private bool hasDistanceCheckedRecently;
-    [SerializeField] LayerMask[] layerMasks;
+    private bool attackReady = true;
     int layerMask;
 
     private List<RaycastHit> hitList = new List<RaycastHit>();
 
     private void Awake()
     {
+        AIBase = GetComponent<AI_Base>();
+        AIBaseEnemy = GetComponent<AI_Base_Enemy>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
         layerMask = ~((1 << 11) | (1 << 13));
         EnemyEventManager.OnAggro += CheckGroupAggroDistance;
     }
 
-    private void Start()
-    {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        homePoint = transform.position;
-    }
-
     private void Update()
     {
-        if (moveToPoint)
-            navMeshAgent.SetDestination(moveToPoint.position);
-        else if(!hasFoeCheckedRecently)
-            StartCoroutine(CheckForFoes());
-
-        if (moveToPoint && !hasDistanceCheckedRecently)
-            StartCoroutine(CheckForDistanceBreak());
         transform.rotation = Quaternion.identity;
     }
 
@@ -46,12 +48,15 @@ public class AI_Enemy : MonoBehaviour
         moveToPoint = target;
         if (moveToPoint != null)
             EnemyEventManager.NewAggro(gameObject, moveToPoint);
-        else
-            StartCoroutine(GoHome());
     }
 
     private void CheckGroupAggroDistance(GameObject sender, Transform target)
     {
+        // negligible cases
+        if (this == null)
+            return;
+        if (sender == null)
+            return;
         if (sender == gameObject)
             return;
 
@@ -80,10 +85,24 @@ public class AI_Enemy : MonoBehaviour
         return closestFoeTransform;
     }
 
+    private IEnumerator AttackCooldown()
+    {
+        attackReady = false;
+        yield return new WaitForSeconds(attackCooldown);
+        attackReady = true;
+    }
+
+    private IEnumerator AttackRecovery()
+    {
+        yield return new WaitForSeconds(recoveryTime);
+        navMeshAgent.SetDestination(moveToPoint.position);
+    }
+
     private IEnumerator CheckForDistanceBreak()
     {
         if (Vector3.Distance(transform.position, moveToPoint.position) > aggroRange * 2f)
-            moveToPoint = null;
+            AssignAggroTarget(null);
+
         hasDistanceCheckedRecently = true;
         yield return new WaitForSeconds(1.5f);
         hasDistanceCheckedRecently = false;
@@ -98,12 +117,11 @@ public class AI_Enemy : MonoBehaviour
             ray.origin = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z);
             ray.direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.right;
             RaycastHit raycastHit = new RaycastHit();
-            Debug.DrawRay(ray.origin, ray.direction * aggroRange, Color.black, .7f);
+            Debug.DrawRay(ray.origin, ray.direction * aggroRange, Color.black, .75f);
             if (Physics.Raycast(ray, out raycastHit, aggroRange, layerMask))
             {
                 /*if (raycastHit.collider.gameObject.layer == 9)
                 {*/
-                    Debug.Log(gameObject.name + " sees " + raycastHit.collider.gameObject.name);
                     hitList.Add(raycastHit);
                 //}
             }
@@ -123,10 +141,77 @@ public class AI_Enemy : MonoBehaviour
         AssignAggroTarget(target);
     }
 
-    private IEnumerator GoHome()
+    public void AttackCompleted()
     {
-        yield return new WaitForSeconds(0.35f);
-        if (moveToPoint == null)
-            navMeshAgent.SetDestination(homePoint);
+        onAnimationCompleted();
+        StartCoroutine(AttackCooldown());
+        StartCoroutine(AttackRecovery());
+    }
+
+    public bool AttackReady()
+    {
+        return attackReady;
+    }
+
+    public void DashAttack(Vector3 startPos, Vector3 target, float maxDistance, Action animation)
+    {
+        if(Vector3.Distance(startPos, transform.position) < maxDistance)
+            Vector3.Lerp(transform.position, target, Time.deltaTime);
+    }
+
+    public float DashDistance()
+    {
+        return dashDistance;
+    }
+    
+    public void DistanceCheck()
+    {
+        if (!hasDistanceCheckedRecently)
+            StartCoroutine(CheckForDistanceBreak());
+    }
+
+    public void Idling()
+    {
+        isIdle = true;
+        AIBase.PlayIdleAnimation(lastMoveDirection);
+    }
+
+    public bool IsIdle()
+    {
+        return isIdle;
+    }
+
+    public void MoveTo(Vector3 target, float stopDistance, Action onArrivedAtPosition)
+    {
+        isIdle = false;
+        navMeshAgent.SetDestination(target);
+        targetDir = (target - transform.position).normalized;
+        AIBase.PlayWalkingAnimation(targetDir);
+        if (Vector3.Distance(transform.position, target) <= stopDistance)
+        {
+            Idling();
+            onArrivedAtPosition();
+        }
+    }
+
+    public void PlayAnimationAttack(Vector3 lookAtPosition, Action onAnimationCompleted)
+    {
+        isIdle = false;
+
+        AIBaseEnemy.PlayAttackAnimation(lookAtPosition);
+        this.onAnimationCompleted = onAnimationCompleted;
+    }
+
+    public void SearchForFoes()
+    {
+        if (!hasFoeCheckedRecently)
+        {
+            StartCoroutine(CheckForFoes());
+        }
+    }
+
+    public Transform GetTarget()
+    {
+        return moveToPoint;
     }
 }

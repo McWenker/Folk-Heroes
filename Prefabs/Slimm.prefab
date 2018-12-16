@@ -19,12 +19,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4358307824815472}
+  - component: {fileID: 195485229069004228}
   - component: {fileID: 114310786180156302}
   - component: {fileID: 65873697533417382}
+  - component: {fileID: 114937912579901320}
   - component: {fileID: 114917187309812294}
-  - component: {fileID: 114717075052540046}
+  - component: {fileID: 114017247596612262}
   - component: {fileID: 114650014603440644}
-  - component: {fileID: 195485229069004228}
+  - component: {fileID: 114717075052540046}
+  - component: {fileID: 114401647019032740}
   m_Layer: 13
   m_Name: Slimm
   m_TagString: Untagged
@@ -118,6 +121,59 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 1.4302356, z: 1.4842341}
   m_Center: {x: 0, y: 0.73, z: -0.04993236}
+--- !u!114 &114017247596612262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063417736671268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c588f3feae84efe40a61c019b3895eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteAnim: {fileID: 114671142762605526}
+  attackSouthEastAnimationFrameArray:
+  - {fileID: 21300134, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300136, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300138, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300140, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300142, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300144, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300146, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300148, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300150, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  attackSouthWestAnimationFrameArray:
+  - {fileID: 21300050, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300052, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300054, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300056, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300058, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300060, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300062, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300064, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300066, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  attackNorthEastAnimationFrameArray:
+  - {fileID: 21300176, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300178, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300180, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300182, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300184, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300186, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300188, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300190, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300192, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  attackNorthWestAnimationFrameArray:
+  - {fileID: 21300092, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300094, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300096, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300098, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300100, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300102, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300104, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300106, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300108, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  attackFrameRate: 0.2
 --- !u!114 &114310786180156302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +197,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61225d0e8af94b847bd81c833b0c176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114401647019032740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063417736671268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3f7e00993844f4e95abeb20ea601f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  cooldown: 0.5
 --- !u!114 &114650014603440644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,9 +223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveToPoint: {fileID: 0}
   aggroRange: 8
-  layerMasks:
-  - serializedVersion: 2
-    m_Bits: 2048
+  attackCooldown: 0.5
+  recoveryTime: 0.3
+  dashDistance: 1
 --- !u!114 &114671142762605526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 3
+  isPlayer: 0
 --- !u!114 &114917187309812294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,7 +282,31 @@ MonoBehaviour:
   - {fileID: 21300024, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
   idleNorthAnimationFrameArray:
   - {fileID: 21300000, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  walkSouthEastAnimationFrameArray: []
+  - {fileID: 21300002, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300004, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300006, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300008, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300010, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300012, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300014, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300016, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300018, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300020, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300022, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300024, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  walkSouthEastAnimationFrameArray:
+  - {fileID: 21300110, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300112, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300114, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300116, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300118, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300120, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300122, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300124, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300126, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300128, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300130, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300132, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
   walkSouthWestAnimationFrameArray:
   - {fileID: 21300026, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
   - {fileID: 21300028, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
@@ -226,27 +320,48 @@ MonoBehaviour:
   - {fileID: 21300044, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
   - {fileID: 21300046, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
   - {fileID: 21300048, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  walkNorthEastAnimationFrameArray: []
+  walkNorthEastAnimationFrameArray:
+  - {fileID: 21300152, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300154, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300156, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300158, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300160, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300162, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300164, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300166, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300168, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300170, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300172, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300174, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300176, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
   walkNorthWestAnimationFrameArray:
-  - {fileID: 21300026, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300028, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300030, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300032, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300034, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300036, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300038, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300040, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300042, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300044, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300046, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  - {fileID: 21300048, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
-  mineSouthEastAnimationFrameArray: []
-  mineSouthWestAnimationFrameArray: []
-  mineNorthEastAnimationFrameArray: []
-  mineNorthWestAnimationFrameArray: []
+  - {fileID: 21300068, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300070, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300072, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300074, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300076, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300078, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300080, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300082, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300084, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300086, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300088, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300090, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
+  - {fileID: 21300092, guid: e2039513b80d72a48a21dafcea12bc65, type: 3}
   idleFrameRate: 0.2
   walkFrameRate: 0.15
-  mineFrameRate: 0.1
+--- !u!114 &114937912579901320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063417736671268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c414464be88f724ea841a756d9e6cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!195 &195485229069004228
 NavMeshAgent:
   m_ObjectHideFlags: 1

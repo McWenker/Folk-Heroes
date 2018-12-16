@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GathererAI : MonoBehaviour
+public class AI_Gather_States : MonoBehaviour
 {
     private enum State
     {
@@ -14,6 +14,7 @@ public class GathererAI : MonoBehaviour
     }
 
     private IUnit unit;
+    private IGather gather;
     private State state;
     private ResourceNode resourceNode;
     private Transform storageNodeTransform;
@@ -23,7 +24,8 @@ public class GathererAI : MonoBehaviour
     // Use this for initialization
     private void Awake ()
     {
-        unit = gameObject.GetComponent<IUnit>();
+        unit = GetComponent<IUnit>();
+        gather = GetComponent<IGather>();
         state = State.Idle;
         inventoryTextMesh = GetComponentInChildren<TextMeshPro>();
 	}
@@ -66,7 +68,7 @@ public class GathererAI : MonoBehaviour
                     }
                     else
                     {
-                        unit.PlayAnimationMine(resourceNode.GetPosition(), () =>
+                        gather.PlayAnimationMine(resourceNode.GetPosition(), () =>
                         {
                             if (resourceNode != null)
                             {

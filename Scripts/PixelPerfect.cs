@@ -51,7 +51,7 @@ public class PixelPerfect : MonoBehaviour
         // set it
         Camera.main.orthographicSize = orthoSize;
 
-        Debug.Log(lastSize + " " + orthoSize + " " + multiplier + " " + ppu);
+        //Debug.Log(lastSize + " " + orthoSize + " " + multiplier + " " + ppu);
     }
 
     // Update is called once per frame
