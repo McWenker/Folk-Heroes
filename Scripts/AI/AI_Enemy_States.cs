@@ -37,6 +37,7 @@ public class AI_Enemy_States : MonoBehaviour
         switch (state)
         {
             case State.Idle:
+                // to be expanded later, maybe add patrol functionality
                 if (target != null)
                     state = State.ChasingFoe;
                 else
@@ -47,8 +48,7 @@ public class AI_Enemy_States : MonoBehaviour
                 break;
 
             case State.SearchingFoe:
-                attack.SearchForFoes();
-                target = attack.GetTarget();
+                target = attack.SearchForFoes();
                 if (target == null)
                     state = State.Returning;
                 else
@@ -56,15 +56,16 @@ public class AI_Enemy_States : MonoBehaviour
                 break;
 
             case State.ChasingFoe:
-                attack.DistanceCheck();
-                target = attack.GetTarget();
-                if (target == null)
+                bool hasTarget = attack.DistanceCheck();
+                if (!hasTarget)
+                {
                     state = State.Returning;
+                    target = null;
+                }
                 else
                 {
                     unit.MoveTo(target.position, 3f, () =>
                     {
-                        state = State.Attacking;
                     });
                 }
                 break;
@@ -85,8 +86,7 @@ public class AI_Enemy_States : MonoBehaviour
                 break;
 
             case State.Returning:
-                attack.SearchForFoes();
-                target = attack.GetTarget();
+                target = attack.SearchForFoes();
                 if (target != null)
                     state = State.ChasingFoe;
                 else

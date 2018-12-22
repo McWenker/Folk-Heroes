@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114650014603440644}
   - component: {fileID: 114717075052540046}
   - component: {fileID: 114401647019032740}
+  - component: {fileID: 54960469532472858}
   m_Layer: 13
   m_Name: Slimm
   m_TagString: Untagged
@@ -109,6 +110,21 @@ Transform:
   m_Father: {fileID: 4358307824815472}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54960469532472858
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063417736671268}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!65 &65873697533417382
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -225,7 +241,7 @@ MonoBehaviour:
   aggroRange: 8
   attackCooldown: 0.5
   recoveryTime: 0.3
-  dashDistance: 1
+  dashDistance: 3
 --- !u!114 &114671142762605526
 MonoBehaviour:
   m_ObjectHideFlags: 1

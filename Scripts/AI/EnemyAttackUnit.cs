@@ -43,11 +43,34 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
         transform.rotation = Quaternion.identity;
     }
 
-    private void AssignAggroTarget(Transform target)
+    private Transform AssignAggroTarget(Transform target)
     {
         moveToPoint = target;
         if (moveToPoint != null)
             EnemyEventManager.NewAggro(gameObject, moveToPoint);
+        return moveToPoint;
+    }
+
+    private Transform CheckForFoes()
+    {
+        for (int i = 0; i < 72; ++i)
+        {
+            float angle = i * 5;
+            Ray ray = new Ray();
+            ray.origin = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z);
+            ray.direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.right;
+            RaycastHit raycastHit = new RaycastHit();
+            Debug.DrawRay(ray.origin, ray.direction * aggroRange, Color.black, .75f);
+            if (Physics.Raycast(ray, out raycastHit, aggroRange, layerMask))
+            {
+                /*if (raycastHit.collider.gameObject.layer == 9)
+                {*/
+                hitList.Add(raycastHit);
+                //}
+            }
+        }
+
+        return AssignAggroTarget(DetermineClosestTarget());
     }
 
     private void CheckGroupAggroDistance(GameObject sender, Transform target)
@@ -59,7 +82,7 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
             return;
         if (sender == gameObject)
             return;
-
+        
         if (moveToPoint == null)
         {
             if (Vector3.Distance(transform.position, sender.transform.position) < (aggroRange / 2))
@@ -85,6 +108,16 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
         return closestFoeTransform;
     }
 
+    private bool CheckForDistanceBreak()
+    {
+        if (Vector3.Distance(transform.position, moveToPoint.position) > aggroRange * 2f)
+        {
+            AssignAggroTarget(null);
+            return false;
+        }
+        return true;
+    }
+
     private IEnumerator AttackCooldown()
     {
         attackReady = false;
@@ -98,38 +131,15 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
         navMeshAgent.SetDestination(moveToPoint.position);
     }
 
-    private IEnumerator CheckForDistanceBreak()
+    private IEnumerator CheckForDistanceBreakCooldown()
     {
-        if (Vector3.Distance(transform.position, moveToPoint.position) > aggroRange * 2f)
-            AssignAggroTarget(null);
-
         hasDistanceCheckedRecently = true;
         yield return new WaitForSeconds(1.5f);
         hasDistanceCheckedRecently = false;
     }
 
-    private IEnumerator CheckForFoes()
+    private IEnumerator CheckForFoesCooldown()
     {
-        for(int i = 0; i < 72; ++i)
-        {
-            float angle = i * 5;
-            Ray ray = new Ray();
-            ray.origin = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z);
-            ray.direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.right;
-            RaycastHit raycastHit = new RaycastHit();
-            Debug.DrawRay(ray.origin, ray.direction * aggroRange, Color.black, .75f);
-            if (Physics.Raycast(ray, out raycastHit, aggroRange, layerMask))
-            {
-                /*if (raycastHit.collider.gameObject.layer == 9)
-                {*/
-                    hitList.Add(raycastHit);
-                //}
-            }
-            else
-                moveToPoint = null;
-        }
-
-        AssignAggroTarget(DetermineClosestTarget());
         hasFoeCheckedRecently = true;
         yield return new WaitForSeconds(0.7f);
         hasFoeCheckedRecently = false;
@@ -164,10 +174,14 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
         return dashDistance;
     }
     
-    public void DistanceCheck()
+    public bool DistanceCheck()
     {
         if (!hasDistanceCheckedRecently)
-            StartCoroutine(CheckForDistanceBreak());
+        {
+            StartCoroutine(CheckForDistanceBreakCooldown());
+            return CheckForDistanceBreak();
+        }
+        return true;
     }
 
     public void Idling()
@@ -202,16 +216,13 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
         this.onAnimationCompleted = onAnimationCompleted;
     }
 
-    public void SearchForFoes()
+    public Transform SearchForFoes()
     {
         if (!hasFoeCheckedRecently)
         {
-            StartCoroutine(CheckForFoes());
+            StartCoroutine(CheckForFoesCooldown());
+            return CheckForFoes();
         }
-    }
-
-    public Transform GetTarget()
-    {
-        return moveToPoint;
+        return null;
     }
 }

@@ -47,8 +47,12 @@ public class Health : MonoBehaviour
             if (HP <= 0)
             {
                 if(!isPlayer)
+                {
                     // DIE
                     Destroy(gameObject);
+                    return;
+                }
+                
                 // player death stuff, maybe better in a new class
                 Debug.Log("Player HP: " + HP);
             }

@@ -8,7 +8,7 @@ public class EnemyContactDamage : MonoBehaviour
     [SerializeField] float cooldown;
     private bool onCooldown;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if(!onCooldown)
         {
