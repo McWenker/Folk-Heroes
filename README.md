@@ -21,7 +21,8 @@ You will need a copy of the [UnityEditor](https://unity3d.com/)
 		a) locate the Unity Projects directory (or create it)
 	3) Create a new Project
 		a) title it "Folk Heroes" to ensure compatability (maybe? I have no idea if that will matter)
-	4) Replace the new Project's "Assets" folder with the repository.
+	4) Clone this Repo
+		a) paste the contents of the cloned directory into the "Folk Heroes" project folder, merging and replacing existing files
 	5) ??????
 	6) Profit!
 
