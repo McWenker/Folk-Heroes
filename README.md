@@ -37,4 +37,5 @@ This project is licensed under a Creative Commons BY-NC license. Currently the p
 ## Acknowledgments
 
 * Tip of the hat to [Unity CodeMonkey](https://unitycodemonkey.com) for a useful utilities library
+* Respect to the creators of [TextMesh Pro](http://digitalnativestudios.com/textmeshpro/docs/)
 * Clear inspiration: [Enter the Gungeon](http://dodgeroll.com/)
