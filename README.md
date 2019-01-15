@@ -8,6 +8,19 @@ Folk Heroes hopes to capture some of the basebuilding fun of classic games like 
 
 ![FirstDemoGif](DemoImages/AIswarm.gif?raw=true "Just need to add some bullets, some traps, a few more monsters...")
 
+## Next Steps
+#### Command Modes
+   Only by mastering both Combat and Command, will you become a worthy Folk Hero...
+
+#### Building
+   Gatherers can collect things, now let's use their efforts to forge an empire...
+
+#### Abilities and Classes
+   Guns are only the beginning! Swords, spells, bombs, and much more is in the plan...
+
+#### More Art, A Story
+   Eventually this shit will have to have some kind of theme... right?
+
 ## Changelog
 #### 1/14/2019
 ##### Added AI state machine
