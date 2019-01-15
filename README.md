@@ -8,6 +8,16 @@ Folk Heroes hopes to capture some of the basebuilding fun of classic games like 
 
 ![FirstDemoGif](DemoImages/AIswarm.gif?raw=true "Just need to add some bullets, some traps, a few more monsters...")
 
+## Changelog
+#### 1/14/2019
+##### Added AI state machine
+* Gatherers now randomly seek Resource Nodes
+* Hostiles now seek nearest Gatherer within range first, then nearest Player within range
+
+##### Resources are go, but unsure what they are yet
+* Gatherers can now mine Iron & Gold, or (mine) Mana
+* The actual names of the resources haven't been nailed down yet (lol)
+
 ## Trying the Demo Thusfar
 
 While I highly do not recommend you try to play the game in its current state (it's ugly and bad), if you insist...
