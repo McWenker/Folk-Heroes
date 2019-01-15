@@ -33,6 +33,7 @@ public class SpriteAnimator : MonoBehaviour
         if(onComplete != null)
             onComplete();
         loopCounter = -1;
+        onComplete = null;
     }
 
     private void FixedUpdate()

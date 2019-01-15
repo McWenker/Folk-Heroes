@@ -36,15 +36,15 @@ public class GameHandler : MonoBehaviour
         resourceNodeList = new List<ResourceNode>();
         foreach(Transform goldNodeTransform in goldNodeTransformArray)
         {
-            resourceNodeList.Add(new ResourceNode(goldNodeTransform));
+            resourceNodeList.Add(new ResourceNode(goldNodeTransform, GameResourceType.Gold));
         }
         foreach (Transform ironNodeTransform in ironNodeTransformArray)
         {
-            resourceNodeList.Add(new ResourceNode(ironNodeTransform));
+            resourceNodeList.Add(new ResourceNode(ironNodeTransform, GameResourceType.Iron));
         }
         foreach (Transform manaNodeTransform in manaNodeTransformArray)
         {
-            resourceNodeList.Add(new ResourceNode(manaNodeTransform));
+            resourceNodeList.Add(new ResourceNode(manaNodeTransform, GameResourceType.Mana));
         }
 
         ResourceNode.OnResourceNodeClicked += ResourceNode_OnResourceNodeClicked;

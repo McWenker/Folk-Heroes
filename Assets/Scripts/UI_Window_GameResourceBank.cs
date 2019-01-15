@@ -12,37 +12,37 @@ public class UI_Window_GameResourceBank : MonoBehaviour
 
     private void Awake()
     {
-        GameResourceBank.OnGoldAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResource.Gold); };
-        GameResourceBank.OnIronAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResource.Iron); };
-        GameResourceBank.OnManaAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResource.Mana); };
-        GameResourceBank.OnStoneAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResource.Stone); };
+        GameResourceBank.OnGoldAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResourceType.Gold); };
+        GameResourceBank.OnIronAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResourceType.Iron); };
+        GameResourceBank.OnManaAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResourceType.Mana); };
+        GameResourceBank.OnStoneAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResourceType.Stone); };
         UpdateResourceTextObject();
     }
 
     private void UpdateResourceTextObject()
     {
-        goldField.SetText("GOLD: " + GameResourceBank.GetAmount(GameResource.Gold));
-        ironField.SetText("IRON: " + GameResourceBank.GetAmount(GameResource.Iron));
-        manaField.SetText("MANA: " + GameResourceBank.GetAmount(GameResource.Mana));
-        stoneField.SetText("STONE: " + GameResourceBank.GetAmount(GameResource.Stone));
+        goldField.SetText("GOLD: " + GameResourceBank.GetAmount(GameResourceType.Gold));
+        ironField.SetText("IRON: " + GameResourceBank.GetAmount(GameResourceType.Iron));
+        manaField.SetText("MANA: " + GameResourceBank.GetAmount(GameResourceType.Mana));
+        stoneField.SetText("STONE: " + GameResourceBank.GetAmount(GameResourceType.Stone));
     }
 
     // better to give a resource type
-    private void UpdateResourceTextObject(GameResource resource)
+    private void UpdateResourceTextObject(GameResourceType resource)
     {
         switch(resource)
         {
-            case (GameResource.Gold):
-                goldField.SetText("GOLD: " + GameResourceBank.GetAmount(GameResource.Gold));
+            case (GameResourceType.Gold):
+                goldField.SetText("GOLD: " + GameResourceBank.GetAmount(GameResourceType.Gold));
                 break;
-            case (GameResource.Iron):
-                ironField.SetText("IRON: " + GameResourceBank.GetAmount(GameResource.Iron));
+            case (GameResourceType.Iron):
+                ironField.SetText("IRON: " + GameResourceBank.GetAmount(GameResourceType.Iron));
                 break;
-            case (GameResource.Mana):
-                manaField.SetText("MANA: " + GameResourceBank.GetAmount(GameResource.Mana));
+            case (GameResourceType.Mana):
+                manaField.SetText("MANA: " + GameResourceBank.GetAmount(GameResourceType.Mana));
                 break;
-            case (GameResource.Stone):
-                stoneField.SetText("STONE: " + GameResourceBank.GetAmount(GameResource.Stone));
+            case (GameResourceType.Stone):
+                stoneField.SetText("STONE: " + GameResourceBank.GetAmount(GameResourceType.Stone));
                 break;
             default:
                 UpdateResourceTextObject();

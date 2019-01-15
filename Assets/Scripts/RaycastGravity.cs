@@ -10,5 +10,6 @@ public class RaycastGravity : MonoBehaviour
     {
         if (transform.position.y > minY)
             transform.position += Vector3.down * 0.01f;
+        transform.rotation = Quaternion.identity;
     }
 }

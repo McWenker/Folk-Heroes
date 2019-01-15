@@ -14,40 +14,40 @@ public static class GameResourceBank
     private static int manaAmount;
     private static int stoneAmount;
 
-    public static void AddAmount(GameResource resourceToGrow, int amount)
+    public static void AddAmount(GameResourceType resourceToGrow, int amount)
     {
         switch (resourceToGrow)
         {
-            case (GameResource.Gold):
+            case (GameResourceType.Gold):
                 goldAmount += amount;
                 if (OnGoldAmountChanged != null) OnGoldAmountChanged(null, EventArgs.Empty);
                 break;
-            case (GameResource.Iron):
+            case (GameResourceType.Iron):
                 ironAmount += amount;
                 if (OnIronAmountChanged != null) OnIronAmountChanged(null, EventArgs.Empty);
                 break;
-            case (GameResource.Mana):
+            case (GameResourceType.Mana):
                 manaAmount += amount;
                 if (OnManaAmountChanged != null) OnManaAmountChanged(null, EventArgs.Empty);
                 break;
-            case (GameResource.Stone):
+            case (GameResourceType.Stone):
                 stoneAmount += amount;
                 if (OnStoneAmountChanged != null) OnStoneAmountChanged(null, EventArgs.Empty);
                 break;
         }
     }
 
-    public static int GetAmount(GameResource resourceToGet)
+    public static int GetAmount(GameResourceType resourceToGet)
     {
         switch (resourceToGet)
         {
-            case (GameResource.Gold):
+            case (GameResourceType.Gold):
                 return goldAmount;
-            case (GameResource.Iron):
+            case (GameResourceType.Iron):
                 return ironAmount;
-            case (GameResource.Mana):
+            case (GameResourceType.Mana):
                 return manaAmount;
-            case (GameResource.Stone):
+            case (GameResourceType.Stone):
                 return stoneAmount;
             default:
                 return 0;

@@ -8,6 +8,7 @@ public class AI_Base : MonoBehaviour
     [SerializeField] private SpriteAnimator spriteAnim;
 
     public Vector3 LastMoveDirection { get; private set; }
+    [SerializeField] public AI_Faction faction;
 
     [SerializeField] private Sprite[] idleSouthAnimationFrameArray;
     [SerializeField] private Sprite[] idleNorthAnimationFrameArray;

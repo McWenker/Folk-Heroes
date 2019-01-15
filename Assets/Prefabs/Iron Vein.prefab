@@ -29,7 +29,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4916878380712360
 Transform:
@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1584914956909808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.76, y: 0, z: -5.289997}
-  m_LocalScale: {x: 1, y: 1.4142135, z: 1}
+  m_LocalScale: {x: 0.7241, y: 1.4142135, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,8 +54,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9299932, y: 1.4999999, z: 1.1375512}
-  m_Center: {x: -0.0011537075, y: 0.84, z: 0.12}
+  m_Size: {x: 2.454135, y: 1.4999999, z: 0.66098833}
+  m_Center: {x: 0.031522274, y: 0.84, z: 0.16430783}
 --- !u!114 &114059341132332288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,11 +98,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.4649965, y: 0.75000006, z: 0.5687755}
+  m_Extents: {x: 1.2270675, y: 0.75000006, z: 0.33049414}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.001153708, y: 0.84, z: 0.12}
+  m_Center: {x: 0.03152227, y: 0.84, z: 0.1643078}
   m_TimeToStationary: 0.5
 --- !u!212 &212382122439816350
 SpriteRenderer:

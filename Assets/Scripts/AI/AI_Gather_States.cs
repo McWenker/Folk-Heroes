@@ -11,93 +11,135 @@ public class AI_Gather_States : MonoBehaviour
         MovingToResourceNode,
         GatheringResources,
         MovingToStorage,
+        Fleeing,
     }
 
     private IUnit unit;
     private IGather gather;
-    private State state;
+    private IVision vision;
+    [SerializeField] private State state;
+    private State prevState;
     private ResourceNode resourceNode;
     private Transform storageNodeTransform;
-    private int goldInventoryAmount;
+    private int inventoryAmount = 0;
     private TextMeshPro inventoryTextMesh;
+    [SerializeField] private Transform hostile;
+    private bool fleeingCooldown = false;
 
     // Use this for initialization
     private void Awake ()
     {
         unit = GetComponent<IUnit>();
         gather = GetComponent<IGather>();
+        vision = GetComponent<IVision>();
         state = State.Idle;
         inventoryTextMesh = GetComponentInChildren<TextMeshPro>();
 	}
 
     private void UpdateInventoryText()
     {
-        if (goldInventoryAmount > 0)
-            inventoryTextMesh.SetText(goldInventoryAmount.ToString());
+        if (inventoryAmount > 0)
+            inventoryTextMesh.SetText(inventoryAmount.ToString());
         else
             inventoryTextMesh.SetText("");
     }
 
     private void Update()
     {
+        if(inventoryAmount >= 3)
+        {
+            storageNodeTransform = GameHandler.GetStorageNode_Static();
+            state = State.MovingToStorage;
+        }
+        hostile = vision.SearchForFoes();
+        if(hostile != null && state != State.Fleeing)
+        {
+            state = State.Fleeing;
+        }
+
         switch (state)
         {
             case State.Idle:
-                //resourceNode = GameHandler.GetResourceNode_Static();
+                unit.Idling();
+                resourceNode = GameHandler.GetResourceNode_Static();
                 if(resourceNode != null)
                     state = State.MovingToResourceNode;
                 break;
             case State.MovingToResourceNode:
-                if (unit.IsIdle())
+                unit.MoveTo(resourceNode.GetPosition(), 1.5f, () =>
                 {
-                    unit.MoveTo(resourceNode.GetPosition(), 1.2f, () =>
-                    {
-                        state = State.GatheringResources;
-                    });
-                }
+                    state = State.GatheringResources;
+                });
                 break;
             case State.GatheringResources:
-                if (unit.IsIdle())
+                if(inventoryAmount >= 3)
                 {
-                    if(goldInventoryAmount >= 3)
+                    // move to storage
+                    storageNodeTransform = GameHandler.GetStorageNode_Static();
+                    resourceNode = GameHandler.GetResourceNodeNearPosition_Static(resourceNode.GetPosition());
+                    state = State.MovingToStorage;
+                    unit.Idling();
+                    break;
+                }
+                else
+                {
+                    gather.PlayAnimationMine(resourceNode.GetPosition(), () =>
                     {
-                        // move to storage
-                        storageNodeTransform = GameHandler.GetStorageNode_Static();
-                        resourceNode = GameHandler.GetResourceNodeNearPosition_Static(resourceNode.GetPosition());
-                        state = State.MovingToStorage;
-                    }
-                    else
-                    {
-                        gather.PlayAnimationMine(resourceNode.GetPosition(), () =>
+                        if (resourceNode != null)
                         {
-                            if (resourceNode != null)
+                            if (resourceNode.GrabResource())
                             {
-                                if (resourceNode.GrabResource())
-                                {
-                                    goldInventoryAmount++;
-                                    UpdateInventoryText();
-                                }
-                                else
-                                    state = State.Idle;
-                            }                                
+                                gather.AddToInventory(new GameResource(resourceNode.ResourceType));
+                                inventoryAmount++;
+                                UpdateInventoryText();
+                            }
+                            else
+                                state = State.Idle;
+                        }                                
+                    });
+                }              
+                break;
+            case State.MovingToStorage:
+                unit.MoveTo(storageNodeTransform.position, 2f, () =>
+                {
+                    gather.UnloadInventory();
+                    inventoryAmount = 0;
+                    UpdateInventoryText();
+                    state = State.Idle;
+                });
+                break;
+            case State.Fleeing:
+                if(hostile == null)
+                {
+                    state = State.Idle;
+                }
+                else
+                {
+                    if(!fleeingCooldown)
+                    {
+                        Vector3 dirToFoe = (transform.position - hostile.position);
+                        dirToFoe *= 2f;
+                        Vector3 posToRun = (transform.position + dirToFoe);
+                        StartCoroutine(FleeingCooldown());
+                        unit.MoveTo(posToRun, 1f, () => 
+                        {
+                            hostile = vision.SearchForFoes();
+                            if(hostile == null)
+                            {
+                                state = State.Idle;
+                            }
+                            
                         });
                     }                    
                 }
                 break;
-            case State.MovingToStorage:
-                if (unit.IsIdle())
-                {
-                    unit.MoveTo(storageNodeTransform.position, 0.3f, () =>
-                    {
-                        GameResourceBank.AddAmount(GameResource.Gold, goldInventoryAmount);
-                        goldInventoryAmount = 0;
-                        UpdateInventoryText();
-                        state = State.Idle;
-                    });
-                }
-                break;
-
         }
+    }
+    private IEnumerator FleeingCooldown()
+    {
+        fleeingCooldown = true;
+        yield return new WaitForSeconds(0.2f);
+        fleeingCooldown = false;
     }
 
     public void SetResourceNode(ResourceNode resourceToGet)

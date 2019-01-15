@@ -15,6 +15,7 @@ public class AI_Enemy_States : MonoBehaviour
 
     private IUnit unit;
     private IAttack attack;
+    private IVision vision;
     private State state;
     [SerializeField] private Transform target;
     private Vector3 homePoint;
@@ -23,13 +24,13 @@ public class AI_Enemy_States : MonoBehaviour
     {
         unit = GetComponent<IUnit>();
         attack = GetComponent<IAttack>();
+        vision = GetComponent<IVision>();
         state = State.Idle;
     }
 
     private void Start()
     {
         homePoint = transform.position;
-        Debug.Log(homePoint);
     }
 
     private void Update()
@@ -48,7 +49,7 @@ public class AI_Enemy_States : MonoBehaviour
                 break;
 
             case State.SearchingFoe:
-                target = attack.SearchForFoes();
+                target = vision.SearchForFoes();
                 if (target == null)
                     state = State.Returning;
                 else
@@ -56,13 +57,14 @@ public class AI_Enemy_States : MonoBehaviour
                 break;
 
             case State.ChasingFoe:
-                bool hasTarget = attack.DistanceCheck();
+                target = vision.SearchForFoes();
+                bool hasTarget = vision.DistanceCheck();
                 if (!hasTarget)
                 {
                     state = State.Returning;
                     target = null;
                 }
-                else
+                else if(target != null)
                 {
                     unit.MoveTo(target.position, 3f, () =>
                     {
@@ -86,7 +88,7 @@ public class AI_Enemy_States : MonoBehaviour
                 break;
 
             case State.Returning:
-                target = attack.SearchForFoes();
+                target = vision.SearchForFoes();
                 if (target != null)
                     state = State.ChasingFoe;
                 else

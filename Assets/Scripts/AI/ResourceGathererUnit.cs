@@ -6,19 +6,23 @@ using UnityEngine.AI;
 
 public class ResourceGathererUnit : MonoBehaviour, IUnit, IGather
 {
-    private bool isIdle;
+    private bool isIdle = true;
     private bool finishedMining;
-    private Vector3 targetDir;
+    private Vector3 targetDir; 
     private Vector3 lastMoveDirection;
     private float distance;
     private Action onAnimationCompleted;
     private NavMeshAgent navAgent;
     [SerializeField] private Transform rayPoint;
     [SerializeField] private float moveSpeed;
+    private List<GameResource> inventory = new List<GameResource>();
     
     private AI_Base AIBase;
     private AI_Base_Gatherer AIBaseGather;
-
+    public void ClearMove()
+    {
+        navAgent.ResetPath();
+    }
     public void Idling()
     {
         isIdle = true;
@@ -38,28 +42,40 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit, IGather
 
     public void MoveTo(Vector3 target, float stopDistance, Action onArrivedAtPosition)
     {
-        if(isIdle == true)
+        isIdle = false;
+        navAgent.SetDestination(target);
+        targetDir = (target - transform.position).normalized;
+        AIBase.PlayWalkingAnimation(target - transform.position);
+        
+        if ((navAgent.remainingDistance != Mathf.Infinity && navAgent.remainingDistance <= stopDistance && !navAgent.pathPending)
+        || Vector3.Distance(target, transform.position) <= stopDistance)
         {
-            isIdle = false;
-            targetDir = (target - transform.position).normalized;
-            navAgent.SetDestination(target);
-        }
-        else if (Vector3.Distance(transform.position, target) > stopDistance)
-        {
-            AIBase.PlayWalkingAnimation(targetDir);
-        }
-        else
-        {
+            navAgent.ResetPath();
             Idling();
             onArrivedAtPosition();
         }
+
     }
 
     public void PlayAnimationMine(Vector3 lookAtPosition, Action onAnimationCompleted)
     {
         isIdle = false;
-        AIBaseGather.PlayMiningAnimation(lookAtPosition);
+        AIBaseGather.PlayMiningAnimation(lookAtPosition - transform.position);
         this.onAnimationCompleted = onAnimationCompleted;
+    }
+
+    public void AddToInventory(GameResource resToAdd)
+    {
+        inventory.Add(resToAdd);
+    }
+
+    public void UnloadInventory()
+    {
+        foreach(GameResource r in inventory)
+        {
+            GameResourceBank.AddAmount(r.ResourceType, 1);
+        }
+        inventory.Clear();
     }
 
     private void Awake()

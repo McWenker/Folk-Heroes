@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameResource
+[System.Serializable]
+public enum AI_Faction
 {
-    Gold,
-    Iron,
-    Mana,
-    Stone
+	Friendly,
+	Enemy,
+	Neutral
 }

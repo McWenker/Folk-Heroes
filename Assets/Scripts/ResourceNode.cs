@@ -9,12 +9,18 @@ public class ResourceNode
 {
     public static event EventHandler OnResourceNodeClicked;
     private Transform resourceNodeTransform;
+    private GameResourceType resourceType;
     private int resourceAmount;
+    public GameResourceType ResourceType
+    {
+        get { return resourceType; }
+    }
 
-    public ResourceNode(Transform resourceNodeTransform)
+    public ResourceNode(Transform resourceNodeTransform, GameResourceType resourceType)
     {
         this.resourceNodeTransform = resourceNodeTransform;
-        resourceAmount = 6;
+        this.resourceType = resourceType;
+        resourceAmount = 3;
         resourceNodeTransform.GetComponent<Button_Sprite>().ClickFunc = () =>
         {
             if (OnResourceNodeClicked != null) OnResourceNodeClicked(this, EventArgs.Empty);
@@ -35,7 +41,23 @@ public class ResourceNode
         else
             return false;
         if (resourceAmount <= 0)
-            resourceNodeTransform.GetComponent<SpriteRenderer>().sprite = GameAssets.i.goldNodeDepletedSprite;
+        {
+            switch(resourceType)
+            {
+                case GameResourceType.Gold:
+                    resourceNodeTransform.GetComponent<SpriteRenderer>().sprite = GameAssets.i.goldNodeDepletedSprite;
+                    break;
+                case GameResourceType.Iron:
+                    resourceNodeTransform.GetComponent<SpriteRenderer>().sprite = GameAssets.i.ironNodeDepletedSprite;
+                    break;
+                case GameResourceType.Mana:
+                    resourceNodeTransform.GetComponent<SpriteRenderer>().sprite = GameAssets.i.manaNodeDepletedSprite;
+                    break;
+                default:
+                    resourceNodeTransform.GetComponent<SpriteRenderer>().enabled = false;
+                    break;
+            }
+        }
         return true;
     }
 
