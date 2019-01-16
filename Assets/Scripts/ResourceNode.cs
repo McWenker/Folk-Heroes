@@ -16,11 +16,11 @@ public class ResourceNode
         get { return resourceType; }
     }
 
-    public ResourceNode(Transform resourceNodeTransform, GameResourceType resourceType)
+    public ResourceNode(Transform resourceNodeTransform, GameResourceType resourceType, int resourceAmount)
     {
         this.resourceNodeTransform = resourceNodeTransform;
         this.resourceType = resourceType;
-        resourceAmount = 3;
+        this.resourceAmount = resourceAmount;
         resourceNodeTransform.GetComponent<Button_Sprite>().ClickFunc = () =>
         {
             if (OnResourceNodeClicked != null) OnResourceNodeClicked(this, EventArgs.Empty);

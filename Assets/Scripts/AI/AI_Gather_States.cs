@@ -24,6 +24,7 @@ public class AI_Gather_States : MonoBehaviour
     private int inventoryAmount = 0;
     private TextMeshPro inventoryTextMesh;
     [SerializeField] private Transform hostile;
+    [SerializeField] private SpriteRenderer fleeSprite;
     private bool fleeingCooldown = false;
 
     // Use this for initialization
@@ -46,17 +47,45 @@ public class AI_Gather_States : MonoBehaviour
 
     private void Update()
     {
+        DetermineInventory();
+        hostile = vision.SearchForFoes();
+        DetermineFlee();
+        StateSwitch();
+    }
+
+    private void DetermineInventory()
+    {
         if(inventoryAmount >= 3)
         {
-            storageNodeTransform = GameHandler.GetStorageNode_Static();
-            state = State.MovingToStorage;
+            FullInventory();
         }
-        hostile = vision.SearchForFoes();
+    }
+
+    private void FullInventory()
+    {
+        storageNodeTransform = GameHandler.GetStorageNode_Static();
+        resourceNode = GameHandler.GetResourceNodeNearPosition_Static(resourceNode.GetPosition());
+        state = State.MovingToStorage;
+        unit.Idling();
+    }
+
+    private void DetermineFlee()
+    {
         if(hostile != null && state != State.Fleeing)
         {
             state = State.Fleeing;
         }
 
+        if(state == State.Fleeing)
+        {
+            fleeSprite.enabled = true;
+        }
+        else
+            fleeSprite.enabled = false;
+    }
+
+    private void StateSwitch()
+    {
         switch (state)
         {
             case State.Idle:
@@ -74,18 +103,14 @@ public class AI_Gather_States : MonoBehaviour
             case State.GatheringResources:
                 if(inventoryAmount >= 3)
                 {
-                    // move to storage
-                    storageNodeTransform = GameHandler.GetStorageNode_Static();
-                    resourceNode = GameHandler.GetResourceNodeNearPosition_Static(resourceNode.GetPosition());
-                    state = State.MovingToStorage;
-                    unit.Idling();
+                    FullInventory();
                     break;
                 }
                 else
                 {
-                    gather.PlayAnimationMine(resourceNode.GetPosition(), () =>
+                    if (resourceNode != null && resourceNode.HasResources())
                     {
-                        if (resourceNode != null)
+                        gather.PlayAnimationMine(resourceNode.GetPosition(), () =>
                         {
                             if (resourceNode.GrabResource())
                             {
@@ -95,8 +120,10 @@ public class AI_Gather_States : MonoBehaviour
                             }
                             else
                                 state = State.Idle;
-                        }                                
-                    });
+                        });
+                    }
+                    else
+                        state = State.Idle;
                 }              
                 break;
             case State.MovingToStorage:

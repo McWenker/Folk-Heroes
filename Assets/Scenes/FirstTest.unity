@@ -171,6 +171,8 @@ MonoBehaviour:
   manaNodeTransformArray:
   - {fileID: 1108745470}
   storageTransform: {fileID: 2114832520}
+  minRandom: 2
+  maxRandom: 7
 --- !u!114 &32873989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3184,16 +3186,6 @@ Prefab:
     - target: {fileID: 114916145960482618, guid: 9575e42a6bc1c3a478c1325d84c03982,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114883182514154432, guid: 9575e42a6bc1c3a478c1325d84c03982,
-        type: 2}
-      propertyPath: visionRange
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114743718738807380, guid: 9575e42a6bc1c3a478c1325d84c03982,
-        type: 2}
-      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

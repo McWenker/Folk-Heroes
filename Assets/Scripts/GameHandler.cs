@@ -11,6 +11,8 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private Transform[] ironNodeTransformArray;
     [SerializeField] private Transform[] manaNodeTransformArray;
     [SerializeField] private Transform storageTransform;
+    [SerializeField] private int minRandom;
+    [SerializeField] private int maxRandom;
 
     private List<ResourceNode> resourceNodeList;
 
@@ -36,15 +38,15 @@ public class GameHandler : MonoBehaviour
         resourceNodeList = new List<ResourceNode>();
         foreach(Transform goldNodeTransform in goldNodeTransformArray)
         {
-            resourceNodeList.Add(new ResourceNode(goldNodeTransform, GameResourceType.Gold));
+            resourceNodeList.Add(new ResourceNode(goldNodeTransform, GameResourceType.Gold, UnityEngine.Random.Range(minRandom, maxRandom)));
         }
         foreach (Transform ironNodeTransform in ironNodeTransformArray)
         {
-            resourceNodeList.Add(new ResourceNode(ironNodeTransform, GameResourceType.Iron));
+            resourceNodeList.Add(new ResourceNode(ironNodeTransform, GameResourceType.Iron, UnityEngine.Random.Range(minRandom, maxRandom)));
         }
         foreach (Transform manaNodeTransform in manaNodeTransformArray)
         {
-            resourceNodeList.Add(new ResourceNode(manaNodeTransform, GameResourceType.Mana));
+            resourceNodeList.Add(new ResourceNode(manaNodeTransform, GameResourceType.Mana, UnityEngine.Random.Range(minRandom, maxRandom)));
         }
 
         ResourceNode.OnResourceNodeClicked += ResourceNode_OnResourceNodeClicked;
