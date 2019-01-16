@@ -21,7 +21,19 @@ Folk Heroes hopes to capture some of the basebuilding fun of classic games like 
 #### More Art, A Story
    Eventually this shit will have to have some kind of theme... right?
 
+![AIInteraction](DemoImages/AIresponses.gif?raw=true "Why would these slime monsters kill such tiny cuties?!?!")
+
 ## Changelog
+#### 1/15/2019
+##### Resource node randomization
+* Resource nodes now spawn with a random number of resources.
+* Currently the range is small, but I intend to address this further during map generation.
+
+##### Gatherer improvements
+* Gatherers now visually indicate when they are fleeing with a ! icon
+* Gatherers no longer attempt to mine depleted resources
+* Gatherer flee reaction speed and pathing improved
+
 #### 1/14/2019
 ##### Added AI state machine
 * Gatherers now randomly seek Resource Nodes
