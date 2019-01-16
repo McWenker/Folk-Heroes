@@ -34,6 +34,10 @@ Folk Heroes hopes to capture some of the basebuilding fun of classic games like 
 * Gatherers no longer attempt to mine depleted resources
 * Gatherer flee reaction speed and pathing improved
 
+##### Enemy improvements
+* Enemies now chase the nearest priority target sooner
+* Enemies now better alert their nearby allies to a target
+
 #### 1/14/2019
 ##### Added AI state machine
 * Gatherers now randomly seek Resource Nodes
