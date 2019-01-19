@@ -83,6 +83,7 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit, IGather
         AIBase = GetComponent<AI_Base>();
         AIBaseGather = GetComponent<AI_Base_Gatherer>();
         navAgent = GetComponent<NavMeshAgent>();
+        navAgent.avoidancePriority = UnityEngine.Random.Range(0, 99);
     }
 
     private bool CanMove(Vector3 dir, float distance)

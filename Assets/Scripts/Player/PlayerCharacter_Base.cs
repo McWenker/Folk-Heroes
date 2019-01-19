@@ -25,22 +25,9 @@ public class PlayerCharacter_Base : MonoBehaviour
 
     private void GetFacing()
     {
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane hPlane = new Plane(Vector3.up, new Vector3(0, 1.2f, 0));
-        float distance = 0;
-
-        // if the ray hits the plane...
-        if (hPlane.Raycast(ray, out distance))
-        {
-            // get the hit point:
-            mousePointInWorld = ray.GetPoint(distance);
+        mousePointInWorld = RayToGroundUtil.FetchMousePointOnGround(1.2f);
+        if(mousePointInWorld != Vector3.zero)
             weaponBase.RotateWeapon(transform.position, mousePointInWorld);
-        }
-    }
-
-    public void CreateTargetTestObject()
-    {
-        GameObject testBlock = Instantiate(testObj, mousePointInWorld, Quaternion.identity);
     }
 
     public void PlayIdleAnimation()

@@ -4,12 +4,32 @@ using UnityEngine;
 
 public class CursorController : MonoBehaviour
 {
-    [SerializeField] private Texture2D reticleSprite;
+    [SerializeField] private Texture2D crosshairSprite;
+    [SerializeField] private Texture2D menuSprite;
 
-    private void Start()
+    public void UpdateState(ControlState state)
     {
-        Vector2 hotspot = new Vector2(reticleSprite.width / 2, reticleSprite.height / 2);
-        if (reticleSprite != null)
-            Cursor.SetCursor(reticleSprite, hotspot, CursorMode.Auto);
+        Texture2D cursor = null;
+        switch(state)
+        {
+            case ControlState.Combat:
+                cursor = crosshairSprite;
+                break;
+            case ControlState.Menu:
+                cursor = menuSprite;
+                break;
+            case ControlState.Construction:
+                break;
+        }
+        Cursor.visible = (cursor != null);
+        if (cursor != null)
+        {
+            Vector2 hotspot = new Vector2(cursor.width / 2, cursor.height / 2);
+            Cursor.SetCursor(cursor, hotspot, CursorMode.Auto);
+        }
+    }
+    private void Awake()
+    {
+        UpdateState(ControlState.Combat);
     }
 }

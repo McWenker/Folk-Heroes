@@ -12,6 +12,8 @@ Folk Heroes hopes to capture some of the basebuilding fun of classic games like 
 #### Command Modes
    Only by mastering both Combat and Command, will you become a worthy Folk Hero...
 
+![ConstructionGif](DemoImages/constructionDemo.gif?raw=true "The early iterations of construction")
+
 #### Building
    Gatherers can collect things, now let's use their efforts to forge an empire...
 
@@ -24,6 +26,19 @@ Folk Heroes hopes to capture some of the basebuilding fun of classic games like 
 ![AIInteraction](DemoImages/AIresponses.gif?raw=true "Why would these slime monsters kill such tiny cuties?!?!")
 
 ## Changelog
+#### 1/18/2019
+##### Mode swapping first implementation
+* Very exciting! The player can now switch between Combat and Command modes
+* Command mode offers only some simple building options
+
+##### Construction first implementation
+* Homes for the little Dweffis can now be placed
+* Homes check for eligibility before construction, and consume resources
+* Newly constructed buildings are baked into the navigation at instantiation
+
+##### Gatherer improvements
+* Gatherer flee pathing improved, they will get stuck on one another less frequently
+
 #### 1/15/2019
 ##### Resource node randomization
 * Resource nodes now spawn with a random number of resources.

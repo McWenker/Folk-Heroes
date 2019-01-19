@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using CodeMonkey.Utils;
 
 public class PlayerCharacter : MonoBehaviour
@@ -13,18 +14,42 @@ public class PlayerCharacter : MonoBehaviour
     private Vector3 lastMoveDirection;
     private PlayerCharacter_Base playerCharacterBase;
     private Weapon weapon;
+    private ControlState controlState;
+    private bool controlStateCooldown;
+    private bool constructionFlipCooldown;
 
     private void Awake()
     {
         playerCharacterBase = GetComponent<PlayerCharacter_Base>();
         weapon = GetComponentInChildren<Weapon>();
+        controlState = ControlEventManager.ControlStateSwap(gameObject, ControlState.Construction);
+        ControlEventManager.OnControlStateSet += SetControlState;
     }    
 
     private void FixedUpdate()
     {
+        HandleControlState();
         HandleMovement();
         HandleDash();
-        HandleAttack();
+        HandleMouse();
+        HandleConstructionFlip();
+    }
+
+    private void HandleControlState()
+    {
+        if(Input.GetKey(KeyCode.LeftAlt) && !controlStateCooldown)
+        {
+            controlState = ControlEventManager.ControlStateSwap(gameObject, controlState);
+            controlStateCooldown = true;
+            StartCoroutine(ControlStateCooldown());
+        }
+        weapon.gameObject.SetActive(controlState == ControlState.Combat);
+    }
+
+    private void SetControlState(ControlState state)
+    {
+        controlState = state;        
+        weapon.gameObject.SetActive(controlState == ControlState.Combat);
     }
 
     private void HandleMovement()
@@ -83,12 +108,30 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-    private void HandleAttack()
+    private void HandleMouse()
     {
         if(Input.GetMouseButton(0))
         {
-            if (weapon != null)
+            
+            if (controlState == ControlState.Combat && weapon != null && weapon.isActiveAndEnabled)
                 weapon.Attack();
+            else if(controlState == ControlState.Construction)
+            {
+                if (!EventSystem.current.IsPointerOverGameObject ())
+                    ConstructionEventManager.NewBuild(gameObject);
+            }
+        }
+    }
+
+    private void HandleConstructionFlip()
+    {
+        if(controlState != ControlState.Construction)
+            return;
+        if((Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E)) && !constructionFlipCooldown)
+        {
+            ConstructionEventManager.FlipSprite(gameObject);
+            constructionFlipCooldown = true;
+            StartCoroutine(ConstructionFlipCooldown());
         }
     }
 
@@ -126,6 +169,18 @@ public class PlayerCharacter : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private IEnumerator ControlStateCooldown()
+    {
+        yield return new WaitForSeconds(1f);
+        controlStateCooldown = false;
+    }
+
+    private IEnumerator ConstructionFlipCooldown()
+    {
+        yield return new WaitForSeconds(0.3f);
+        constructionFlipCooldown = false;
     }
 
 }

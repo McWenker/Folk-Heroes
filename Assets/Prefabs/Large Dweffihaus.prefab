@@ -19,17 +19,50 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4629529335155022}
+  - component: {fileID: 54788028733987336}
   - component: {fileID: 212203569449525344}
   - component: {fileID: 65878965623980750}
   - component: {fileID: 208617713805719136}
   - component: {fileID: 114100798923989576}
-  m_Layer: 11
-  m_Name: House_1
+  - component: {fileID: 114117352418301660}
+  - component: {fileID: 114735043848687120}
+  m_Layer: 15
+  m_Name: Large Dweffihaus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1985761415345766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4509896401697052}
+  - component: {fileID: 65671928074107428}
+  - component: {fileID: 65189530750400634}
+  m_Layer: 15
+  m_Name: construction footprint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4509896401697052
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985761415345766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4629529335155022}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4629529335155022
 Transform:
   m_ObjectHideFlags: 1
@@ -39,10 +72,50 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.21, y: 0, z: -3.329998}
   m_LocalScale: {x: 1, y: 1.414214, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4509896401697052}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54788028733987336
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474365715646598}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 100
+  m_AngularDrag: 100
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &65189530750400634
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985761415345766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1082516, y: 1.0601188, z: 1.1580441}
+  m_Center: {x: 0.38276386, y: 0.4647942, z: -0.67833745}
+--- !u!65 &65671928074107428
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985761415345766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.6698115, y: 2.273802, z: 1.6622345}
+  m_Center: {x: -0.15219939, y: 1.1264298, z: 0.172068}
 --- !u!65 &65878965623980750
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -66,13 +139,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61225d0e8af94b847bd81c833b0c176c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114117352418301660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474365715646598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1400dc849f64ad546ac5209ae7b7e878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteIndex: 0
+  sprites:
+  - {fileID: 21300000, guid: 7167b255a00740b40887823572c26452, type: 3}
+  - {fileID: 21300000, guid: caad72d9df464aa4b9f131cda4a4bc79, type: 3}
+  isGhost: 1
+  canBuild: 1
+--- !u!114 &114735043848687120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474365715646598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8cca336babb8f4ba404a0ca02b35f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldCost: 5
+  ironCost: 0
+  manaCost: 0
+  bloodCost: 0
 --- !u!208 &208617713805719136
 NavMeshObstacle:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474365715646598}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 1.8349055, y: 1.1666665, z: 0.6263485}
