@@ -38,6 +38,8 @@ GameObject:
   - component: {fileID: 65531867674739472}
   - component: {fileID: 114755329446605894}
   - component: {fileID: 208763452661676030}
+  - component: {fileID: 114580137707757678}
+  - component: {fileID: 114507439053014976}
   m_Layer: 15
   m_Name: Stronghold
   m_TagString: Untagged
@@ -139,6 +141,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.9107742, y: 6.13, z: 1.9355278}
   m_Center: {x: -0.021374702, y: 3.07, z: 0.8}
+--- !u!114 &114507439053014976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263597791849772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8cca336babb8f4ba404a0ca02b35f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldCost: 15
+  ironCost: 10
+  manaCost: 10
+  bloodCost: 30
+--- !u!114 &114580137707757678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263597791849772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1400dc849f64ad546ac5209ae7b7e878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteIndex: 0
+  sprites:
+  - {fileID: 21300000, guid: e1d9ff753516f344ba0108ef850ff424, type: 3}
+  isGhost: 1
+  canBuild: 1
 --- !u!114 &114755329446605894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,7 +189,7 @@ NavMeshObstacle:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1263597791849772}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 1.955387, y: 3.065, z: 0.967764}

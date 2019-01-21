@@ -8,14 +8,14 @@ public class UI_Window_GameResourceBank : MonoBehaviour
     [SerializeField] TextMeshProUGUI goldField;
     [SerializeField] TextMeshProUGUI ironField;
     [SerializeField] TextMeshProUGUI manaField;
-    [SerializeField] TextMeshProUGUI stoneField;
+    [SerializeField] TextMeshProUGUI bloodField;
 
     private void Awake()
     {
         GameResourceBank.OnGoldAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResourceType.Gold); };
         GameResourceBank.OnIronAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResourceType.Iron); };
         GameResourceBank.OnManaAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResourceType.Mana); };
-        GameResourceBank.OnStoneAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResourceType.Stone); };
+        GameResourceBank.OnBloodAmountChanged += delegate (object sender, EventArgs e){ UpdateResourceTextObject(GameResourceType.Blood); };
         UpdateResourceTextObject();
     }
 
@@ -24,7 +24,7 @@ public class UI_Window_GameResourceBank : MonoBehaviour
         goldField.SetText("GOLD: " + GameResourceBank.GetAmount(GameResourceType.Gold));
         ironField.SetText("IRON: " + GameResourceBank.GetAmount(GameResourceType.Iron));
         manaField.SetText("MANA: " + GameResourceBank.GetAmount(GameResourceType.Mana));
-        stoneField.SetText("STONE: " + GameResourceBank.GetAmount(GameResourceType.Stone));
+        bloodField.SetText("BLOOD: " + GameResourceBank.GetAmount(GameResourceType.Blood));
     }
 
     // better to give a resource type
@@ -41,8 +41,8 @@ public class UI_Window_GameResourceBank : MonoBehaviour
             case (GameResourceType.Mana):
                 manaField.SetText("MANA: " + GameResourceBank.GetAmount(GameResourceType.Mana));
                 break;
-            case (GameResourceType.Stone):
-                stoneField.SetText("STONE: " + GameResourceBank.GetAmount(GameResourceType.Stone));
+            case (GameResourceType.Blood):
+                bloodField.SetText("BLOOD: " + GameResourceBank.GetAmount(GameResourceType.Blood));
                 break;
             default:
                 UpdateResourceTextObject();

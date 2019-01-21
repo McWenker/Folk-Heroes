@@ -17,7 +17,7 @@ public class ConstructionCost : MonoBehaviour
 			return false;
 		if(GameResourceBank.GetAmount(GameResourceType.Mana) < manaCost)
 			return false;
-		if(GameResourceBank.GetAmount(GameResourceType.Stone) < bloodCost)
+		if(GameResourceBank.GetAmount(GameResourceType.Blood) < bloodCost)
 			return false;
 		return true;
 	}
@@ -27,6 +27,6 @@ public class ConstructionCost : MonoBehaviour
 		GameResourceBank.AddAmount(GameResourceType.Gold, -goldCost);
 		GameResourceBank.AddAmount(GameResourceType.Iron, -ironCost);
 		GameResourceBank.AddAmount(GameResourceType.Mana, -manaCost);
-		GameResourceBank.AddAmount(GameResourceType.Stone, -bloodCost);
+		GameResourceBank.AddAmount(GameResourceType.Blood, -bloodCost);
 	}
 }

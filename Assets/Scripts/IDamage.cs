@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameResourceType
+public interface IDamage
 {
-    Gold,
-    Iron,
-    Mana,
-    Blood
+	int Damage
+	{
+		get;
+		set;
+	}
 }

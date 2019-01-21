@@ -50,7 +50,8 @@ public class Construction : MonoBehaviour
 
 	public void Construct(int spriteIndex)
 	{	
-		cost.Spend();	
+		cost.Spend();
+		GetComponent<Housing>().enabled = true;
 		IsGhost = false;
 		SpriteIndex = spriteIndex;
 	}

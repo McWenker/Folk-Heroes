@@ -90,7 +90,7 @@ public class AI_Gather_States : MonoBehaviour
         {
             case State.Idle:
                 unit.Idling();
-                resourceNode = GameHandler.GetResourceNode_Static();
+                resourceNode = GameHandler.GetResourceNodeNearPosition_Static(transform.position);
                 if(resourceNode != null)
                     state = State.MovingToResourceNode;
                 break;

@@ -8,11 +8,11 @@ public static class GameResourceBank
     public static event EventHandler OnGoldAmountChanged;
     public static event EventHandler OnIronAmountChanged;
     public static event EventHandler OnManaAmountChanged;
-    public static event EventHandler OnStoneAmountChanged;
+    public static event EventHandler OnBloodAmountChanged;
     private static int goldAmount;
     private static int ironAmount;
     private static int manaAmount;
-    private static int stoneAmount;
+    private static int bloodAmount;
 
     public static void AddAmount(GameResourceType resourceToGrow, int amount)
     {
@@ -30,9 +30,9 @@ public static class GameResourceBank
                 manaAmount += amount;
                 if (OnManaAmountChanged != null) OnManaAmountChanged(null, EventArgs.Empty);
                 break;
-            case (GameResourceType.Stone):
-                stoneAmount += amount;
-                if (OnStoneAmountChanged != null) OnStoneAmountChanged(null, EventArgs.Empty);
+            case (GameResourceType.Blood):
+                bloodAmount += amount;
+                if (OnBloodAmountChanged != null) OnBloodAmountChanged(null, EventArgs.Empty);
                 break;
         }
     }
@@ -47,8 +47,8 @@ public static class GameResourceBank
                 return ironAmount;
             case (GameResourceType.Mana):
                 return manaAmount;
-            case (GameResourceType.Stone):
-                return stoneAmount;
+            case (GameResourceType.Blood):
+                return bloodAmount;
             default:
                 return 0;
         }

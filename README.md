@@ -26,6 +26,17 @@ Folk Heroes hopes to capture some of the basebuilding fun of classic games like 
 ![AIInteraction](DemoImages/AIresponses.gif?raw=true "Why would these slime monsters kill such tiny cuties?!?!")
 
 ## Changelog
+#### 1/20/2019
+##### Melee Weapons!
+* Took the first swing at some other weapon types, and making the different weapon modes play nice together
+* Currently, melee weapons do not deal friendly fire (guns do)
+
+![Houses](DemoImages/spawningWheel.gif?raw=true "Need a chimney with a cozy fire...")
+
+##### Houses are homes
+* Gatherers are now created from houses, up to a maximum per house
+* Currently this happens automatically, but later it will change
+
 #### 1/18/2019
 ##### Mode swapping first implementation
 * Very exciting! The player can now switch between Combat and Command modes

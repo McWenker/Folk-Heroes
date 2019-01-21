@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +33,7 @@ public class Weapon_Base : MonoBehaviour
         spriteAnim.PlayAnimation(anim, idleFrameRate, false);
     }
 
-    public void PlayAttackAnimation()
+    public void PlayAttackAnimation(Action onAnimationCompleted)
     {
         Sprite[] anim;
 
@@ -41,7 +42,10 @@ public class Weapon_Base : MonoBehaviour
         else
             anim = attackWestAnimationArray;
 
-        spriteAnim.PlayAnimation(anim, attackFrameRate, false);
+        spriteAnim.PlayAnimation(anim, attackFrameRate, () => 
+        {
+            onAnimationCompleted();
+        });
     }
 
     public void RotateWeapon(Vector3 charPosition, Vector3 pointToward)

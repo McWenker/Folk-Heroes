@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    private enum WeaponState
+    {
+        Idle,
+        Attack
+    }
+    private WeaponState state;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private GameObject damageObjectPrefab;
     [SerializeField] private GameObject targetTestObject;
@@ -26,13 +32,12 @@ public class Weapon : MonoBehaviour
         switch(canAttack)
         {
             case (true):
-                StartCoroutine(AttackCooldown());
-                weaponBase.PlayAttackAnimation();
+                canAttack = false;
                 CreateDamageObject();
                 PlayAttackSFX();
+                state = WeaponState.Attack;
                 break;
             default:
-                weaponBase.PlayIdleAnimation();
                 break;
         }
     }
@@ -40,8 +45,8 @@ public class Weapon : MonoBehaviour
     private void CreateDamageObject()
     {
         GameObject obj = Instantiate(damageObjectPrefab, attackPoint.position, attackPoint.rotation) as GameObject;
-        DamageObject damObj = obj.AddComponent<DamageObject>();
-        damObj.damage = damage;
+        IDamage damObj = obj.GetComponent<IDamage>();
+        damObj.Damage = damage;
     }
 
     private void PlayAttackSFX()
@@ -51,15 +56,20 @@ public class Weapon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(canAttack)
+        switch(state)
         {
-            weaponBase.PlayIdleAnimation();
+            case WeaponState.Idle:                
+                weaponBase.PlayIdleAnimation();
+                break;
+            case WeaponState.Attack:                
+                weaponBase.PlayAttackAnimation(() => StartCoroutine(AttackCooldown()));
+                break;
         }
     }
 
     private IEnumerator AttackCooldown()
     {
-        canAttack = false;
+        state = WeaponState.Idle;
         yield return new WaitForSeconds(cooldown);
         canAttack = true;
     }
