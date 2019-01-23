@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
+public class MeleeAttackUnit : MonoBehaviour, IUnit, IAttack
 {
     private bool isIdle;
 
@@ -14,6 +14,7 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
     [SerializeField] float dashDistance;
 
     private Vector3 targetDir;
+    private Vector3 dashTarget;
     private Vector3 lastMoveDirection;
 
     private Action onAnimationCompleted;
@@ -21,6 +22,29 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
     private AI_Base AIBase;
     private AI_Base_Enemy AIBaseEnemy;
     private bool attackReady = true;
+    private bool attacking;    
+
+    public bool Attacking
+    {
+        get { return attacking; }
+        set { attacking = value; }
+    }
+    public float AttackRange
+    {
+        get { return dashDistance; }
+        set { dashDistance = value; }
+    }
+
+    public bool AttackReady
+    {
+        get { return attackReady; }
+        set { attackReady = value; }
+    }  
+
+    public bool IsIdle
+    {
+        get { return isIdle; }
+    }
 
     private void Awake()
     {
@@ -31,41 +55,41 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
 
     private IEnumerator AttackCooldown()
     {
-        attackReady = false;
         yield return new WaitForSeconds(attackCooldown);
         attackReady = true;
     }
 
-    private IEnumerator AttackRecovery()
+    public void Attack(Action onAttackComplete)
     {
-        yield return new WaitForSeconds(recoveryTime);
-        navMeshAgent.SetDestination(moveToPoint.position);
+        if(dashTarget != Vector3.zero)
+        {
+            transform.position = Vector3.Lerp(transform.position, dashTarget, 0.1f);
+            if(Vector3.Distance(transform.position, dashTarget) <= 0.2f)
+            {
+                dashTarget = Vector3.zero;
+                AttackCompleted();
+                onAttackComplete();
+            }
+        }
     }
-
     public void AttackCompleted()
     {
+        attacking = false;
+        attackReady = false;
         onAnimationCompleted();
         StartCoroutine(AttackCooldown());
-        StartCoroutine(AttackRecovery());
-    }
-
-    public bool AttackReady()
-    {
-        return attackReady;
     }
     public void ClearMove()
     {
+        navMeshAgent.isStopped = true;
+        moveToPoint = null;
     }
 
-    public void DashAttack(Vector3 startPos, Vector3 target, float maxDistance, Action animation)
+    public void CommenceAttack(Vector3 target, Action Animation)
     {
-        if(Vector3.Distance(startPos, transform.position) < maxDistance)
-            Vector3.Lerp(transform.position, target, Time.deltaTime);
-    }
-
-    public float DashDistance()
-    {
-        return dashDistance;
+        attacking = true;
+        dashTarget = target;
+        Animation();
     }
 
     public void Idling()
@@ -74,15 +98,11 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
         AIBase.PlayIdleAnimation(lastMoveDirection);
     }
 
-    public bool IsIdle()
-    {
-        return isIdle;
-    }
-
     public void MoveTo(Vector3 target, float stopDistance, Action onArrivedAtPosition)
     {
         isIdle = false;
         navMeshAgent.SetDestination(target);
+        navMeshAgent.isStopped = false;
         targetDir = (target - transform.position);
         AIBase.PlayWalkingAnimation(targetDir);
         if (Vector3.Distance(transform.position, target) <= stopDistance)
@@ -90,6 +110,10 @@ public class EnemyAttackUnit : MonoBehaviour, IUnit, IAttack
             Idling();
             onArrivedAtPosition();
         }
+    }
+    public void OnDeath()
+    {
+        DeathEventManager.UnitDeath(this);
     }
 
     public void PlayAnimationAttack(Vector3 lookAtPosition, Action onAnimationCompleted)

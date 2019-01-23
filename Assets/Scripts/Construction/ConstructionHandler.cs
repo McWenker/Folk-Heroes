@@ -58,7 +58,7 @@ public class ConstructionHandler : MonoBehaviour
 			GameObject.Destroy(this.toConstruct.gameObject);
 			this.toConstruct = null;
 		}	
-		ControlEventManager.ControlStateSet(ControlState.Construction);
+		ControlEventManager.ControlStateSet(this, ControlState.Construction);
 		toConstructPrefab = toConstruct;
 		SpawnGhost();
 	}

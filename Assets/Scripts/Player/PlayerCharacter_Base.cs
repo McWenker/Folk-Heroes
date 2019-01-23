@@ -6,7 +6,11 @@ public class PlayerCharacter_Base : MonoBehaviour
 {
     [SerializeField] private GameObject testObj;
     [SerializeField] private SpriteAnimator spriteAnim;
-    [SerializeField] private Weapon_Base weaponBase;
+    [SerializeField] private Weapon_Base right_weaponBase;
+    [SerializeField] private Weapon_Base left_weaponBase;
+
+    public Transform rightHand;
+    public Transform leftHand;
 
     [SerializeField] private Sprite[] idleSouthEastAnimationFrameArray;
     [SerializeField] private Sprite[] idleSouthWestAnimationFrameArray;
@@ -23,11 +27,67 @@ public class PlayerCharacter_Base : MonoBehaviour
     
     private Vector3 mousePointInWorld;    
 
+    private Dictionary<string, Vector3> handDict = new Dictionary<string, Vector3>()
+    {
+        {"R_southeast", new Vector3(0.572f, 0.55f, 0f)},
+        {"L_southeast", new Vector3(-0.2f, 0.44f, 0f)},
+        {"R_northeast", new Vector3(0.399f, 0.715f, 0f)},
+        {"L_northeast", new Vector3(-0.42f, 0.579f, 0f)},
+
+        {"R_southwest", new Vector3(-0.79f, 0.63f, 0f)},
+        {"L_southwest", new Vector3(0.279f, 0.862f, 0f)},
+        {"R_northwest", new Vector3(-0.28f, 0.96f, 0f)},
+        {"L_northwest", new Vector3(-0.7f, 0.96f, 0f)}
+    };
+
+    private Vector3 rightHandPos;
+    private Vector3 leftHandPos;
+
+    private void Awake()
+    {
+        rightHandPos = rightHand.localPosition;
+        leftHandPos = leftHand.localPosition;
+    }
+
     private void GetFacing()
     {
-        mousePointInWorld = RayToGroundUtil.FetchMousePointOnGround(1.2f);
+        mousePointInWorld = RayToGroundUtil.FetchMousePointOnGround(0.8f);
+        PlaceHands();
         if(mousePointInWorld != Vector3.zero)
-            weaponBase.RotateWeapon(transform.position, mousePointInWorld);
+        {
+            right_weaponBase.RotateWeapon(rightHand.position, mousePointInWorld);
+            left_weaponBase.RotateWeapon(leftHand.position, mousePointInWorld);
+        }
+    }
+
+    private void PlaceHands()
+    {
+        if(mousePointInWorld.x >= transform.position.x) // facing east
+        {
+            if(mousePointInWorld.z <= transform.position.z) // southeast
+            {
+                rightHand.localPosition = handDict["R_southeast"];
+                leftHand.localPosition = handDict["L_southeast"];
+            }
+            else // northeast
+            {
+                rightHand.localPosition = handDict["R_northeast"];
+                leftHand.localPosition = handDict["L_northeast"];
+            }
+        }
+        else
+        {
+            if(mousePointInWorld.z <= transform.position.z) // southwest
+            {
+                rightHand.localPosition = handDict["R_southwest"];
+                leftHand.localPosition = handDict["L_southwest"];
+            }
+            else // northwest
+            {
+                rightHand.localPosition = handDict["R_northwest"];
+                leftHand.localPosition = handDict["L_northwest"];
+            }
+        }
     }
 
     public void PlayIdleAnimation()

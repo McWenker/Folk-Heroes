@@ -13,8 +13,8 @@ public class AI_Enemy_States : MonoBehaviour
         Returning,
     }
 
-    private IUnit unit;
     private IAttack attack;
+    private IUnit unit;
     private IVision vision;
     private State state;
     [SerializeField] private Transform target;
@@ -35,6 +35,7 @@ public class AI_Enemy_States : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(state);
         switch (state)
         {
             case State.Idle:
@@ -66,21 +67,31 @@ public class AI_Enemy_States : MonoBehaviour
                 }
                 else if(target != null)
                 {
-                    unit.MoveTo(target.position, 3f, () =>
+                    unit.MoveTo(target.position, attack.AttackRange, () =>
                     {
+                        Debug.Log("Attack!");
+                        Debug.DrawRay(target.position, Vector3.up, Color.black);
+                        unit.ClearMove();
+                        state = State.Attacking;
                     });
                 }
                 break;
 
             case State.Attacking:
-                if(attack.AttackReady())
+                if(!attack.Attacking && attack.AttackReady)
                 {
-                    attack.DashAttack(transform.position, target.transform.position, attack.DashDistance(), () =>
+                    attack.CommenceAttack(target.position, () =>
                     {
                         attack.PlayAnimationAttack(target.transform.position, () =>
                         {
-                            state = State.Idle;
                         });
+                    });
+                }
+                else if(attack.Attacking)
+                {
+                    attack.Attack(() =>
+                    {
+                        state = State.Idle;
                     });
                 }
                 else

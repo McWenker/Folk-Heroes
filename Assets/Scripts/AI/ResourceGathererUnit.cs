@@ -29,9 +29,9 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit, IGather
         AIBase.PlayIdleAnimation(lastMoveDirection);
     }
 
-    public bool IsIdle()
+    public bool IsIdle
     {
-        return isIdle;
+        get { return isIdle; }
     }
 
     public void MiningCompleted()
@@ -68,6 +68,10 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit, IGather
     {
         inventory.Add(resToAdd);
     }
+    public void OnDeath()
+    {
+        DeathEventManager.UnitDeath(this);
+    }
 
     public void UnloadInventory()
     {
@@ -91,7 +95,7 @@ public class ResourceGathererUnit : MonoBehaviour, IUnit, IGather
         Debug.DrawRay(rayPoint.position, dir, Color.red, 2f);
         return !Physics.Raycast(rayPoint.position, dir, distance);
     }
-
+    
     private bool TryMove(Vector3 baseMoveDir, float distance)
     {
         Vector3 moveDir = baseMoveDir;

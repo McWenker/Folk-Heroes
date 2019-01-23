@@ -15,7 +15,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject targetTestObject;
     [SerializeField] private AudioClip[] attackSFX;
     [SerializeField] private int damage;
-    [SerializeField] private float spread;
+    [SerializeField] private int spreadCount;
+    [SerializeField] private float spreadAmount;
     private Weapon_Base weaponBase;
     [SerializeField] float rotationTweak;
 
@@ -24,6 +25,10 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
+        if(spreadCount == 0)
+        {
+            spreadCount = 1;
+        }
         weaponBase = GetComponent<Weapon_Base>();
     }
 
@@ -33,7 +38,7 @@ public class Weapon : MonoBehaviour
         {
             case (true):
                 canAttack = false;
-                CreateDamageObject();
+                CreateDamageObjects();
                 PlayAttackSFX();
                 state = WeaponState.Attack;
                 break;
@@ -42,11 +47,18 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void CreateDamageObject()
+    private void CreateDamageObjects()
     {
-        GameObject obj = Instantiate(damageObjectPrefab, attackPoint.position, attackPoint.rotation) as GameObject;
-        IDamage damObj = obj.GetComponent<IDamage>();
-        damObj.Damage = damage;
+        Vector3 startingAttackRotation = attackPoint.rotation.eulerAngles;
+        for(int i = 0; i < spreadCount; ++i)
+        {
+            Quaternion attackAngle = Quaternion.Euler(new Vector3(startingAttackRotation.x, startingAttackRotation.y + (Random.Range(-spreadAmount, spreadAmount)), startingAttackRotation.z));
+            GameObject obj = Instantiate(damageObjectPrefab, attackPoint.position, attackAngle) as GameObject;
+            IDamage damObj = obj.GetComponent<IDamage>();
+            damObj.Damage = damage;
+            damObj.CreatorWeapon = this;
+            damObj.AttackOrigin = attackPoint;
+        }
     }
 
     private void PlayAttackSFX()

@@ -7,12 +7,27 @@ public class Projectile : MonoBehaviour, IDamage
 	[SerializeField] float despawnTime;
     [SerializeField] float velocity;
     int damage;
+
+    Weapon creatorWeapon;
+    Transform attackOrigin;
     Vector3 previousPos;
 
     public int Damage
     {
         get { return damage; }
         set { damage = value; }
+    }
+
+    public Weapon CreatorWeapon
+    {
+        get { return creatorWeapon; }
+        set { creatorWeapon = value;}
+    }
+
+    public Transform AttackOrigin
+    {
+        get { return attackOrigin; }
+        set { attackOrigin = value; }
     }
 
     private void Awake()

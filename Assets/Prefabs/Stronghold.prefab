@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4949263778041734}
   - component: {fileID: 65144154948124272}
   - component: {fileID: 65078161392369338}
-  m_Layer: 15
+  m_Layer: 2
   m_Name: construction footprint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

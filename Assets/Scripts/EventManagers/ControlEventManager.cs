@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class ControlEventManager
 {
-    public delegate void ControlStateEventHandler(ControlState state);
+    public delegate void ControlStateEventHandler(Object sender, ControlState state);
 	public delegate ControlState ControlStateActionEventHandler(GameObject sender, ControlState state);
     public static event ControlStateEventHandler OnControlStateSet;
     public static event ControlStateActionEventHandler OnControlStateSwap;
@@ -15,8 +15,8 @@ public static class ControlEventManager
 		else return ControlState.Combat;
     }
 
-    public static void ControlStateSet(ControlState state)
+    public static void ControlStateSet(Object sender, ControlState state)
     {
-        if(OnControlStateSwap != null) OnControlStateSet(state);
+        if(OnControlStateSwap != null) OnControlStateSet(sender, state);
     }
 }

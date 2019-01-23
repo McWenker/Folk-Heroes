@@ -6,6 +6,8 @@ public class MeleeDamage : MonoBehaviour, IDamage
 {
 	[SerializeField] float despawnTime;
 	int damage;
+	Weapon creatorWeapon;
+	Transform attackOrigin;
 
 	private List<Health> hitList = new List<Health>();
 	public int Damage
@@ -13,10 +15,27 @@ public class MeleeDamage : MonoBehaviour, IDamage
         get { return damage; }
         set { damage = value; }
     }
+
+	public Weapon CreatorWeapon
+	{
+        get { return creatorWeapon; }
+        set { creatorWeapon = value; }
+	}
+
+	public Transform AttackOrigin
+	{
+		get { return attackOrigin; }
+		set { attackOrigin = value; }
+	}
 	private void Awake()
     {
         StartCoroutine(DespawnTimer());
     }
+
+	private void FixedUpdate()
+	{
+		transform.position = attackOrigin.position;
+	}
 
 	private IEnumerator DespawnTimer()
     {

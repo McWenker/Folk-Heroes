@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4495607556443138}
-  m_Layer: 15
+  m_Layer: 11
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 224094962086593652}
   - component: {fileID: 222398924111451500}
   - component: {fileID: 114834452425037438}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 224392967810474008}
   - component: {fileID: 223595540577004022}
   - component: {fileID: 114854073244440866}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: progressCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 114117352418301660}
   - component: {fileID: 114735043848687120}
   - component: {fileID: 114019717963117338}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Large Dweffihaus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 224909401907192950}
   - component: {fileID: 222538400024388976}
   - component: {fileID: 114017800470889362}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LoadingBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 222892045883810384}
   - component: {fileID: 114478614494195294}
   - component: {fileID: 114635405597724136}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Radial_ProgressBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 224013600319469874}
   - component: {fileID: 222807486819496980}
   - component: {fileID: 114225244216632980}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 224129683113402840}
   - component: {fileID: 222544008365791818}
   - component: {fileID: 114548451529792582}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Progress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 4509896401697052}
   - component: {fileID: 65671928074107428}
   - component: {fileID: 65189530750400634}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: construction footprint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ BoxCollider:
   m_GameObject: {fileID: 1985761415345766}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1082516, y: 1.0601188, z: 1.1580441}
   m_Center: {x: 0.38276386, y: 0.4647942, z: -0.67833745}
@@ -260,8 +260,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.6698115, y: 2.333333, z: 1.252697}
-  m_Center: {x: -0.15219939, y: 1.0966663, z: 0.37683678}
+  m_Size: {x: 3.6698115, y: 2.333333, z: 1.378312}
+  m_Center: {x: -0.15219939, y: 1.0966663, z: 0.3140292}
 --- !u!114 &114017800470889362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -676,14 +676,14 @@ NavMeshObstacle:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474365715646598}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.8349055, y: 1.1666665, z: 0.6263485}
+  m_Extents: {x: 1.8349055, y: 1.1666665, z: 0.689156}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.1521994, y: 1.096666, z: 0.3768368}
+  m_Center: {x: -0.1521994, y: 1.096666, z: 0.3140292}
   m_TimeToStationary: 0.5
 --- !u!212 &212203569449525344
 SpriteRenderer:

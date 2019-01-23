@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 2a87b1048fbabef4297cb792fcb6f2fe
+guid: b781fac0cbb348d4c83dde03cb9e2df5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: AssRifle_0
-    21300002: AssRifle_1
-    21300004: AssRifle_2
-    21300006: AssRifle_3
-    21300008: AssRifle_4
-    21300010: AssRifle_5
-    21300012: AssRifle_6
-    21300014: AssRifle_7
-    21300016: AssRifle_8
-    21300018: AssRifle_9
-    21300020: AssRifle_10
-    21300022: AssRifle_11
+    21300000: AssShotty_0
+    21300002: AssShotty_1
+    21300004: AssShotty_2
+    21300006: AssShotty_3
+    21300008: AssShotty_4
+    21300010: AssShotty_5
+    21300012: AssShotty_6
+    21300014: AssShotty_7
+    21300016: AssShotty_8
+    21300018: AssShotty_9
+    21300020: AssShotty_10
+    21300022: AssShotty_11
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -118,241 +118,241 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AssRifle_0
+      name: AssShotty_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.25532055}
+      pivot: {x: 0.26394242, y: 0.17101659}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36716a8f667bfcb40bf6da3a7e4b53fd
+      spriteID: df097c6ce425e0f41924c04277024ffe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_1
+      name: AssShotty_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 30
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.25}
+      pivot: {x: 0.26394242, y: 0.17101659}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 408e7c641cd759e4096be273fd219ecc
+      spriteID: bb739230178da8f489d18399005289bb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_2
+      name: AssShotty_2
       rect:
         serializedVersion: 2
-        x: 62
+        x: 60
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.25}
+      pivot: {x: 0.26394242, y: 0.17101659}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5b0dc79a429db144a96873f08b19949
+      spriteID: 3f0f66c692c966f49a18cd95c95602f1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_3
+      name: AssShotty_3
       rect:
         serializedVersion: 2
-        x: 93
+        x: 90
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.25}
+      pivot: {x: 0.26394242, y: 0.17101659}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33894b1d2202eb74e82110cdb8a21158
+      spriteID: ad5f0f8540378c248a905aefc41b5399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_4
+      name: AssShotty_4
       rect:
         serializedVersion: 2
-        x: 124
+        x: 120
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.25}
+      pivot: {x: 0.26394242, y: 0.17101659}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6584b1f5b5a6334bbd8aff8f412b47b
+      spriteID: 45ef74584fbce0a4f82bdddfc50de5f6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_5
+      name: AssShotty_5
       rect:
         serializedVersion: 2
-        x: 155
+        x: 150
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.25}
+      pivot: {x: 0.26394242, y: 0.17101659}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 617ef94100e4cb84bbe9f5f4e1310194
+      spriteID: 2979fd94317da5a4591b79e1496f601b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_6
+      name: AssShotty_6
       rect:
         serializedVersion: 2
-        x: 186
+        x: 180
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.75}
+      pivot: {x: 0.26394242, y: 0.83}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63383b897d3361446882099d0c9d6d0e
+      spriteID: 98b1d1f32526517438e34aff8c926f46
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_7
+      name: AssShotty_7
       rect:
         serializedVersion: 2
-        x: 217
+        x: 210
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.75}
+      pivot: {x: 0.26394242, y: 0.83}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edfa7648c5a25ce478ede19f77bbb23f
+      spriteID: a596518fe9bde93418ecebd2f682b8b9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_8
+      name: AssShotty_8
       rect:
         serializedVersion: 2
-        x: 248
+        x: 240
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.75}
+      pivot: {x: 0.26394242, y: 0.83}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 396e5da623936a14db908d425a3f3dbe
+      spriteID: 1a95987590644464da23d7696014cdd4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_9
+      name: AssShotty_9
       rect:
         serializedVersion: 2
-        x: 279
+        x: 270
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.75}
+      pivot: {x: 0.26394242, y: 0.83}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e995f33b722dea242861894ee8c61d4f
+      spriteID: 0d0e36fcddfda3441aefb6791b7ea72c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_10
+      name: AssShotty_10
       rect:
         serializedVersion: 2
-        x: 310
+        x: 300
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.75}
+      pivot: {x: 0.26394242, y: 0.83}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e97a04e578051114d9027e2d078799fc
+      spriteID: 45a0bd64eb641c8449b9e09a213d02d4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssRifle_11
+      name: AssShotty_11
       rect:
         serializedVersion: 2
-        x: 341
+        x: 330
         y: 0
-        width: 31
-        height: 16
+        width: 30
+        height: 12
       alignment: 9
-      pivot: {x: 0.28828487, y: 0.75}
+      pivot: {x: 0.26394242, y: 0.83}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5153a39e87f65724995c97b462bbb296
+      spriteID: 935cd0a0d1627bb4d950585eda1197d9
       vertices: []
       indices: 
       edges: []
@@ -360,7 +360,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d466961c6d7d38d42be71a69796dca37
+    spriteID: 5f5675b4eb8cff64d98afdbf5d108f02
     vertices: []
     indices: 
     edges: []

@@ -24,12 +24,21 @@ public class ControlStateHandler : MonoBehaviour
     private void Awake()
     {
         ControlEventManager.OnControlStateSwap += SwapState;
+        ControlEventManager.OnControlStateSet += SetState;
     }
 
     private void UpdateConstruction(ControlState state)
     {
         constructionCanvas.gameObject.SetActive(state == ControlState.Menu || state == ControlState.Construction);
         constructionHandler.enabled = (state == ControlState.Construction);
+    }
+
+    private void SetState(Object sender, ControlState state)
+    {
+        if(sender != this)
+        {
+            SetState(state);
+        }
     }
 
     private void SetState(ControlState state)
@@ -41,5 +50,10 @@ public class ControlStateHandler : MonoBehaviour
     public void ConstructionState()
     {
         SetState(ControlState.Construction);
+    }
+
+    public void ExitConstruction()
+    {
+        SetState(ControlState.Combat);
     }
 }

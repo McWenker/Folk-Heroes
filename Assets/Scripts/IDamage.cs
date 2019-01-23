@@ -9,4 +9,16 @@ public interface IDamage
 		get;
 		set;
 	}
+
+	Weapon CreatorWeapon
+	{
+		get;
+		set;
+	}
+
+	Transform AttackOrigin
+	{
+		get;
+		set;
+	}
 }

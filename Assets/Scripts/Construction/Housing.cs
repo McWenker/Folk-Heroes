@@ -18,6 +18,18 @@ public class Housing : MonoBehaviour
 	private void Awake()
 	{
 		spawnList = new List<IUnit>(housingCount);
+		DeathEventManager.OnUnitDeath += CheckUnitDeath;
+	}
+
+	private void CheckUnitDeath(IUnit sender)
+	{
+		if(spawnList.Contains(sender))
+		{
+			spawnList.Remove(sender);
+			
+			if(spawnList.Count < housingCount)
+				atCapacity = false;
+		}
 	}
 
 	private void Spawn()

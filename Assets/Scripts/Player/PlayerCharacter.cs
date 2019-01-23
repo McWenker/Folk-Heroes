@@ -13,7 +13,9 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private float dashEffectWidth;
     private Vector3 lastMoveDirection;
     private PlayerCharacter_Base playerCharacterBase;
-    private Weapon weapon;
+
+    private Weapon rightWeapon;
+    private Weapon leftWeapon;
     private ControlState controlState;
     private bool controlStateCooldown;
     private bool constructionFlipCooldown;
@@ -21,7 +23,8 @@ public class PlayerCharacter : MonoBehaviour
     private void Awake()
     {
         playerCharacterBase = GetComponent<PlayerCharacter_Base>();
-        weapon = GetComponentInChildren<Weapon>();
+        rightWeapon = playerCharacterBase.rightHand.GetComponentInChildren<Weapon>();
+        leftWeapon = playerCharacterBase.leftHand.GetComponentInChildren<Weapon>();
         controlState = ControlEventManager.ControlStateSwap(gameObject, ControlState.Construction);
         ControlEventManager.OnControlStateSet += SetControlState;
     }    
@@ -43,13 +46,24 @@ public class PlayerCharacter : MonoBehaviour
             controlStateCooldown = true;
             StartCoroutine(ControlStateCooldown());
         }
-        weapon.gameObject.SetActive(controlState == ControlState.Combat);
+        playerCharacterBase.rightHand.gameObject.SetActive(controlState == ControlState.Combat);
+        playerCharacterBase.leftHand.gameObject.SetActive(controlState == ControlState.Combat);
+    }
+
+    private void SetControlState(Object sender, ControlState state)
+    {
+        if(sender != this)
+        {
+            SetControlState(state);
+        }
     }
 
     private void SetControlState(ControlState state)
     {
-        controlState = state;        
-        weapon.gameObject.SetActive(controlState == ControlState.Combat);
+        ControlEventManager.ControlStateSet(this, state);
+        controlState = state;   
+        playerCharacterBase.rightHand.gameObject.SetActive(controlState == ControlState.Combat);
+        playerCharacterBase.leftHand.gameObject.SetActive(controlState == ControlState.Combat);
     }
 
     private void HandleMovement()
@@ -111,15 +125,21 @@ public class PlayerCharacter : MonoBehaviour
     private void HandleMouse()
     {
         if(Input.GetMouseButton(0))
-        {
-            
-            if (controlState == ControlState.Combat && weapon != null && weapon.isActiveAndEnabled)
-                weapon.Attack();
+        {            
+            if (controlState == ControlState.Combat && rightWeapon != null && rightWeapon.isActiveAndEnabled)
+                rightWeapon.Attack();
             else if(controlState == ControlState.Construction)
             {
                 if (!EventSystem.current.IsPointerOverGameObject ())
                     ConstructionEventManager.NewBuild(gameObject);
             }
+        }
+        else if(Input.GetMouseButton(1))
+        {
+            if (controlState == ControlState.Combat && leftWeapon != null && leftWeapon.isActiveAndEnabled)
+                leftWeapon.Attack();
+            else
+                SetControlState(ControlState.Combat);
         }
     }
 
@@ -144,7 +164,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool TryMove(Vector3 baseMoveDir, float distance)
     {
         Vector3 moveDir = baseMoveDir;
-        bool canMove = CanMove(moveDir, distance);
+        bool canMove = CanMove(moveDir, distance*3f);
         if (!canMove)
         {
             //cannot move diagonally

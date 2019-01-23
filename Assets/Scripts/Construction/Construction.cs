@@ -52,6 +52,7 @@ public class Construction : MonoBehaviour
 	{	
 		cost.Spend();
 		GetComponent<Housing>().enabled = true;
+		gameObject.layer = 11;
 		IsGhost = false;
 		SpriteIndex = spriteIndex;
 	}

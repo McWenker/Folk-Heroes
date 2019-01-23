@@ -8,11 +8,13 @@ public class Health : MonoBehaviour
     [SerializeField] bool isPlayer;
     private int HP;
     private SpriteRenderer spriteRenderer;
+    private IUnit unit;
     private bool isInvuln;
 
     private void Awake()
     {
         HP = maxHP;
+        unit = GetComponent<IUnit>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -49,6 +51,8 @@ public class Health : MonoBehaviour
                 if(!isPlayer)
                 {
                     // DIE
+                    if(unit != null)
+                        unit.OnDeath();
                     Destroy(gameObject);
                     return;
                 }

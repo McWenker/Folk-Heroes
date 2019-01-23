@@ -56,7 +56,7 @@ public class Weapon_Base : MonoBehaviour
         else
             facingEast = false;
 
-        // Shift z-position of weapon
+        // 2.5D camera trix
         if (pointToward.z - charPosition.z > 1.25)
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0.3f);
         else

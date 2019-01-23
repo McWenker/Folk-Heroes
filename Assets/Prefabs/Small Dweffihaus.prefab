@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222444019708380560}
   - component: {fileID: 114301038406940092}
   - component: {fileID: 114902477619363496}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Radial_ProgressBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 224823554335435848}
   - component: {fileID: 222562218172494108}
   - component: {fileID: 114466887699458850}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Progress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224913489291199004}
   - component: {fileID: 223877460482233774}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: progressCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 224874824430313858}
   - component: {fileID: 222059316409121780}
   - component: {fileID: 114267125356479750}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 224331952104468588}
   - component: {fileID: 222759839744886456}
   - component: {fileID: 114389845754789666}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LoadingBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 114504917567934456}
   - component: {fileID: 114379377079881842}
   - component: {fileID: 114179338393847760}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Small Dweffihaus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 4101441011095664}
   - component: {fileID: 65720913985510770}
   - component: {fileID: 65656188933911108}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: construction footprint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 224054730959086018}
   - component: {fileID: 222532846083057502}
   - component: {fileID: 114952455588346150}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,8 +235,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.2499995, z: 1.5328345}
-  m_Center: {x: 0, y: 0.9382499, z: 0.49960446}
+  m_Size: {x: 2.5, y: 2.2499995, z: 1.437314}
+  m_Center: {x: 0, y: 0.9382499, z: 0.5473647}
 --- !u!65 &65656188933911108
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -245,7 +245,7 @@ BoxCollider:
   m_GameObject: {fileID: 1907377081318080}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0813091, z: 1.7486715}
   m_Center: {x: 0, y: 0.44817358, z: -0.37433577}
@@ -657,11 +657,11 @@ NavMeshObstacle:
   m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.25, y: 1.125, z: 0.7664175}
+  m_Extents: {x: 1.25, y: 1.125, z: 0.718657}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.9382499, z: 0.4996045}
+  m_Center: {x: 0, y: 0.9382499, z: 0.5473647}
   m_TimeToStationary: 0.5
 --- !u!212 &212839937710350482
 SpriteRenderer:
