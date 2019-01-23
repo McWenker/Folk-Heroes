@@ -10,6 +10,7 @@
 #### Enemy attacks, enemy spawns
 * Enemies now have the ability to dash attack, play an animated attack, or fire a projectile
 * Enemies will now spawn from their own homes, just like Dweffis
+---
 
 ### 1/20/2019
 #### Melee Weapons!
@@ -21,6 +22,7 @@
 #### Houses are homes
 * Gatherers are now created from houses, up to a maximum per house
 * Currently this happens automatically, but later it will change
+---
 
 ### 1/18/2019
 #### Mode swapping first implementation
@@ -34,6 +36,7 @@
 
 #### Gatherer improvements
 * Gatherer flee pathing improved, they will get stuck on one another less frequently
+---
 
 ### 1/15/2019
 #### Resource node randomization
@@ -48,6 +51,7 @@
 #### Enemy improvements
 * Enemies now chase the nearest priority target sooner
 * Enemies now better alert their nearby allies to a target
+---
 
 ### 1/14/2019
 #### Added AI state machine
