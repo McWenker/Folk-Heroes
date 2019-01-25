@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 208763452661676030}
   - component: {fileID: 114580137707757678}
   - component: {fileID: 114507439053014976}
+  - component: {fileID: 114381289471351028}
   m_Layer: 15
   m_Name: Stronghold
   m_TagString: Untagged
@@ -141,6 +142,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.9107742, y: 6.13, z: 1.9355278}
   m_Center: {x: -0.021374702, y: 3.07, z: 0.8}
+--- !u!114 &114381289471351028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263597791849772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf0b7cc77df4d740917c4fdd88a602e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 50
+  isPlayer: 0
 --- !u!114 &114507439053014976
 MonoBehaviour:
   m_ObjectHideFlags: 1

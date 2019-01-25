@@ -74,8 +74,9 @@ GameObject:
   - component: {fileID: 208617713805719136}
   - component: {fileID: 114100798923989576}
   - component: {fileID: 114117352418301660}
-  - component: {fileID: 114735043848687120}
   - component: {fileID: 114019717963117338}
+  - component: {fileID: 114735043848687120}
+  - component: {fileID: 114048299845753208}
   m_Layer: 15
   m_Name: Large Dweffihaus
   m_TagString: Untagged
@@ -295,7 +296,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474365715646598}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afc5f4e99211d4c499da916cbcc747c4, type: 3}
   m_Name: 
@@ -310,6 +311,19 @@ MonoBehaviour:
     type: 2}
   spawnLoc: {fileID: 4495607556443138}
   progressBar: {fileID: 114635405597724136}
+--- !u!114 &114048299845753208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474365715646598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf0b7cc77df4d740917c4fdd88a602e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 20
+  isPlayer: 0
 --- !u!114 &114100798923989576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -336,8 +350,8 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 7167b255a00740b40887823572c26452, type: 3}
   - {fileID: 21300000, guid: caad72d9df464aa4b9f131cda4a4bc79, type: 3}
-  isGhost: 0
-  canBuild: 0
+  isGhost: 1
+  canBuild: 1
 --- !u!114 &114225244216632980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -676,7 +690,7 @@ NavMeshObstacle:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474365715646598}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 1.8349055, y: 1.1666665, z: 0.689156}

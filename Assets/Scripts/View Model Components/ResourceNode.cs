@@ -42,6 +42,7 @@ public class ResourceNode
             return false;
         if (resourceAmount <= 0)
         {
+            Debug.Log(GameAssets.i);
             switch(resourceType)
             {
                 case GameResourceType.Gold:

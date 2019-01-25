@@ -14,6 +14,7 @@ public static class RayToGroundUtil
         if (hPlane.Raycast(ray, out distance))
         {
             // get the hit point:
+            Debug.DrawRay(ray.GetPoint(distance), Vector3.up, Color.red);
             return ray.GetPoint(distance);
         }
         return Vector3.zero;

@@ -105,7 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211048153350056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40cea53c2ea41b5408b25c938df88905, type: 3}
+  m_Script: {fileID: 11500000, guid: ece5d1c268ee46f4f8254852973cabaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnTime: 0.4
+  despawnTime: 0.15

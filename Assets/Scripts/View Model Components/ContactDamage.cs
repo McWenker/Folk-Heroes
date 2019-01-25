@@ -18,7 +18,7 @@ public class ContactDamage : MonoBehaviour
     {
         if(!onCooldown)
         {
-            if (collision.gameObject.layer == 9 || collision.gameObject.layer == 10) // player or friendly layer
+            if (collision.gameObject.layer == 9 || collision.gameObject.layer == 10 || (collision.gameObject.layer == 11 && collision.gameObject.tag == "friendly_housing")) // player or friendly layer
             {
                 Health collisionHP = collision.gameObject.GetComponent<Health>();
 

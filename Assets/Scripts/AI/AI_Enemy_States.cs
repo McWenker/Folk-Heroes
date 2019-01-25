@@ -17,7 +17,8 @@ public class AI_Enemy_States : MonoBehaviour
     private IUnit unit;
     private IVision vision;
     private State state;
-    [SerializeField] private Transform target;
+    private Transform target;
+    [SerializeField] private Transform macroTarget;
     private Vector3 homePoint;
 
     private void Awake()
@@ -35,13 +36,17 @@ public class AI_Enemy_States : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(state);
         switch (state)
         {
             case State.Idle:
                 // to be expanded later, maybe add patrol functionality
                 if (target != null)
                     state = State.ChasingFoe;
+                else if(macroTarget != null)
+                {
+                    unit.MoveTo(macroTarget.position, 0.2f, null);
+                    target = vision.SearchForFoes();
+                }
                 else
                 {
                     unit.Idling();
@@ -69,8 +74,6 @@ public class AI_Enemy_States : MonoBehaviour
                 {
                     unit.MoveTo(target.position, attack.AttackRange, () =>
                     {
-                        Debug.Log("Attack!");
-                        Debug.DrawRay(target.position, Vector3.up, Color.black);
                         unit.ClearMove();
                         state = State.Attacking;
                     });

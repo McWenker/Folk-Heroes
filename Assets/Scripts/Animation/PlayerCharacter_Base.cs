@@ -51,7 +51,7 @@ public class PlayerCharacter_Base : MonoBehaviour
 
     private void GetFacing()
     {
-        mousePointInWorld = RayToGroundUtil.FetchMousePointOnGround(0.8f);
+        mousePointInWorld = RayToGroundUtil.FetchMousePointOnGround(1.2f);
         PlaceHands();
         if(mousePointInWorld != Vector3.zero)
         {

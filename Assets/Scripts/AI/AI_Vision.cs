@@ -56,7 +56,7 @@ public class AI_Vision : MonoBehaviour, IVision
             ray.origin = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z);
             ray.direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.right;
             RaycastHit raycastHit = new RaycastHit();
-            Debug.DrawRay(ray.origin, ray.direction * visionRange, Color.black, .75f);
+            //Debug.DrawRay(ray.origin, ray.direction * visionRange, Color.black, .75f);
             if (Physics.Raycast(ray, out raycastHit, visionRange, layerMask))
             {
                 hitList.Add(raycastHit);

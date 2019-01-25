@@ -56,6 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4064457379799734}
+  - component: {fileID: 114324923793538736}
   - component: {fileID: 136491917752016516}
   - component: {fileID: 54854444781580938}
   - component: {fileID: 195342336423749686}
@@ -63,7 +64,6 @@ GameObject:
   - component: {fileID: 114502828328747656}
   - component: {fileID: 114883182514154432}
   - component: {fileID: 114743718738807380}
-  - component: {fileID: 114324923793538736}
   - component: {fileID: 114913358740330304}
   - component: {fileID: 114587574990734862}
   m_Layer: 10
@@ -236,7 +236,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1216521583813732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50bb9b23d799a0f40a18ae53194bb9ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 9297336b047a86d4388390c92ff5efaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minY: 0
+--- !u!114 &114502828328747656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216521583813732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ea113cd3cc497479d0e7687f01fc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnim: {fileID: 114734559717742858}
@@ -260,8 +272,8 @@ MonoBehaviour:
   - {fileID: 21300074, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
   - {fileID: 21300076, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
   - {fileID: 21300078, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  mineFrameRate: 0.15
---- !u!114 &114502828328747656
+  mineFrameRate: 0.18
+--- !u!114 &114587574990734862
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,7 +281,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1216521583813732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2064a1fb1d61c84f9abbcf536badffd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cf0b7cc77df4d740917c4fdd88a602e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 3
+  isPlayer: 0
+--- !u!114 &114595038185600416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216521583813732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d0b2ad10cceca49b87646fd34d59b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteAnim: {fileID: 114734559717742858}
@@ -298,33 +323,8 @@ MonoBehaviour:
   - {fileID: 21300058, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
   - {fileID: 21300060, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
   - {fileID: 21300062, guid: 01bd956fcd77fff478d216fc9b8b5bd4, type: 3}
-  idleFrameRate: 0.2
-  walkFrameRate: 0.15
---- !u!114 &114587574990734862
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1216521583813732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd479fad7138004aab85c49bdbac32c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 2
-  isPlayer: 0
---- !u!114 &114595038185600416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1216521583813732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a4af3a5adbc3b40bf8a922c56733ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minY: 0.01
+  idleFrameRate: 0.4
+  walkFrameRate: 0.2
 --- !u!114 &114734559717742858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067932494845640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08cec1c8e52f02d4d99deaf4bfded043, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f7cda5872e41d4fb6c23b1edcb5168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   frameArray: []

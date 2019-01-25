@@ -134,13 +134,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4849463174357842}
-  - component: {fileID: 114919602217523652}
-  - component: {fileID: 114064504873131868}
   - component: {fileID: 65515380484330746}
-  - component: {fileID: 114858848082083968}
-  - component: {fileID: 114854064272580724}
   - component: {fileID: 208926728784548432}
   - component: {fileID: 54804808967850688}
+  - component: {fileID: 114854064272580724}
+  - component: {fileID: 114919602217523652}
+  - component: {fileID: 114064504873131868}
+  - component: {fileID: 114858848082083968}
   m_Layer: 9
   m_Name: Goria
   m_TagString: Untagged
@@ -350,14 +350,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548233206087500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4814844201621668}
   m_Father: {fileID: 4849463174357842}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!4 &4510093373652064
 Transform:
   m_ObjectHideFlags: 1
@@ -406,14 +406,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1036647317163780}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: -0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4510093373652064}
   m_Father: {fileID: 4849463174357842}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!4 &4814507255616744
 Transform:
   m_ObjectHideFlags: 1
@@ -524,11 +524,11 @@ Camera:
   far clip plane: 40
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 16183
+    m_Bits: 48951
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1185814814425502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08cec1c8e52f02d4d99deaf4bfded043, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f7cda5872e41d4fb6c23b1edcb5168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   frameArray: []
@@ -753,10 +753,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1105752081325446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08cec1c8e52f02d4d99deaf4bfded043, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f7cda5872e41d4fb6c23b1edcb5168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameArray: []
+  frameArray:
+  - {fileID: 21300090, guid: be35b5da8e7211044b6fc054235fbd48, type: 3}
   destroyOnComplete: 0
   frameRate: 0.1
   isLoop: 0
@@ -768,7 +769,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1553782983944860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08cec1c8e52f02d4d99deaf4bfded043, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f7cda5872e41d4fb6c23b1edcb5168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   frameArray: []
@@ -792,7 +793,7 @@ MonoBehaviour:
   targetTestObject: {fileID: 0}
   attackSFX:
   - {fileID: 8300000, guid: afee463d4a6d23847b6256555793781e, type: 3}
-  damage: 1
+  damage: 2
   spreadCount: 0
   spreadAmount: 0
   rotationTweak: 100
@@ -814,7 +815,7 @@ MonoBehaviour:
   targetTestObject: {fileID: 0}
   attackSFX:
   - {fileID: 8300000, guid: afee463d4a6d23847b6256555793781e, type: 3}
-  damage: 1
+  damage: 2
   spreadCount: 5
   spreadAmount: 10
   rotationTweak: 100
@@ -869,11 +870,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430640253124778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd479fad7138004aab85c49bdbac32c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9297336b047a86d4388390c92ff5efaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 4
-  isPlayer: 1
+  minY: 0.01
 --- !u!114 &114858848082083968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -882,10 +882,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430640253124778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a4af3a5adbc3b40bf8a922c56733ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cf0b7cc77df4d740917c4fdd88a602e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minY: 0.01
+  maxHP: 10
+  isPlayer: 1
 --- !u!114 &114919602217523652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -894,10 +895,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430640253124778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2bf952730158d94284aac63475ac874, type: 3}
+  m_Script: {fileID: 11500000, guid: 1124f324ca2aef8449187f094e060dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testObj: {fileID: 1966295279438514, guid: f8fa3dc8fa2e92242bf006985cb0a369, type: 2}
+  testObj: {fileID: 0}
   spriteAnim: {fileID: 114278735234944688}
   right_weaponBase: {fileID: 114082215852445428}
   left_weaponBase: {fileID: 114758565279104968}
@@ -947,8 +948,8 @@ MonoBehaviour:
   - {fileID: 21300102, guid: be35b5da8e7211044b6fc054235fbd48, type: 3}
   - {fileID: 21300104, guid: be35b5da8e7211044b6fc054235fbd48, type: 3}
   - {fileID: 21300106, guid: be35b5da8e7211044b6fc054235fbd48, type: 3}
-  idleFrameRate: 0.2
-  walkFrameRate: 0.15
+  idleFrameRate: 0.3
+  walkFrameRate: 0.1
 --- !u!208 &208926728784548432
 NavMeshObstacle:
   m_ObjectHideFlags: 1

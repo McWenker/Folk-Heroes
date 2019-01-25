@@ -125,8 +125,9 @@ GameObject:
   - component: {fileID: 208264485389729760}
   - component: {fileID: 114309211590876124}
   - component: {fileID: 114504917567934456}
-  - component: {fileID: 114379377079881842}
   - component: {fileID: 114179338393847760}
+  - component: {fileID: 114379377079881842}
+  - component: {fileID: 114985200400441626}
   m_Layer: 15
   m_Name: Small Dweffihaus
   m_TagString: Untagged
@@ -648,6 +649,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114985200400441626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576482299728408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf0b7cc77df4d740917c4fdd88a602e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 8
+  isPlayer: 0
 --- !u!208 &208264485389729760
 NavMeshObstacle:
   m_ObjectHideFlags: 1
