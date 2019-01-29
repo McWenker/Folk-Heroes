@@ -35,6 +35,7 @@ public class AI_Gather_States : MonoBehaviour
         vision = GetComponent<IVision>();
         state = State.Idle;
         inventoryTextMesh = GetComponentInChildren<TextMeshPro>();
+        storageNodeTransform = GameHandler.GetStorageNode_Static();
 	}
 
     private void UpdateInventoryText()
@@ -64,7 +65,7 @@ public class AI_Gather_States : MonoBehaviour
     private void FullInventory()
     {
         storageNodeTransform = GameHandler.GetStorageNode_Static();
-        resourceNode = GameHandler.GetResourceNodeNearPosition_Static(resourceNode.GetPosition());
+        resourceNode = GameHandler.GetResourceNodeNearPosition_Static(transform.position);
         state = State.MovingToStorage;
         unit.Idling();
     }
@@ -93,6 +94,8 @@ public class AI_Gather_States : MonoBehaviour
                 resourceNode = GameHandler.GetResourceNodeNearPosition_Static(transform.position);
                 if(resourceNode != null)
                     state = State.MovingToResourceNode;
+                else
+                    state = State.MovingToStorage;
                 break;
             case State.MovingToResourceNode:
                 unit.MoveTo(resourceNode.GetPosition(), 1.5f, () =>
@@ -112,11 +115,14 @@ public class AI_Gather_States : MonoBehaviour
                     {
                         gather.PlayAnimationMine(resourceNode.GetPosition(), () =>
                         {
-                            if (resourceNode.GrabResource())
+                            if(resourceNode != null)
                             {
-                                gather.AddToInventory(new GameResource(resourceNode.ResourceType));
-                                inventoryAmount++;
-                                UpdateInventoryText();
+                                if (resourceNode.GrabResource())
+                                {
+                                    gather.AddToInventory(new GameResource(resourceNode.ResourceType));
+                                    inventoryAmount++;
+                                    UpdateInventoryText();
+                                }                                
                             }
                             else
                                 state = State.Idle;

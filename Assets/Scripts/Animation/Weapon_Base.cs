@@ -58,9 +58,9 @@ public class Weapon_Base : MonoBehaviour
 
         // 2.5D camera trix
         if (pointToward.z - charPosition.z > 1.25)
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0.3f);
+            spriteAnim.transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, 0.3f);
         else
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.15f);
+            spriteAnim.transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.4f);
 
         float AngleRad;
         //AngleRad = Mathf.Atan2(pointToward.z - charPosition.z, pointToward.x - charPosition.x);
@@ -71,7 +71,7 @@ public class Weapon_Base : MonoBehaviour
         
         spriteAngle = new Vector3(0, 0, AngleDeg);
         attackAngle = new Vector3(0, -AngleDeg, 0);
-        spriteAnim.transform.rotation = Quaternion.Euler(spriteAngle);
+        spriteAnim.transform.localRotation = Quaternion.Euler(spriteAngle);
         attackRing.rotation = Quaternion.Euler(attackAngle);
     }
 }

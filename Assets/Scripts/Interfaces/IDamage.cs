@@ -21,4 +21,6 @@ public interface IDamage
 		get;
 		set;
 	}
+
+	void SetLayerMask(LayerMask layersToHit);
 }

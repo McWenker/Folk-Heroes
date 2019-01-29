@@ -18,6 +18,8 @@ public class PlayerCharacter : MonoBehaviour
     private Weapon leftWeapon;
     private ControlState controlState;
     private bool controlStateCooldown;
+
+    private bool constructionCooldown;
     private bool constructionFlipCooldown;
 
     private void Awake()
@@ -130,8 +132,12 @@ public class PlayerCharacter : MonoBehaviour
                 rightWeapon.Attack();
             else if(controlState == ControlState.Construction)
             {
-                if (!EventSystem.current.IsPointerOverGameObject ())
+                if (!EventSystem.current.IsPointerOverGameObject () && !constructionCooldown)
+                {
                     ConstructionEventManager.NewBuild(gameObject);
+                    constructionCooldown = true;
+                    StartCoroutine(ConstructionCooldown());
+                }
             }
         }
         else if(Input.GetMouseButton(1))
@@ -195,6 +201,12 @@ public class PlayerCharacter : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         controlStateCooldown = false;
+    }
+
+    private IEnumerator ConstructionCooldown()
+    {
+        yield return new WaitForSeconds(0.2f);
+        constructionCooldown = false;
     }
 
     private IEnumerator ConstructionFlipCooldown()

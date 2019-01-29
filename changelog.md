@@ -1,4 +1,10 @@
 # Changelog
+### 1/28/2019
+#### AI targeting improvements & friendly AI
+* AI characters can now have targeting priorities. Hostile AI prioritize Soldiers > Gatherers > Players > Buildings
+* Hostile AI will destroy buildings if no other targets are found
+* Friendly AI Soldiers can now fight Hostile AI, much to improve
+
 ### 1/22/2019
 #### Dualwielding, enemy improvements
 ![Dualwielding](DemoImages/DUALWIELD.gif?raw=true "It's a little rough around the edges, but I like it so far.")

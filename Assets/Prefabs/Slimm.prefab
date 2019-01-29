@@ -140,10 +140,15 @@ MonoBehaviour:
   nearestHostile: {fileID: 0}
   visionRange: 5
   layersToHit:
+    serializedVersion: 2
+    m_Bits: 34304
+  layerPriorities:
+  - serializedVersion: 2
+    m_Bits: 1024
   - serializedVersion: 2
     m_Bits: 512
   - serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 2048
 --- !u!114 &114017247596612262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,10 +208,8 @@ MonoBehaviour:
   damage: 1
   cooldown: 0.5
   layersToHit:
-  - serializedVersion: 2
-    m_Bits: 512
-  - serializedVersion: 2
-    m_Bits: 1024
+    serializedVersion: 2
+    m_Bits: 3584
 --- !u!114 &114310786180156302
 MonoBehaviour:
   m_ObjectHideFlags: 1

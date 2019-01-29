@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour, IDamage
     Weapon creatorWeapon;
     Transform attackOrigin;
     Vector3 previousPos;
+	int layerMask;
+	LayerMask layersToHit;
 
     public int Damage
     {
@@ -47,7 +49,7 @@ public class Projectile : MonoBehaviour, IDamage
         {
             Health collisionHP = hits[i].collider.gameObject.GetComponent<Health>();
 
-            if (collisionHP != null)
+            if (collisionHP != null && LayerMaskUtil.CheckLayerMask(layersToHit, collisionHP.gameObject.layer))
                 collisionHP.ModifyHP(-damage);
             Destroy(gameObject);
         }
@@ -58,4 +60,8 @@ public class Projectile : MonoBehaviour, IDamage
         yield return new WaitForSeconds(despawnTime);
         Destroy(gameObject);
     }
+    public void SetLayerMask(LayerMask mask)
+	{
+		layersToHit = mask;
+	}
 }

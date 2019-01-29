@@ -7,7 +7,8 @@ public class AI_Vision : MonoBehaviour, IVision
 	[SerializeField] Transform nearestHostile;
 	AI_Faction faction;
 	[SerializeField] float visionRange;
-    [SerializeField] LayerMask[] layersToHit;
+    [SerializeField] LayerMask layersToHit;
+    [SerializeField] LayerMask[] layerPriorities;
     int layerMask;
     private List<RaycastHit> hitList = new List<RaycastHit>();
     
@@ -15,19 +16,27 @@ public class AI_Vision : MonoBehaviour, IVision
     private bool hasFoeCheckedRecently;
     private bool hasDistanceCheckedRecently;
 
+    private bool hasCalledToArmsRecently;
+
 
 	private void Awake()
 	{
 		faction = GetComponent<AI_Base>().faction;
         if(faction == AI_Faction.Enemy)        
             EnemyEventManager.OnAggro += CheckGroupAggroDistance;
-        layerMask = LayerMaskUtil.GetLayers(layersToHit);
+        layerMask = LayerMaskUtil.GetLayer(layersToHit);
 	}
     private Transform AssignAggroTarget(Transform target)
     {
+        Debug.Log(target);
         nearestHostile = target;
-        if (nearestHostile != null && faction == AI_Faction.Enemy)
+        if (nearestHostile != null && faction == AI_Faction.Enemy && !hasCalledToArmsRecently)
+        {
             EnemyEventManager.NewAggro(gameObject, nearestHostile);
+            hasCalledToArmsRecently = true;
+            StartCoroutine(CallToArmsCooldown());
+        }
+        this.hitList.Clear();
         return nearestHostile;
     }
     private void CheckGroupAggroDistance(GameObject sender, Transform target)
@@ -63,24 +72,65 @@ public class AI_Vision : MonoBehaviour, IVision
             }
         }
 
-        return AssignAggroTarget(DetermineClosestTarget());
+        if(hitList.Count > 1)
+            return AssignAggroTarget(DetermineClosestTarget(DeterminePriorityTargets()));
+        else if(hitList.Count == 1)
+            return AssignAggroTarget(hitList[0].transform);
+        else
+            return null;
+
+
     }
 
-    private Transform DetermineClosestTarget()
+    private List<Transform> DeterminePriorityTargets()
     {
-        Transform closestFoeTransform = null;
-        if (hitList.Count > 0)
+        int highestPriority = 0;
+        int currentPriority;
+        List<int> priorityScores = new List<int>(hitList.Count);
+        List<Transform> priorityTargets = new List<Transform>();
+        for(int i = 0; i < hitList.Count; ++i)
         {
-            foreach (RaycastHit rcH in hitList)
+            currentPriority = 0;
+            for(int j = 0; j < layerPriorities.Length; ++j)
             {
-                if (closestFoeTransform == null)
-                    closestFoeTransform = rcH.collider.transform;
-                else if (Vector3.Distance(transform.position, closestFoeTransform.position) > Vector3.Distance(transform.position, rcH.collider.transform.position))
-                    closestFoeTransform = rcH.collider.transform;
+                if(hitList[i].transform != null)
+                {
+                    if(LayerMaskUtil.CheckLayerMask(layerPriorities[j], hitList[i].transform.gameObject.layer))
+                    {
+                        if(hitList[i].transform.tag == "Worker" || hitList[i].transform.tag == "Player")
+                            currentPriority += (layerPriorities.Length - j)/2;
+                        else
+                            currentPriority += (layerPriorities.Length - j);
+                    }
+                }
             }
+            priorityScores.Insert(i, currentPriority);
+            if(currentPriority > highestPriority)
+                highestPriority = currentPriority;
         }
 
-        hitList.Clear();
+        for(int k = 0; k < hitList.Count; ++k)
+        {
+            if(priorityScores[k] == (highestPriority))
+                priorityTargets.Add(hitList[k].transform);
+        }
+
+        return priorityTargets;
+    }
+
+    private Transform DetermineClosestTarget(List<Transform> targets)
+    {
+        Transform closestFoeTransform = null;
+        if (targets.Count > 0)
+        {
+            foreach (Transform t in targets)
+            {
+                if (closestFoeTransform == null)
+                    closestFoeTransform = t;
+                else if (Vector3.Distance(transform.position, closestFoeTransform.position) > Vector3.Distance(transform.position, t.position))
+                    closestFoeTransform = t;
+            }
+        }
         return closestFoeTransform;
     }
 
@@ -98,16 +148,19 @@ public class AI_Vision : MonoBehaviour, IVision
             return true;
         }
     }
+    private IEnumerator CallToArmsCooldown()
+    {
+        yield return new WaitForSeconds(2f);
+        hasCalledToArmsRecently = false;
+    }
 	private IEnumerator CheckForDistanceBreakCooldown()
     {
-        hasDistanceCheckedRecently = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.3f);
         hasDistanceCheckedRecently = false;
     }
 
     private IEnumerator CheckForFoesCooldown()
     {
-        hasFoeCheckedRecently = true;
         yield return new WaitForSeconds(0.7f);
         hasFoeCheckedRecently = false;
     }
@@ -121,6 +174,7 @@ public class AI_Vision : MonoBehaviour, IVision
     {
         if (!hasDistanceCheckedRecently)
         {
+            hasDistanceCheckedRecently = true;
             StartCoroutine(CheckForDistanceBreakCooldown());
             return CheckForDistanceBreak();
         }
@@ -136,6 +190,7 @@ public class AI_Vision : MonoBehaviour, IVision
     {
         if (!hasFoeCheckedRecently)
         {
+            hasFoeCheckedRecently = true;
             StartCoroutine(CheckForFoesCooldown());
             return CheckForFoes();
         }

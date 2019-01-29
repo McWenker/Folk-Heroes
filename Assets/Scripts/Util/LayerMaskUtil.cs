@@ -4,13 +4,13 @@ using UnityEngine;
 
 public static class LayerMaskUtil
 {
-	public static int GetLayers(LayerMask[] layersToHit)
+	public static bool CheckLayerMask(LayerMask layersToHit, int layer)
     {
-        int retVal = 0;
-        for(int i = 0; i < layersToHit.Length; ++i)
-        {
-            retVal |= layersToHit[i].value;
-        }
-        return retVal;
+        return layersToHit == (layersToHit | (1 << layer));
+    }
+
+    public static int GetLayer(LayerMask layerMask)
+    {
+        return layerMask.value;
     }
 }

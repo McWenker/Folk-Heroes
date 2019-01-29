@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private int spreadCount;
     [SerializeField] private float spreadAmount;
+    [SerializeField] private LayerMask layersToHit;
     private Weapon_Base weaponBase;
     [SerializeField] float rotationTweak;
 
@@ -58,6 +59,7 @@ public class Weapon : MonoBehaviour
             damObj.Damage = damage;
             damObj.CreatorWeapon = this;
             damObj.AttackOrigin = attackPoint;
+            damObj.SetLayerMask(layersToHit);
         }
     }
 

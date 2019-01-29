@@ -7,18 +7,13 @@ public class ContactDamage : MonoBehaviour
     [SerializeField] int damage;
     [SerializeField] float cooldown;
     private bool onCooldown;
-    int layerMask;
-    [SerializeField] LayerMask[] layersToHit;
-    private void Awake()
-    {
-        layerMask = LayerMaskUtil.GetLayers(layersToHit);
-    }
+    [SerializeField] LayerMask layersToHit;
 
     private void OnCollisionStay(Collision collision)
     {
         if(!onCooldown)
         {
-            if (collision.gameObject.layer == 9 || collision.gameObject.layer == 10 || (collision.gameObject.layer == 11 && collision.gameObject.tag == "friendly_housing")) // player or friendly layer
+            if (LayerMaskUtil.CheckLayerMask(layersToHit, collision.gameObject.layer)) // player or friendly layer
             {
                 Health collisionHP = collision.gameObject.GetComponent<Health>();
 

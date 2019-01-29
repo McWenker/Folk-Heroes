@@ -14,6 +14,14 @@ public class GameAssets : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        if(GetComponent<GameAssets>() != false)
+        {
+            _i = GetComponent<GameAssets>();
+        }
+    }
+
     public Sprite goldNodeDepletedSprite;
     public Sprite ironNodeDepletedSprite;
     public Sprite manaNodeDepletedSprite;

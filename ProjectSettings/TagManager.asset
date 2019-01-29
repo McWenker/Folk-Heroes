@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Soldier
+  - Worker
   layers:
   - Default
   - TransparentFX
@@ -16,11 +18,11 @@ TagManager:
   - PostProcessing
   - Player
   - AI_Friendly
-  - UnWalkable
+  - Construction
   - GroundPlane
   - AI_Hostile
   - NavQuad
-  - Construction
+  - ConstructionGhost
   - 
   - 
   - 

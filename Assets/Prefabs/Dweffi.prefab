@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 114587574990734862}
   m_Layer: 10
   m_Name: Dweffi
-  m_TagString: Untagged
+  m_TagString: Worker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -368,8 +368,9 @@ MonoBehaviour:
   nearestHostile: {fileID: 0}
   visionRange: 5
   layersToHit:
-  - serializedVersion: 2
+    serializedVersion: 2
     m_Bits: 8192
+  layerPriorities: []
 --- !u!114 &114913358740330304
 MonoBehaviour:
   m_ObjectHideFlags: 1

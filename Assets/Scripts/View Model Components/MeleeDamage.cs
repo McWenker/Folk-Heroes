@@ -8,7 +8,7 @@ public class MeleeDamage : MonoBehaviour, IDamage
 	int damage;
 	Weapon creatorWeapon;
 	Transform attackOrigin;
-
+	LayerMask layersToHit;
 	private List<Health> hitList = new List<Health>();
 	public int Damage
     {
@@ -46,7 +46,7 @@ public class MeleeDamage : MonoBehaviour, IDamage
 
 	private void OnTriggerStay(Collider other)
 	{
-		if(other.gameObject.layer == 13) // enemy layer, TODO fix later
+		if(LayerMaskUtil.CheckLayerMask(layersToHit, other.gameObject.layer)) // enemy layer, TODO fix later
 		{
 			Health targetHP = other.GetComponent<Health>();
 			if(targetHP != null && !hitList.Contains(targetHP))
@@ -55,5 +55,10 @@ public class MeleeDamage : MonoBehaviour, IDamage
 				hitList.Add(targetHP);
 			}
 		}
+	}
+
+	public void SetLayerMask(LayerMask mask)
+	{
+		layersToHit = mask;
 	}
 }
