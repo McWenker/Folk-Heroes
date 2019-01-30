@@ -27,7 +27,7 @@ Folk Heroes hopes to capture some of the basebuilding fun of classic games like 
    Guns are only the beginning! Swords, spells, bombs, and much more is in the plan...
 
 #### Procedural Generation
-	Caves, dungeons, and other random spots inhabited by Goblins, Trolls, Ogres, and such... fantasy!
+   Caves, dungeons, and other random spots inhabited by Goblins, Trolls, Ogres, and such... fantasy!
 
 #### More Art, A Story
    Eventually this shit will have to have some kind of theme... right?
