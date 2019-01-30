@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 208832929699628418}
   - component: {fileID: 114372574859213420}
   - component: {fileID: 114957962158255668}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Gold Vein
   m_TagString: Untagged
   m_Icon: {fileID: 0}

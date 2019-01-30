@@ -45,7 +45,7 @@ public class AI_Base : MonoBehaviour
         else 
             anim = idleSouthAnimationFrameArray;
 
-        spriteAnim.PlayAnimation(anim, idleFrameRate, false);
+        spriteAnim.PlayAnimation(anim, idleFrameRate, true);
     }
 
     public void PlayWalkingAnimation(Vector3 facingDir)

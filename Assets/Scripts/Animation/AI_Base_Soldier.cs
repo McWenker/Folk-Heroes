@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AI_Base_Enemy : MonoBehaviour
+public class AI_Base_Soldier : MonoBehaviour
 {
     private IAttack unit;
     private Vector3 lastMoveDirection;

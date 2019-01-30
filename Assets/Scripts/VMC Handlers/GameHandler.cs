@@ -34,7 +34,6 @@ public class GameHandler : MonoBehaviour
     private void Awake()
     {
         instance = this;
-
         resourceNodeList = new List<ResourceNode>();
         foreach(Transform goldNodeTransform in goldNodeTransformArray)
         {
@@ -50,6 +49,11 @@ public class GameHandler : MonoBehaviour
         }
 
         ResourceNode.OnResourceNodeClicked += ResourceNode_OnResourceNodeClicked;
+    }
+
+    private void AssignInstance()
+    {
+        instance = this;
     }
 
     private void ResourceNode_OnResourceNodeClicked(object sender, EventArgs e)

@@ -279,9 +279,12 @@ MonoBehaviour:
   targetTestObject: {fileID: 0}
   attackSFX:
   - {fileID: 8300000, guid: afee463d4a6d23847b6256555793781e, type: 3}
-  damage: 6
+  damage: 3
   spreadCount: 0
   spreadAmount: 0
+  layersToHit:
+    serializedVersion: 2
+    m_Bits: 0
   rotationTweak: 100
   cooldown: 0.5
 --- !u!212 &212959401410103404

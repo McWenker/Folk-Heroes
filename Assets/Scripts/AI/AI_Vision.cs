@@ -28,7 +28,6 @@ public class AI_Vision : MonoBehaviour, IVision
 	}
     private Transform AssignAggroTarget(Transform target)
     {
-        Debug.Log(target);
         nearestHostile = target;
         if (nearestHostile != null && faction == AI_Faction.Enemy && !hasCalledToArmsRecently)
         {

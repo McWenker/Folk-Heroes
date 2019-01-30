@@ -8,17 +8,26 @@ Folk Heroes hopes to capture some of the basebuilding fun of classic games like 
 
 ![FirstDemoGif](DemoImages/AIswarm.gif?raw=true "Just need to add some bullets, some traps, a few more monsters...")
 
-## Next Steps
+## Features
 #### Command Modes
    Only by mastering both Combat and Command, will you become a worthy Folk Hero...
 
 ![ConstructionGif](DemoImages/constructionDemo.gif?raw=true "The early iterations of construction")
 
 #### Building
-   Gatherers can collect things, now let's use their efforts to forge an empire...
+   Protect your Gatherers, and use their efforts to forge an empire...
 
+#### Allies and Enemies
+	Fear not, you are not in this fight alone...
+
+![DoggoGIF](DemoImages/DOGGOS.gif?raw=true "SIK'EM!")
+
+## Next Steps
 #### Abilities and Classes
    Guns are only the beginning! Swords, spells, bombs, and much more is in the plan...
+
+#### Procedural Generation
+	Caves, dungeons, and other random spots inhabited by Goblins, Trolls, Ogres, and such... fantasy!
 
 #### More Art, A Story
    Eventually this shit will have to have some kind of theme... right?

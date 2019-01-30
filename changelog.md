@@ -1,4 +1,10 @@
 # Changelog
+### 1/29/2019
+#### AI combat improvements
+![DoggoGIF](DemoImages/DOGGOS.gif?raw=true "DOGGGOOOOOOSSSS!!!")
+* Hostile AI can now use weapons, to decent effect.
+* Allied AI are now much cuter and more violent.
+
 ### 1/28/2019
 #### AI targeting improvements & friendly AI
 * AI characters can now have targeting priorities. Hostile AI prioritize Soldiers > Gatherers > Players > Buildings

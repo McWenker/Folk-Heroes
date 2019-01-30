@@ -141,7 +141,7 @@ MonoBehaviour:
   visionRange: 5
   layersToHit:
     serializedVersion: 2
-    m_Bits: 34304
+    m_Bits: 3584
   layerPriorities:
   - serializedVersion: 2
     m_Bits: 1024
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  cooldown: 0.5
+  cooldown: 0.4
   layersToHit:
     serializedVersion: 2
     m_Bits: 3584
@@ -380,9 +380,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveToPoint: {fileID: 0}
-  attackCooldown: 4
+  attackCooldown: 0.4
   recoveryTime: 0.3
-  dashDistance: 3
+  attackRange: 2
 --- !u!136 &136234545759849844
 CapsuleCollider:
   m_ObjectHideFlags: 1

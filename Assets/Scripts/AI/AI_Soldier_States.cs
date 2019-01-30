@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AI_Enemy_States : MonoBehaviour
+public class AI_Soldier_States : MonoBehaviour
 {
     private enum State
     {
@@ -81,7 +81,7 @@ public class AI_Enemy_States : MonoBehaviour
                 break;
 
             case State.Attacking:
-                if(!attack.Attacking && attack.AttackReady)
+                if(!attack.Attacking && attack.AttackReady && target != null)
                 {
                     attack.CommenceAttack(target.position, () =>
                     {

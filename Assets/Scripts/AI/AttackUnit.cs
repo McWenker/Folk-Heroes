@@ -4,25 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MeleeAttackUnit : MonoBehaviour, IUnit, IAttack
+public class AttackUnit : MonoBehaviour, IUnit, IAttack
 {
-    private bool isIdle;
+    protected bool isIdle;
 
     [SerializeField] Transform moveToPoint;
     [SerializeField] float attackCooldown;
     [SerializeField] float recoveryTime;
-    [SerializeField] float dashDistance;
+    [SerializeField] float attackRange;
 
-    private Vector3 targetDir;
-    private Vector3 dashTarget;
-    private Vector3 lastMoveDirection;
+    protected Vector3 targetDir;
+    protected Vector3 attackTarget;
+    protected Vector3 lastMoveDirection;
 
-    private Action onAnimationCompleted;
-    private NavMeshAgent navMeshAgent;
-    private AI_Base AIBase;
-    private AI_Base_Enemy AIBaseEnemy;
-    private bool attackReady = true;
-    private bool attacking;    
+    protected Action onAnimationCompleted;
+    protected NavMeshAgent navMeshAgent;
+    protected AI_Base AIBase;
+    protected AI_Base_Soldier AIBaseSoldier;
+    protected bool attackReady = true;
+    protected bool attacking;    
 
     public bool Attacking
     {
@@ -31,8 +31,8 @@ public class MeleeAttackUnit : MonoBehaviour, IUnit, IAttack
     }
     public float AttackRange
     {
-        get { return dashDistance; }
-        set { dashDistance = value; }
+        get { return attackRange; }
+        set { attackRange = value; }
     }
 
     public bool AttackReady
@@ -46,32 +46,21 @@ public class MeleeAttackUnit : MonoBehaviour, IUnit, IAttack
         get { return isIdle; }
     }
 
-    private void Awake()
+    protected void Awake()
     {
         AIBase = GetComponent<AI_Base>();
-        AIBaseEnemy = GetComponent<AI_Base_Enemy>();
+        AIBaseSoldier = GetComponent<AI_Base_Soldier>();
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    private IEnumerator AttackCooldown()
+    protected IEnumerator AttackCooldown()
     {
         yield return new WaitForSeconds(attackCooldown);
         attackReady = true;
     }
-
-    public void Attack(Action onAttackComplete)
+    public virtual void Attack(Action onAttackComplete)
     {
-        if(dashTarget != Vector3.zero)
-        {
-            transform.position = Vector3.Lerp(transform.position, dashTarget, 0.1f);
-            if(Vector3.Distance(transform.position, dashTarget) <= 0.2f)
-            {
-                dashTarget = Vector3.zero;
-                AttackCompleted();
-                onAttackComplete();
-            }
-        }
-    }
+	}
     public void AttackCompleted()
     {
         attacking = false;
@@ -85,10 +74,10 @@ public class MeleeAttackUnit : MonoBehaviour, IUnit, IAttack
         moveToPoint = null;
     }
 
-    public void CommenceAttack(Vector3 target, Action Animation)
+    public virtual void CommenceAttack(Vector3 target, Action Animation)
     {
         attacking = true;
-        dashTarget = target;
+        attackTarget = target;
         Animation();
     }
 
@@ -120,7 +109,7 @@ public class MeleeAttackUnit : MonoBehaviour, IUnit, IAttack
     {
         isIdle = false;
 
-        AIBaseEnemy.PlayAttackAnimation(lookAtPosition - transform.position);
+        AIBaseSoldier.PlayAttackAnimation(lookAtPosition - transform.position);
         this.onAnimationCompleted = onAnimationCompleted;
     }
 }

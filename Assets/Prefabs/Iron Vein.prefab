@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 208848667444845328}
   - component: {fileID: 114059341132332288}
   - component: {fileID: 114359793036699576}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Iron Vein
   m_TagString: Untagged
   m_Icon: {fileID: 0}

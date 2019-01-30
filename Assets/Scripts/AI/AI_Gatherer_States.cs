@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class AI_Gather_States : MonoBehaviour
+public class AI_Gatherer_States : MonoBehaviour
 {
     private enum State
     {
@@ -28,7 +28,7 @@ public class AI_Gather_States : MonoBehaviour
     private bool fleeingCooldown = false;
 
     // Use this for initialization
-    private void Awake ()
+    private void Start ()
     {
         unit = GetComponent<IUnit>();
         gather = GetComponent<IGather>();

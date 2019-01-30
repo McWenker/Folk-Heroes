@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 208556570377732372}
   - component: {fileID: 114245773853266932}
   - component: {fileID: 114211378077394360}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Mana Shrine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
