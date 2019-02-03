@@ -1405,7 +1405,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1966115948076838, guid: 62295d04346656e449153c4cc1796a35, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62295d04346656e449153c4cc1796a35, type: 2}
@@ -3006,7 +3006,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1966115948076838, guid: 62295d04346656e449153c4cc1796a35, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62295d04346656e449153c4cc1796a35, type: 2}
@@ -4012,6 +4012,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 1966115948076838, guid: 62295d04346656e449153c4cc1796a35, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62295d04346656e449153c4cc1796a35, type: 2}
   m_IsPrefabAsset: 0
@@ -4174,6 +4178,61 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1516660808}
   m_CullTransparentMesh: 0
+--- !u!1001 &1544591607
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -7.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_RootOrder
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024967084723964, guid: 608ebcf859bdfc746ad914d52f81c1cb,
+        type: 2}
+      propertyPath: macroTarget
+      value: 
+      objectReference: {fileID: 954623303}
+    - target: {fileID: 1062835362885980, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062835362885980, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_Name
+      value: Slimurai Gunner (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1553865733
 Prefab:
   m_ObjectHideFlags: 0
@@ -4663,10 +4722,65 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1966115948076838, guid: 62295d04346656e449153c4cc1796a35, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62295d04346656e449153c4cc1796a35, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &1850696584
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724499757623446, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_RootOrder
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024967084723964, guid: 608ebcf859bdfc746ad914d52f81c1cb,
+        type: 2}
+      propertyPath: macroTarget
+      value: 
+      objectReference: {fileID: 954623303}
+    - target: {fileID: 1062835362885980, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062835362885980, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
+      propertyPath: m_Name
+      value: Slimurai Gunner (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
   m_IsPrefabAsset: 0
 --- !u!224 &1874093388 stripped
 RectTransform:
@@ -4996,7 +5110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1966115948076838, guid: 62295d04346656e449153c4cc1796a35, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62295d04346656e449153c4cc1796a35, type: 2}
@@ -5184,7 +5298,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1966115948076838, guid: 62295d04346656e449153c4cc1796a35, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62295d04346656e449153c4cc1796a35, type: 2}
@@ -5235,7 +5349,7 @@ Prefab:
       objectReference: {fileID: 954623303}
     - target: {fileID: 1062835362885980, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608ebcf859bdfc746ad914d52f81c1cb, type: 2}
