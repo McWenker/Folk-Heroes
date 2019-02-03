@@ -15,6 +15,9 @@ public class CursorController : MonoBehaviour
             case ControlState.Combat:
                 cursor = crosshairSprite;
                 break;
+            case ControlState.Command:
+                cursor = menuSprite;
+                break;
             case ControlState.Menu:
                 cursor = menuSprite;
                 break;

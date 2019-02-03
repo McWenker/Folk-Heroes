@@ -1,4 +1,10 @@
 # Changelog
+### 2/3/2019
+#### Direct AI Command
+![UnitSelect](DemoImages/UnitSelection.gif?raw=true "Right now, they don't do much else...")
+* Very rough implementation of direct AI control
+* Allied AI can now be selected in Command Mode and given movement orders
+
 ### 1/29/2019
 #### AI combat improvements
 ![DoggoGIF](DemoImages/DOGGOS.gif?raw=true "DOGGGOOOOOOSSSS!!!")

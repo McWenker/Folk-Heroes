@@ -6,6 +6,7 @@ using UnityEngine;
 public enum ControlState
 {
 	Combat,
+	Command,
 	Construction,
 	Cutscene,
 	Menu

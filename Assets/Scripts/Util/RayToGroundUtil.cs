@@ -19,4 +19,21 @@ public static class RayToGroundUtil
         }
         return Vector3.zero;
     }
+
+    public static Ray FetchRayToGround()
+    {
+        return Camera.main.ScreenPointToRay(Input.mousePosition);
+    }
+
+    public static Selectable FetchFirstSelectableHit()
+    {
+        RaycastHit hitInfo;
+        //Shoots a ray into the 3D world starting at our mouseposition
+        if (Physics.Raycast(FetchRayToGround(), out hitInfo))
+        {
+            //We check if we clicked on an object with a Selectable component
+            return hitInfo.collider.GetComponentInParent<Selectable>();
+        }
+        else return null;
+    }
 }

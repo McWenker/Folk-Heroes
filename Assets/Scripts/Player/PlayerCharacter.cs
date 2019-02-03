@@ -40,16 +40,35 @@ public class PlayerCharacter : MonoBehaviour
         HandleConstructionFlip();
     }
 
+    private void Update()
+    {
+        HandleMouseDownUp();
+    }
+
     private void HandleControlState()
     {
-        if(Input.GetKey(KeyCode.LeftAlt) && !controlStateCooldown)
+        if(Input.GetKey(KeyCode.LeftAlt))
         {
-            controlState = ControlEventManager.ControlStateSwap(gameObject, controlState);
-            controlStateCooldown = true;
-            StartCoroutine(ControlStateCooldown());
+            if(!controlStateCooldown)
+            {
+                if(controlState == ControlState.Command || controlState == ControlState.Construction)
+                {
+                    ControlEventManager.ControlStateSet(this, ControlState.Combat);
+                    controlState = ControlState.Combat;
+                    controlStateCooldown = true;
+                    StartCoroutine(ControlStateCooldown());
+                }
+                else if(controlState == ControlState.Combat)
+                {
+                    ControlEventManager.ControlStateSet(this, ControlState.Command);
+                    controlState = ControlState.Command;
+                    controlStateCooldown = true;
+                    StartCoroutine(ControlStateCooldown());
+                }
+                playerCharacterBase.rightHand.gameObject.SetActive(controlState == ControlState.Combat);
+                playerCharacterBase.leftHand.gameObject.SetActive(controlState == ControlState.Combat);
+            }
         }
-        playerCharacterBase.rightHand.gameObject.SetActive(controlState == ControlState.Combat);
-        playerCharacterBase.leftHand.gameObject.SetActive(controlState == ControlState.Combat);
     }
 
     private void SetControlState(Object sender, ControlState state)
@@ -62,6 +81,8 @@ public class PlayerCharacter : MonoBehaviour
 
     private void SetControlState(ControlState state)
     {
+        if(controlState == ControlState.Command && state != ControlState.Command)
+            Debug.Log("blahblah");
         ControlEventManager.ControlStateSet(this, state);
         controlState = state;   
         playerCharacterBase.rightHand.gameObject.SetActive(controlState == ControlState.Combat);
@@ -144,8 +165,40 @@ public class PlayerCharacter : MonoBehaviour
         {
             if (controlState == ControlState.Combat && leftWeapon != null && leftWeapon.isActiveAndEnabled)
                 leftWeapon.Attack();
+            else if(controlState == ControlState.Command && RTSSelection.selectables.Count != 0)
+            {
+                foreach(Selectable s in RTSSelection.selectables)
+                {
+                    //DEMO code
+                    if(s.isSelected)
+                    {
+                        IUnit sUnit = s.GetComponent<IUnit>();
+                        sUnit.MoveTo(RayToGroundUtil.FetchMousePointOnGround(1.2f), 0f, () =>
+                        {
+                            sUnit.Idling();
+                        });
+
+                    }
+                }
+                RTSSelection.MovementMarker(RayToGroundUtil.FetchMousePointOnGround(1.2f));
+            }
             else
                 SetControlState(ControlState.Combat);
+        }
+    }
+
+    private void HandleMouseDownUp()
+    {
+        if(controlState == ControlState.Command && !EventSystem.current.IsPointerOverGameObject ())
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                RTSEventManager.SelectionMouseDown(this);
+            }
+            if(Input.GetMouseButtonUp(0))
+            {
+                RTSEventManager.SelectionMouseUp(this);
+            }
         }
     }
 
