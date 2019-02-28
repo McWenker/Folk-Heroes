@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CodeMonkey;
-using CodeMonkey.Utils;
 
 public class ResourceNode
 {
@@ -21,10 +19,10 @@ public class ResourceNode
         this.resourceNodeTransform = resourceNodeTransform;
         this.resourceType = resourceType;
         this.resourceAmount = resourceAmount;
-        resourceNodeTransform.GetComponent<Button_Sprite>().ClickFunc = () =>
+        /* resourceNodeTransform.GetComponent<Button_Sprite>().ClickFunc = () =>
         {
             if (OnResourceNodeClicked != null) OnResourceNodeClicked(this, EventArgs.Empty);
-        };
+        };*/
     }
 
     public Vector3 GetPosition()

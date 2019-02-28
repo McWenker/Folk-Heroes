@@ -40,7 +40,7 @@ public class AI_Soldier_States : MonoBehaviour
         {
             case State.Idle:
                 // to be expanded later, maybe add patrol functionality
-                /* if (target != null)
+                if (target != null)
                     state = State.ChasingFoe;
                 else if(macroTarget != null)
                 {
@@ -50,7 +50,7 @@ public class AI_Soldier_States : MonoBehaviour
                 else
                 {
                     state = State.SearchingFoe;
-                }*/
+                }
                 break;
 
             case State.SearchingFoe:

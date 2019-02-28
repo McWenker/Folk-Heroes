@@ -5,7 +5,7 @@ using System.Linq;
  
 public class RTSSelection : MonoBehaviour
 {
- 
+    [SerializeField] ControlStateHandler controlStateHandler;
     public static List<Selectable> selectables = new List<Selectable>();
  
     [Tooltip("Canvas is set automatically if not set in the inspector")]
@@ -22,8 +22,11 @@ public class RTSSelection : MonoBehaviour
     private RectTransform rt;
  
     private bool isSelecting;
+    private bool anySelected;
 	[SerializeField] GameObject demoMovementMarker;
 	static GameObject movementMarker;
+
+    bool commandCooldown;
  
     void Awake()
     {
@@ -41,8 +44,9 @@ public class RTSSelection : MonoBehaviour
             selectionBox.gameObject.SetActive(false);
         }
 
-		RTSEventManager.OnSelectionMouseDown += OnSelectionMouseDown;
-		RTSEventManager.OnSelectionMouseUp += OnSelectionMouseUp;
+		InputEventManager.OnMouseDown += OnSelectionMouseDown;
+		InputEventManager.OnMouseUp += OnSelectionMouseUp;
+        InputEventManager.OnFire += OnRightClick;
     }
  
     void Update()
@@ -83,39 +87,77 @@ public class RTSSelection : MonoBehaviour
         }
     }
 
-	void OnSelectionMouseDown(PlayerCharacter sender)
+	void OnSelectionMouseDown(Object sender, int buttonFired)
 	{
-		Selectable s = RayToGroundUtil.FetchFirstSelectableHit();
-		if (s != null)
+        if(buttonFired == 0)
         {
-            //While holding the copyKey, we can add and remove objects from our selection
-            if (Input.GetKey(copyKey))
+            if(controlStateHandler._ControlState == ControlState.Command)
             {
-           		//Toggle the selection
-                UpdateSelection(s, !s.isSelected);
+                Selectable s = RayToGroundUtil.FetchFirstSelectableHit();
+                if (s != null)
+                {
+                    //While holding the copyKey, we can add and remove objects from our selection
+                    if (Input.GetKey(copyKey))
+                    {
+                        //Toggle the selection
+                        UpdateSelection(s, !s.isSelected);
+                    }
+                    else
+                    {
+                        //If the copyKey was not held, we clear our current selection and select only this unit
+                        ClearSelected();
+                        UpdateSelection(s, true);
+                    }
+        
+                    //If we clicked on a Selectable, we don't want to enable our SelectionBox
+                    return;
+                }
+        
+                if (selectionBox == null)
+                    return;
+                //Storing these variables for the selectionBox
+                startScreenPos = Input.mousePosition;
+                isSelecting = true;
             }
-            else
-            {
-                //If the copyKey was not held, we clear our current selection and select only this unit
-                ClearSelected();
-                UpdateSelection(s, true);
-			}
- 
-            //If we clicked on a Selectable, we don't want to enable our SelectionBox
-            return;
         }
- 
-        if (selectionBox == null)
-            return;
-        //Storing these variables for the selectionBox
-        startScreenPos = Input.mousePosition;
-        isSelecting = true;
+    }
 
+	void OnSelectionMouseUp(Object sender, int buttonFired)
+	{
+        if(buttonFired == 0)
+            if(controlStateHandler._ControlState == ControlState.Command)
+		        isSelecting = false;
 	}
 
-	void OnSelectionMouseUp(PlayerCharacter sender)
+    void OnRightClick(Object Sender, int buttonFired)
 	{
-		isSelecting = false;
+        if(buttonFired == 1)
+        {
+            anySelected = false;
+            if(controlStateHandler._ControlState == ControlState.Command && RTSSelection.selectables.Count != 0 && !commandCooldown)
+            {
+                foreach(Selectable s in RTSSelection.selectables)
+                {
+                    //DEMO code
+                    if(s.isSelected)
+                    {
+                        anySelected = true;
+                        IUnit sUnit = s.GetComponent<IUnit>();
+                        sUnit.MoveTo(RayToGroundUtil.FetchMousePointOnGround(1.2f), 0f, () =>
+                        {
+                            sUnit.Idling();
+                        });
+
+                    }
+                }
+                if(anySelected)
+                {
+                    RTSSelection.MovementMarker(RayToGroundUtil.FetchMousePointOnGround(1.2f));
+                    commandCooldown = true;
+                    StartCoroutine(CommandCooldown());
+                }
+            }
+        }
 	}
  
     /// <summary>
@@ -151,5 +193,11 @@ public class RTSSelection : MonoBehaviour
 	{
 		GameObject demo = Instantiate(movementMarker, worldPosition, Quaternion.identity);
 	}
+
+    private System.Collections.IEnumerator CommandCooldown()
+    {
+        yield return new WaitForSeconds(0.15f);
+        commandCooldown = false;
+    }
  
 }

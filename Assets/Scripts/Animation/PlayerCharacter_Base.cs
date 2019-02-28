@@ -47,6 +47,8 @@ public class PlayerCharacter_Base : MonoBehaviour
     {
         rightHandPos = rightHand.localPosition;
         leftHandPos = leftHand.localPosition;
+        InputEventManager.OnMove += PlayWalkingAnimation;
+        InputEventManager.OnIdle += PlayIdleAnimation;
     }
 
     private void GetFacing()
@@ -90,7 +92,7 @@ public class PlayerCharacter_Base : MonoBehaviour
         }
     }
 
-    public void PlayIdleAnimation()
+    void PlayIdleAnimation(Object sender)
     {
         Sprite[] anim;
 
@@ -102,7 +104,7 @@ public class PlayerCharacter_Base : MonoBehaviour
         spriteAnim.PlayAnimation(anim, idleFrameRate, false);
     }
     
-    public void PlayWalkingAnimation()
+    void PlayWalkingAnimation(Object sender, Vector3 movDir)
     {
         Sprite[] anim;
         if(mousePointInWorld.x >= transform.position.x)

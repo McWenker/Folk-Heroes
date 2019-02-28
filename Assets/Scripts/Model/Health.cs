@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] int maxHP;
     [SerializeField] bool isPlayer;
+    [SerializeField] BarStat bStat;
     private int HP;
     private SpriteRenderer spriteRenderer;
     private IUnit unit;
@@ -16,6 +17,11 @@ public class Health : MonoBehaviour
         HP = maxHP;
         unit = GetComponent<IUnit>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if(bStat != null)
+		{
+            bStat.MaxVal = maxHP;
+            bStat.CurrentVal = maxHP;
+        }
     }
 
     private IEnumerator DamageFlashTemp() // DEMO CODE
@@ -46,6 +52,7 @@ public class Health : MonoBehaviour
         {
             HP += modifyValue;
             StartCoroutine(DamageFlashTemp());
+            if(bStat != null) bStat.CurrentVal = HP;
             if (HP <= 0)
             {
                 if(!isPlayer)

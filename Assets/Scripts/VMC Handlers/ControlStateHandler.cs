@@ -8,43 +8,56 @@ public class ControlStateHandler : MonoBehaviour
     [SerializeField] CanvasRenderer constructionCanvas;
     [SerializeField] CursorController cursorController;
 
-    private ControlState SwapState(GameObject sender, ControlState state)
+    private ControlState controlState;
+    private bool controlStateCooldown;
+    public ControlState _ControlState
     {
-        ControlState retVal;
-        if(state == ControlState.Combat)
-            retVal = ControlState.Menu;
-        else if(state == ControlState.Menu || state == ControlState.Construction)
-            retVal = ControlState.Combat;
-        else
-            retVal = state;
-        SetState(retVal);
-        return retVal;
+        get { return controlState; }
     }
 
     private void Awake()
     {
-        ControlEventManager.OnControlStateSwap += SwapState;
-        ControlEventManager.OnControlStateSet += SetState;
-    }
+        InputEventManager.OnControlStateChange += SwapState;
+        InputEventManager.OnFire += ExitConstruction;
+    }    
 
-    private void UpdateConstruction(ControlState state)
+    private void ExitConstruction(Object sender, int buttonFired)
     {
-        constructionCanvas.gameObject.SetActive(state == ControlState.Menu || state == ControlState.Construction);
-        constructionHandler.enabled = (state == ControlState.Construction);
+        if(buttonFired == 1)
+            if(controlState == ControlState.Construction)
+                SetState(ControlState.Command);
     }
-
-    private void SetState(Object sender, ControlState state)
+    private void SwapState(Object sender)
     {
-        if(sender != this)
+        if(!controlStateCooldown)
         {
-            SetState(state);
-        }
+            controlStateCooldown = true;
+            if(controlState == ControlState.Command || controlState == ControlState.Construction)
+            {
+                SetState(ControlState.Combat);
+                StartCoroutine(ControlStateCooldown());
+            }
+            else if(controlState == ControlState.Combat)
+            {
+                SetState(ControlState.Command);
+                StartCoroutine(ControlStateCooldown());
+            }
+            Debug.Log(controlState);
+        }        
+    }
+
+    private void UpdateConstruction()
+    {
+        constructionCanvas.gameObject.SetActive(controlState == ControlState.Command || controlState == ControlState.Construction);
+        constructionHandler.enabled = (controlState == ControlState.Construction);
     }
 
     private void SetState(ControlState state)
     {
-        UpdateConstruction(state);
+        controlState = state;
+        UpdateConstruction();
         cursorController.UpdateState(state);
+        EquipmentEventManager.ToggleWeapons(this, controlState == ControlState.Combat);
     }
 
     public void ConstructionState()
@@ -52,8 +65,9 @@ public class ControlStateHandler : MonoBehaviour
         SetState(ControlState.Construction);
     }
 
-    public void ExitConstruction()
+    private IEnumerator ControlStateCooldown()
     {
-        SetState(ControlState.Combat);
+        yield return new WaitForSeconds(1f);
+        controlStateCooldown = false;
     }
 }

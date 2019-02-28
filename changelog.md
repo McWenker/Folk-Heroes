@@ -1,4 +1,12 @@
 # Changelog
+### 2/27/2019
+#### Health, Energy Bars
+* Health and energy amounts are now visible in the HUD
+* Actual numbers to come, and the current animation is being tweaked.
+
+#### Modified Player Input
+* Mostly an under-the-hood change, but a very clarifying refactor
+
 ### 2/3/2019
 #### Direct AI Command
 ![UnitSelect](DemoImages/UnitCommands.gif?raw=true "Right now, they don't do much else...")

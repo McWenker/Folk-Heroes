@@ -12,6 +12,8 @@ public class Construction : MonoBehaviour
 	[SerializeField] bool isGhost;
 	[SerializeField] bool canBuild;
 
+	Color yesGhostColor = new Color(0.8f,1f,1f,1f);
+
 	bool inCollision;
 
 	public int SpriteIndex
@@ -75,7 +77,7 @@ public class Construction : MonoBehaviour
 			else
 				canBuild = false;
 						
-			sprite.material.color = canBuild ? Color.white : Color.red;
+			sprite.material.color = canBuild ? yesGhostColor : Color.red;
 		}
 	}
 

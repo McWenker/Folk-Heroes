@@ -9,10 +9,10 @@ public static class GameResourceBank
     public static event EventHandler OnIronAmountChanged;
     public static event EventHandler OnManaAmountChanged;
     public static event EventHandler OnBloodAmountChanged;
-    private static int goldAmount;
-    private static int ironAmount;
-    private static int manaAmount;
-    private static int bloodAmount;
+    private static int goldAmount = 20;
+    private static int ironAmount = 20;
+    private static int manaAmount = 20;
+    private static int bloodAmount = 20;
 
     public static void AddAmount(GameResourceType resourceToGrow, int amount)
     {
