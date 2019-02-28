@@ -16,6 +16,7 @@ public class Weapon_Base : MonoBehaviour
 
     [SerializeField] private float idleFrameRate;
     [SerializeField] private float attackFrameRate;
+    [SerializeField] private int attackTriggerFrame;
 
     private Vector3 spriteAngle;
     private Vector3 attackAngle;
@@ -33,7 +34,7 @@ public class Weapon_Base : MonoBehaviour
         spriteAnim.PlayAnimation(anim, idleFrameRate, false);
     }
 
-    public void PlayAttackAnimation(Action onAnimationCompleted)
+    public void PlayAttackAnimation(Action onTrigger, Action onAnimationCompleted)
     {
         Sprite[] anim;
 
@@ -42,7 +43,10 @@ public class Weapon_Base : MonoBehaviour
         else
             anim = attackWestAnimationArray;
 
-        spriteAnim.PlayAnimation(anim, attackFrameRate, () => 
+        spriteAnim.PlayAnimation(anim, attackFrameRate, attackTriggerFrame, () =>
+        {
+            onTrigger();
+        }, () => 
         {
             onAnimationCompleted();
         });

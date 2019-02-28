@@ -50,7 +50,7 @@ public class InputController : MonoBehaviour
         {
             if(Input.GetKey(_abilityButtons[i]))
             {
-                Debug.Log(_abilityButtons[i].ToString());
+                //Debug.Log(_abilityButtons[i].ToString());
                 InputEventManager.AbilityUse(this, _abilityButtons[i].ToString());
             }
         }

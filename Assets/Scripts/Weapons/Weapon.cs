@@ -39,7 +39,6 @@ public class Weapon : MonoBehaviour
         {
             case (true):
                 canAttack = false;
-                CreateDamageObjects();
                 PlayAttackSFX();
                 state = WeaponState.Attack;
                 break;
@@ -76,7 +75,9 @@ public class Weapon : MonoBehaviour
                 weaponBase.PlayIdleAnimation();
                 break;
             case WeaponState.Attack:                
-                weaponBase.PlayAttackAnimation(() => StartCoroutine(AttackCooldown()));
+                weaponBase.PlayAttackAnimation(() => 
+                    CreateDamageObjects(), () => 
+                    StartCoroutine(AttackCooldown()));
                 break;
         }
     }

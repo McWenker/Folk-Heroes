@@ -25,7 +25,7 @@ public class ConstructionHandler : MonoBehaviour
 				if(toConstruct != null && toConstruct.CanBuild)
 				{
 					Construction construct = GameObject.Instantiate(toConstruct, toConstruct.transform.position, Quaternion.identity).GetComponent<Construction>();
-					construct.Construct(toConstruct.SpriteIndex);
+					construct.BeginConstruction(toConstruct.FacingEast);
 					constructionCooldown = true;
 					StartCoroutine(ConstructionCooldown());
 				}
@@ -47,7 +47,7 @@ public class ConstructionHandler : MonoBehaviour
 			return;
 		else if(toConstruct.IsGhost)
 		{
-			toConstruct.SpriteIndex++;
+			toConstruct.Flip();
 			constructionFlipCooldown = true;
 			StartCoroutine(ConstructionFlipCooldown());
 		}

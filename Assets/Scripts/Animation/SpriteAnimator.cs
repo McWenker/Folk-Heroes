@@ -13,11 +13,14 @@ public class SpriteAnimator : MonoBehaviour
     private float timer;
     [SerializeField] private float frameRate = .1f;
     private SpriteRenderer spriteRenderer;
-    [SerializeField] private bool isLoop = false;
+    private bool isLoop = false;
+    private bool isTrigger = false;
     private bool isPlaying = true;
+    private int triggerFrame;
     private int maxLoopCount;
     private int loopCounter;
     private Action onComplete;
+    private Action onTrigger;
 
     private void Awake()
     {
@@ -51,6 +54,9 @@ public class SpriteAnimator : MonoBehaviour
             timer -= frameRate;
             currentFrame = (currentFrame + 1) % frameArray.Length;
 
+            if(isTrigger && currentFrame == triggerFrame)
+                onTrigger();
+
             if (!isLoop && currentFrame == 0)
                 StopPlaying();
             else if (isLoop && maxLoopCount != 0 && loopCounter >= maxLoopCount)
@@ -67,7 +73,7 @@ public class SpriteAnimator : MonoBehaviour
         }
     }
 
-    public void PlayAnimation(Sprite[] frameArray, float frameRate, Action onComplete)
+    public void PlayAnimation(Sprite[] frameArray, float frameRate, int triggerFrame, Action onTrigger, Action onComplete)
     {
         if (isPlaying)
         {
@@ -82,11 +88,14 @@ public class SpriteAnimator : MonoBehaviour
         loopCounter = -1;
         this.frameArray = frameArray;
         this.frameRate = frameRate;
+        this.isTrigger = true;
+        this.triggerFrame = triggerFrame;
         this.isLoop = false;
         this.maxLoopCount = 0;
         currentFrame = 0;
         timer = 0f;
         spriteRenderer.sprite = frameArray[currentFrame];
+        this.onTrigger = onTrigger;
         this.onComplete = onComplete;
     }
 
@@ -104,6 +113,7 @@ public class SpriteAnimator : MonoBehaviour
 
         this.frameArray = frameArray;
         this.frameRate = frameRate;
+        this.isTrigger = false;
         this.isLoop = isLoop;
         this.maxLoopCount = 0;
         currentFrame = 0;
@@ -126,6 +136,7 @@ public class SpriteAnimator : MonoBehaviour
         loopCounter = -1;
         this.frameArray = frameArray;
         this.frameRate = frameRate;
+        this.isTrigger = false;
         this.isLoop = isLoop;
         this.maxLoopCount = loopCount;
         currentFrame = 0;

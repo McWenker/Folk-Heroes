@@ -57,8 +57,8 @@ public class PlayerCharacter_Base : MonoBehaviour
         PlaceHands();
         if(mousePointInWorld != Vector3.zero)
         {
-            right_weaponBase.RotateWeapon(rightHand.position, mousePointInWorld);
-            left_weaponBase.RotateWeapon(leftHand.position, mousePointInWorld);
+            if(right_weaponBase != null) right_weaponBase.RotateWeapon(rightHand.position, mousePointInWorld);
+            if(left_weaponBase != null) left_weaponBase.RotateWeapon(leftHand.position, mousePointInWorld);
         }
     }
 

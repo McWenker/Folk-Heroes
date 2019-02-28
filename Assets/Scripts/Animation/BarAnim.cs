@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class BarAnim : MonoBehaviour
 {	
@@ -10,7 +11,7 @@ public class BarAnim : MonoBehaviour
 	Image content;
 
 	[SerializeField]
-	Text valueText;
+	TextMeshProUGUI valueText;
 
 	public float MaxValue { get; set; }
 
@@ -20,9 +21,9 @@ public class BarAnim : MonoBehaviour
 		{
 			fillAmount = CalculateFill(value, 0, MaxValue, 0, 1);
             if (valueText && value > 0)
-                valueText.text = value + " / " + MaxValue;
+                valueText.SetText(value + " / " + MaxValue);
             else if (valueText && value == 0)
-                valueText.text = " ";
+                valueText.SetText(" ");
 			if(gameObject.layer == 11)
 				CheckForHide(value, MaxValue);
 		}

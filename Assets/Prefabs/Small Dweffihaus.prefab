@@ -600,8 +600,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1400dc849f64ad546ac5209ae7b7e878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteIndex: 1
-  sprites:
+  productionCost: 0
+  construction1Sprites: []
+  construction2Sprites: []
+  construction3Sprites: []
+  construction4Sprites: []
+  finishedSprites:
   - {fileID: 21300000, guid: a449f2f7fd456e14e863c82b024a9c18, type: 3}
   - {fileID: 21300000, guid: 68861575fea7cfd42bf258e6025645e8, type: 3}
   isGhost: 1
@@ -662,6 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 8
   isPlayer: 0
+  bStat: {fileID: 0}
 --- !u!208 &208264485389729760
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -712,7 +717,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 68861575fea7cfd42bf258e6025645e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a449f2f7fd456e14e863c82b024a9c18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

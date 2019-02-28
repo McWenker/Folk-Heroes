@@ -15,6 +15,10 @@ public class ControlStateHandler : MonoBehaviour
         get { return controlState; }
     }
 
+    private void Update()
+    {
+        Debug.Log(controlState);
+    }
     private void Awake()
     {
         InputEventManager.OnControlStateChange += SwapState;
@@ -42,7 +46,6 @@ public class ControlStateHandler : MonoBehaviour
                 SetState(ControlState.Command);
                 StartCoroutine(ControlStateCooldown());
             }
-            Debug.Log(controlState);
         }        
     }
 

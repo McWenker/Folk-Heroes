@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CursorController : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class CursorController : MonoBehaviour
                 cursor = menuSprite;
                 break;
             case ControlState.Construction:
+                if(EventSystem.current.IsPointerOverGameObject())
+                    cursor = menuSprite;
                 break;
         }
         Cursor.visible = (cursor != null);

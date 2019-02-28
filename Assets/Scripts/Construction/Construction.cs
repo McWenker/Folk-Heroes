@@ -7,32 +7,31 @@ public class Construction : MonoBehaviour
 {
 	private SpriteRenderer sprite;
 	private ConstructionCost cost;
-	[SerializeField] int spriteIndex;
-	[SerializeField] Sprite[] sprites;
+
+	[SerializeField] int productionCost;
+	[SerializeField] private int currentProduction;
+	[SerializeField] Sprite[] construction1Sprites;
+	[SerializeField] Sprite[] construction2Sprites;
+	[SerializeField] Sprite[] construction3Sprites;
+	[SerializeField] Sprite[] construction4Sprites;
+	[SerializeField] Sprite[] finishedSprites;
 	[SerializeField] bool isGhost;
 	[SerializeField] bool canBuild;
+
+	bool facingEast = true;
 
 	Color yesGhostColor = new Color(0.8f,1f,1f,1f);
 
 	bool inCollision;
 
-	public int SpriteIndex
-	{
-		get { return spriteIndex;}
-		set
-		{
-			if(value < 0)
-				value = sprites.Length - 1;
-			if(value >= sprites.Length)
-				value = 0;
-			spriteIndex = value;
-			sprite.sprite = sprites[spriteIndex];
-		}
-	}
-
 	public bool CanBuild
 	{
 		get { return canBuild; }
+	}
+
+	public bool FacingEast
+	{
+		get { return facingEast; }
 	}
 
 	public bool IsGhost
@@ -50,26 +49,51 @@ public class Construction : MonoBehaviour
 		}
 	}
 
-	public void Construct(int spriteIndex)
+	public void BeginConstruction(bool facingEast)
 	{	
 		cost.Spend();
-		GetComponent<Housing>().enabled = true;
 		gameObject.layer = 11;
 		IsGhost = false;
-		SpriteIndex = spriteIndex;
+		this.facingEast = facingEast;
+
+		sprite.sprite = Facing(ProductionStatus());
+	}
+
+	public void Construct(int productionPoints)
+	{
+		currentProduction += productionPoints;
+		sprite.sprite = Facing(ProductionStatus());
+		if(currentProduction >= productionCost)
+		{
+			if(GetComponent<Housing>() != null) GetComponent<Housing>().enabled = true;
+		}
+	}
+
+	public void Flip()
+	{
+		facingEast = !facingEast;
+		sprite.sprite = Facing(ProductionStatus());
 	}
 
 	private void Awake()
 	{
 		sprite = GetComponent<SpriteRenderer>();
 		cost = GetComponent<ConstructionCost>();
-		SpriteIndex = spriteIndex;
+	}
+
+	private Sprite Facing(Sprite[] tierOfProduction)
+	{
+		if(facingEast || tierOfProduction.Length == 1)
+			return tierOfProduction[0];
+		else
+			return tierOfProduction[1];
 	}
 
 	private void FixedUpdate()
 	{
 		if(isGhost)
 		{
+			Debug.Log(facingEast);
 			if(!inCollision && cost.CanAfford())
 			{
 				canBuild = true;
@@ -95,5 +119,27 @@ public class Construction : MonoBehaviour
 		{
 			inCollision = false;
 		}
+	}
+
+	private Sprite[] ProductionStatus() // janky
+	{
+		Debug.Log("current: "+currentProduction);
+		Debug.Log("cost: "+productionCost);
+		Debug.Log("%: "+(float)currentProduction/productionCost);
+		if(isGhost || (float)currentProduction/productionCost >= 1)
+			return finishedSprites;		
+		else if(((float)currentProduction/productionCost) >= 0.75f &&
+		(currentProduction/productionCost) < 1)
+			return construction4Sprites;
+		else if(((float)currentProduction/productionCost) >= 0.5f &&
+		(currentProduction/productionCost) < 0.75f)
+			return construction3Sprites;
+		else if(((float)currentProduction/productionCost) >= 0.25f &&
+		(currentProduction/productionCost) < 0.5f)
+			return construction2Sprites;
+		else
+			return construction1Sprites;
+		
+		
 	}
 }

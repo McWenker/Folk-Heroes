@@ -1,4 +1,10 @@
 # Changelog
+### 2/28/2019
+#### Manual Labor
+![ManualLabor](DemoImages/ManualLabor.gif?raw=true "WORK HARDER!")
+* Players now manually construct buildings after placing sites
+* Coming soon is functionality to instruct workers to build instead
+
 ### 2/27/2019
 #### Health, Energy Bars
 * Health and energy amounts are now visible in the HUD
