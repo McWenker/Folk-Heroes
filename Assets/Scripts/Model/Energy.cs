@@ -6,6 +6,7 @@ public class Energy : MonoBehaviour
 {
     [SerializeField] int maxEnergy;
 	[SerializeField] BarStat bStat;
+    [SerializeField] bool isPlayer;
     private int energy;
     private SpriteRenderer spriteRenderer;
     private IUnit unit;
@@ -18,6 +19,8 @@ public class Energy : MonoBehaviour
 
     private void Awake()
     {
+        //Demo
+        if(isPlayer) bStat = GameObject.Find("EnergyBar").GetComponent<BarStat>();
         energy = maxEnergy;
         unit = GetComponent<IUnit>();
 		if(bStat != null)

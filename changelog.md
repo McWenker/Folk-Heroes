@@ -1,4 +1,10 @@
 # Changelog
+### 3/3/2019
+#### A Whole New World
+![FirstMap](DemoImages/FirstMapTest.gif?raw=true "don't get lost!")
+* Thus begins my journey into procedural map design
+* Also included has been moving off of Unity's native NavMesh in favor of A*
+
 ### 2/28/2019
 #### Manual Labor
 ![ManualLabor](DemoImages/ManualLabor.gif?raw=true "WORK HARDER!")

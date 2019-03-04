@@ -15,9 +15,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject targetTestObject;
     [SerializeField] private AudioClip[] attackSFX;
     [SerializeField] private int damage;
+    [SerializeField] private int constructionDamage;
     [SerializeField] private int spreadCount;
     [SerializeField] private float spreadAmount;
-    [SerializeField] private LayerMask layersToHit;
+    [SerializeField] private LayerMask[] layersToHit;
     private Weapon_Base weaponBase;
     [SerializeField] float rotationTweak;
 
@@ -54,11 +55,20 @@ public class Weapon : MonoBehaviour
         {
             Quaternion attackAngle = Quaternion.Euler(new Vector3(startingAttackRotation.x, startingAttackRotation.y + (Random.Range(-spreadAmount, spreadAmount)), startingAttackRotation.z));
             GameObject obj = Instantiate(damageObjectPrefab, attackPoint.position, attackAngle) as GameObject;
-            IDamage damObj = obj.GetComponent<IDamage>();
-            damObj.Damage = damage;
-            damObj.CreatorWeapon = this;
-            damObj.AttackOrigin = attackPoint;
-            damObj.SetLayerMask(layersToHit);
+            IDamage[] damObjs = obj.GetComponents<IDamage>();
+            for(int j = 0; j < damObjs.Length; ++j)
+            {
+                if(damObjs[j].GetType() == typeof(ConstructionDamage))
+                    damObjs[j].Damage = constructionDamage;
+                else
+                    damObjs[j].Damage = damage;
+                damObjs[j].CreatorWeapon = this;
+                damObjs[j].AttackOrigin = attackPoint;
+                if(layersToHit.Length > j)
+                    damObjs[j].SetLayerMask(layersToHit[j]);
+                else
+                    damObjs[j].SetLayerMask(layersToHit[0]);
+            }
         }
     }
 

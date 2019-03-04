@@ -42,7 +42,8 @@ public class ConstructionDamage : MonoBehaviour, IDamage
     {
         yield return new WaitForSeconds(despawnTime);
 		hitList.Clear();
-        Destroy(gameObject);
+		if(gameObject != null)
+        	Destroy(gameObject);
     }
 
 	private void OnTriggerStay(Collider other)

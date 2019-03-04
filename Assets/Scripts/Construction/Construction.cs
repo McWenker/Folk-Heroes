@@ -123,10 +123,7 @@ public class Construction : MonoBehaviour
 
 	private Sprite[] ProductionStatus() // janky
 	{
-		Debug.Log("current: "+currentProduction);
-		Debug.Log("cost: "+productionCost);
-		Debug.Log("%: "+(float)currentProduction/productionCost);
-		if(isGhost || (float)currentProduction/productionCost >= 1)
+		if(isGhost || (float)currentProduction/productionCost >= 1 || productionCost == 0)
 			return finishedSprites;		
 		else if(((float)currentProduction/productionCost) >= 0.75f &&
 		(currentProduction/productionCost) < 1)

@@ -32,26 +32,30 @@ public class PixelPerfect : MonoBehaviour
 
     void UpdateOrthoSize()
     {
-        lastSize = Screen.height;
+        if(Camera.main != null)
+        {
+            lastSize = Screen.height;
 
-        // first find the reference orthoSize
-        float refOrthoSize = (referenceOrthographicSize / referencePixelsPerUnit) * 0.5f;
+            // first find the reference orthoSize
+            float refOrthoSize = (referenceOrthographicSize / referencePixelsPerUnit) * 0.5f;
 
-        // then find the current orthoSize
-        var overRide = FindOverride(lastSize);
-        float ppu = overRide != null ? overRide.referencePixelsPerUnit : referencePixelsPerUnit;
-        float orthoSize = (lastSize / ppu) * 0.5f;
+            // then find the current orthoSize
+            var overRide = FindOverride(lastSize);
+            float ppu = overRide != null ? overRide.referencePixelsPerUnit : referencePixelsPerUnit;
+            float orthoSize = (lastSize / ppu) * 0.5f;
 
-        // the multiplier is to make sure the orthoSize is as close to the reference as possible
-        float multiplier = Mathf.Max(1, Mathf.Round(orthoSize / refOrthoSize));
+            // the multiplier is to make sure the orthoSize is as close to the reference as possible
+            float multiplier = Mathf.Max(1, Mathf.Round(orthoSize / refOrthoSize));
 
-        // then we rescale the orthoSize by the multipler
-        orthoSize /= multiplier;
+            // then we rescale the orthoSize by the multipler
+            orthoSize /= multiplier;
 
-        // set it
-        Camera.main.orthographicSize = orthoSize;
+            // set it
+            Camera.main.orthographicSize = orthoSize;
 
-        //Debug.Log(lastSize + " " + orthoSize + " " + multiplier + " " + ppu);
+            //Debug.Log(lastSize + " " + orthoSize + " " + multiplier + " " + ppu);
+
+        }
     }
 
     // Update is called once per frame

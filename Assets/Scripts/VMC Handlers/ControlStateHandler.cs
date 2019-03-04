@@ -15,10 +15,10 @@ public class ControlStateHandler : MonoBehaviour
         get { return controlState; }
     }
 
-    private void Update()
+    /*private void Update()
     {
         Debug.Log(controlState);
-    }
+    }*/
     private void Awake()
     {
         InputEventManager.OnControlStateChange += SwapState;

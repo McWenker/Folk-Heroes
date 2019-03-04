@@ -14,6 +14,8 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
+        //Demo
+        if(isPlayer) bStat = GameObject.Find("HealthBar").GetComponent<BarStat>();
         HP = maxHP;
         unit = GetComponent<IUnit>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();

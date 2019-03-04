@@ -7,6 +7,7 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private ControlStateHandler controlStateHandler;
     [SerializeField] private Transform rayPoint;
     [SerializeField] private float speed = 10f;
+    [SerializeField] private float distCoeff;
     [SerializeField] private float dashDistance = 100f;
     [SerializeField] private GameObject dashEffectPrefab;
     [SerializeField] private float dashEffectWidth;
@@ -24,6 +25,9 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Awake()
     {
+        //demo
+        controlStateHandler = GameObject.FindObjectOfType<ControlStateHandler>();
+
         playerCharacterBase = GetComponent<PlayerCharacter_Base>();
         energyPool = GetComponent<Energy>();
         rightWeapon = playerCharacterBase.rightHand.GetComponentInChildren<Weapon>();
@@ -93,17 +97,17 @@ public class PlayerCharacter : MonoBehaviour
         Vector3 moveDir = baseMoveDir;
         // distance coefficient is so that the ray makes it beyond player bounds
         // will later need to be custom for each hero
-        bool canMove = CanMove(moveDir, distance*6f);
+        bool canMove = CanMove(moveDir, distance*distCoeff);
         if (!canMove)
         {
             //cannot move diagonally
             moveDir = new Vector3(baseMoveDir.x, 0f).normalized;
-            canMove = moveDir.x != 0f && CanMove(moveDir, distance*6f);
+            canMove = moveDir.x != 0f && CanMove(moveDir, distance*distCoeff);
             if (!canMove)
             {
                 //cannot move horizontally
                 moveDir = new Vector3(0f, 0f, baseMoveDir.y).normalized;
-                canMove = CanMove(moveDir, distance*6f);
+                canMove = CanMove(moveDir, distance*distCoeff);
             }
         }
 
