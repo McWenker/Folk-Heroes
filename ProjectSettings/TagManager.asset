@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Soldier
-  - Worker
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -15,16 +13,16 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - Ground
   - Player
-  - AI_Friendly
-  - Construction
-  - GroundPlane
-  - AI_Hostile
-  - NavQuad
-  - ConstructionGhost
-  - Resource
-  - UnWalkable
+  - Enemy
+  - Projectile
+  - WorldObject
+  - Flora_PassThru
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -40,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1293075987
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3090097955
     locked: 0

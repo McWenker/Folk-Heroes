@@ -1,20 +1,33 @@
 fileFormatVersion: 2
-guid: 6f9832a69e1d4344eb20877fa1fe4bfe
+guid: d6083c1e380f3024a9fd0afb060b1414
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Slag_0
-    21300002: Slag_1
-    21300004: Slag_2
-    21300006: Slag_3
-    21300008: Slag_4
-    21300010: Slag_5
-    21300012: Slag_6
-    21300014: Slag_7
-    21300016: Slag_8
-    21300018: Slag_9
-    21300020: Slag_10
+  internalIDToNameTable:
+  - first:
+      213: 3241412723919822131
+    second: Slag_0
+  - first:
+      213: -4250057321174560981
+    second: Slag_1
+  - first:
+      213: -4379115612135840403
+    second: Slag_2
+  - first:
+      213: 6582871421454197940
+    second: Slag_3
+  - first:
+      213: -3084224169954761650
+    second: Slag_4
+  - first:
+      213: -9049320123308560155
+    second: Slag_5
+  - first:
+      213: 4124071478615678888
+    second: Slag_6
+  - first:
+      213: -4788480722114770731
+    second: Slag_7
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -47,16 +60,16 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +82,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,7 +93,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -91,7 +105,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -102,7 +117,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -113,6 +129,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -122,16 +139,17 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f38ca6c56a2d5d4fb1413850c66cbee
+      spriteID: 5c4bbaa9a39fda3499d2d64a27e82954
+      internalID: 3241412723919822131
       vertices: []
       indices: 
       edges: []
@@ -140,18 +158,19 @@ TextureImporter:
       name: Slag_1
       rect:
         serializedVersion: 2
-        x: 1
+        x: 8
         y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9a53333fbfa0de4eabaa7956cb35687
+      spriteID: 6326c52d3c04e134aab6da51ebd3ca13
+      internalID: -4250057321174560981
       vertices: []
       indices: 
       edges: []
@@ -160,18 +179,19 @@ TextureImporter:
       name: Slag_2
       rect:
         serializedVersion: 2
-        x: 2
+        x: 16
         y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c00886ab6c979243bc63abae709d420
+      spriteID: 195a5da6ce48bf949b6ef94e534ad326
+      internalID: -4379115612135840403
       vertices: []
       indices: 
       edges: []
@@ -180,18 +200,19 @@ TextureImporter:
       name: Slag_3
       rect:
         serializedVersion: 2
-        x: 3
+        x: 24
         y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e60f5e54e79fec4699b153227ba4298
+      spriteID: 451e7457ac9e0a44c9928763bf76859b
+      internalID: 6582871421454197940
       vertices: []
       indices: 
       edges: []
@@ -200,18 +221,19 @@ TextureImporter:
       name: Slag_4
       rect:
         serializedVersion: 2
-        x: 4
+        x: 32
         y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d45f320b6d8614541ad643d3f94bc73a
+      spriteID: 7221e452d9f82c4468a5bcbcfbdeed8f
+      internalID: -3084224169954761650
       vertices: []
       indices: 
       edges: []
@@ -220,18 +242,19 @@ TextureImporter:
       name: Slag_5
       rect:
         serializedVersion: 2
-        x: 5
+        x: 40
         y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd435170591da5a418f07beb8b5c406c
+      spriteID: 5d0efca58f8e99a44b11dc3c6de38b80
+      internalID: -9049320123308560155
       vertices: []
       indices: 
       edges: []
@@ -240,18 +263,19 @@ TextureImporter:
       name: Slag_6
       rect:
         serializedVersion: 2
-        x: 6
+        x: 48
         y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e353549cbf37e943a461a959ff892dc
+      spriteID: 9e2028ba44774ab4690beafdcb4fe290
+      internalID: 4124071478615678888
       vertices: []
       indices: 
       edges: []
@@ -260,78 +284,19 @@ TextureImporter:
       name: Slag_7
       rect:
         serializedVersion: 2
-        x: 7
+        x: 56
         y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28f03c29d851ed041a126f970414922d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slag_8
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80695f650dd11504aa6ab93bce3ae5a6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slag_9
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b62dca0ce7243c4ea23e8a6fd7c15e8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slag_10
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 0
-        width: 1
-        height: 1
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08145a7c20045de4dbede89509883ffa
+      spriteID: 058704e801fe0d64e8431c72d583a294
+      internalID: -4788480722114770731
       vertices: []
       indices: 
       edges: []
@@ -339,11 +304,13 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: df909afb7293a4449ac448dca501adca
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

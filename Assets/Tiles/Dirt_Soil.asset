@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e4e4fc705376343a3e65b25d94f0e2, type: 3}
+  m_Name: Dirt_Soil
+  m_EditorClassIdentifier: 
+  m_Sprites:
+  - {fileID: -6842903486819295599, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: 3798998952015900418, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: 5140075221428664539, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: 52451964964440250, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: 4840545013027365079, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: 7349066876424025982, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: 4898295311430761402, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: -4197604000742222148, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: -5953269118803870484, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: -5024897895207391527, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: 8136582349047580856, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: 4983681955809756894, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: -5870905312564595708, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: -2361278913797465747, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  - {fileID: 4677764248164832395, guid: a4bd203eb0300b541a41e2a23acacf0d, type: 3}
+  friendlyTiles:
+  - {fileID: 11400000, guid: a2bd0e64b5f29ca4d80cc09ccaaed808, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  reversionTile: {fileID: 0}

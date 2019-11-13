@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db129aa558bede74292db2374e00822b, type: 3}
+  m_Name: Unarmed_Goria
+  m_EditorClassIdentifier: 
+  itemName: Goria's Fists
+  itemSprites:
+    inventorySprite: {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+    leftHandSprite: {fileID: -6724383649986841061, guid: 6263176afc80a304c935b68750b06c40,
+      type: 3}
+    rightHandSprite: {fileID: 1740866647190618355, guid: 4d20ffaf0433fb34994db09c4c2e3a67,
+      type: 3}
+    flipSprites: 0
+    wrapSwing: 1
+  useTypes:
+  - name: Attack
+    uses:
+    - name: Left Punch
+      leftHandSprites:
+      - {fileID: -4067296444732771748, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -254814451871343604, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -5173334765501291544, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: 3889047238032533310, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: 3613727186012294513, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      rightHandSprites:
+      - {fileID: -9102383177681597003, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: -444333008742482510, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: -8505189019824489007, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: 5091296383402885309, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: 6243962021915033760, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      keyFrame: 1
+      cooldown: 0.5
+      range: 0.3
+      effects:
+      - {fileID: 11400000, guid: b0a47cd440ae6fe4580d135985e8331e, type: 2}
+      canBeHeld: 0
+      holdScaling:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      leftHandChargeSprites: []
+      rightHandChargeSprites: []
+      minHoldTime: 0
+      maxHoldTime: 0
+      notEnoughHold:
+        name: 
+        leftHandSprites: []
+        rightHandSprites: []
+        keyFrame: 0
+        cooldown: 0
+        range: 0
+        effects: []
+    - name: Right Jab
+      leftHandSprites:
+      - {fileID: -295904659707758289, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -5688890050290867135, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -3012020293434162076, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -6969316924353182291, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: 6449083797510635261, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      rightHandSprites:
+      - {fileID: 9163672970093675356, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: 8714287992523016382, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: -4083448080966076066, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: -4174137973566971278, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: 103203166645492432, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      keyFrame: 1
+      cooldown: 0.4
+      range: 0.3
+      effects:
+      - {fileID: 11400000, guid: 9a7176b6b0e4b1949b91e7d4c18e1e81, type: 2}
+      canBeHeld: 0
+      holdScaling:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      leftHandChargeSprites: []
+      rightHandChargeSprites: []
+      minHoldTime: 0
+      maxHoldTime: 0
+      notEnoughHold:
+        name: 
+        leftHandSprites: []
+        rightHandSprites: []
+        keyFrame: 0
+        cooldown: 0
+        range: 0
+        effects: []
+    - name: Right Hook
+      leftHandSprites:
+      - {fileID: -8950482990281590410, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: 8443850910993981007, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -3346209202620884695, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: 2870978427019282757, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      rightHandSprites:
+      - {fileID: -2847794770916688957, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: -4368025655220641975, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: 3956435373172992082, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: 5598184398164557295, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      keyFrame: 2
+      cooldown: 1
+      range: 0.35
+      effects:
+      - {fileID: 11400000, guid: 436a639151c9f81448b277811a359078, type: 2}
+      canBeHeld: 1
+      holdScaling:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      leftHandChargeSprites:
+      - {fileID: -8950482990281590410, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: 8443850910993981007, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -3346209202620884695, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: 2870978427019282757, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      rightHandChargeSprites:
+      - {fileID: 9036216257490447342, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: 7075882297970165556, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: -2927962301446867500, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      - {fileID: 2029564416250799918, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+      minHoldTime: 0.2
+      maxHoldTime: 1.2
+      notEnoughHold:
+        name: Left Jab
+        leftHandSprites:
+        - {fileID: 9163672970093675356, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+        - {fileID: 8714287992523016382, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+        - {fileID: -4083448080966076066, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+        - {fileID: -4174137973566971278, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+        - {fileID: 103203166645492432, guid: 4d20ffaf0433fb34994db09c4c2e3a67, type: 3}
+        rightHandSprites:
+        - {fileID: -295904659707758289, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+        - {fileID: -5688890050290867135, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+        - {fileID: -3012020293434162076, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+        - {fileID: -6969316924353182291, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+        - {fileID: 6449083797510635261, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+        keyFrame: 1
+        cooldown: 0.8
+        range: 0.3
+        effects:
+        - {fileID: 11400000, guid: 9a7176b6b0e4b1949b91e7d4c18e1e81, type: 2}
+  maxRange: 0.6
+  resetTime: 1.5

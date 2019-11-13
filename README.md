@@ -4,56 +4,14 @@ Hello and welcome to Folk Heroes, an upcoming indie RPGenre bender designed and 
 
 ## Concept
 
-Folk Heroes hopes to capture some of the basebuilding fun of classic games like Stronghold or Age of Empires, while blending it with a bullet-hell RPG that will probably never stop expanding in scope and reach (please help me).
+Folk Heroes hopes to capture the placid joy of farming simulators like Harvest Moon and Stardew Valley, while maintaining the combative edge of action RPGs.
+The player will not only maintain a farm for aesthetics and income, their community depends on them for food--and defense...
 
-![FirstDemoGif](DemoImages/AIswarm.gif?raw=true "Just need to add some bullets, some traps, a few more monsters...")
-
-## Features
-#### Command Modes
-   Only by mastering both Combat and Command, will you become a worthy Folk Hero...
-
-![ConstructionGif](DemoImages/constructionDemo.gif?raw=true "The early iterations of construction")
-
-#### Building
-   Protect your Gatherers, and use their efforts to forge an empire...
-
-#### Allies and Enemies
-   Fear not, you are not in this fight alone...
-
-![DoggoGIF](DemoImages/DOGGOS.gif?raw=true "SIK'EM!")
-
-## Next Steps
-#### Abilities and Classes
-   Guns are only the beginning! Swords, spells, bombs, and much more is in the plan...
-
-#### Procedural Generation
-   Caves, dungeons, and other random spots inhabited by Goblins, Trolls, Ogres, and such... fantasy!
-
-#### More Art, A Story
-   Eventually this shit will have to have some kind of theme... right?
-
-![AIInteraction](DemoImages/AIresponses.gif?raw=true "Why would these slime monsters kill such tiny cuties?!?!")
+## Please Forgive Our Appearance
+With the revival of this project, a lot of the scope and target product has changed. I will be revamping this README as I continue to flesh out the goal (and make cool GIFs of features). Thanks for understanding!
 
 ## Changelog
 The changelog has been moved, and is now available [here.](changelog.md)
-
-## Trying the Demo Thusfar
-
-While I highly do not recommend you try to play the game in its current state (it's ugly and bad), if you insist...
-
-### Prerequisites
-
-You will need a copy of the [UnityEditor](https://unity3d.com/)
-
-	1) Download the repository
-	2) Open your UnityEditor
-		a) locate the Unity Projects directory (or create it)
-	3) Create a new Project
-		a) title it "Folk Heroes" to ensure compatability (maybe? I have no idea if that will matter)
-	4) Clone this Repo
-		a) paste the contents of the cloned directory into the "Folk Heroes" project folder, merging and replacing existing files
-	5) ??????
-	6) Profit!
 
 ## Authors
 
@@ -61,10 +19,9 @@ You will need a copy of the [UnityEditor](https://unity3d.com/)
 
 ## License
 
-This project is licensed under a Creative Commons BY-NC license. Currently the project is non-commercial, however that obviously may change going forward if things go well.
+This project is currently licensed under a Creative Commons BY-NC license.
 
 ## Acknowledgments
 
 * Tip of the hat to [Unity CodeMonkey](https://unitycodemonkey.com) for a useful utilities library
-* Respect to the creators of [TextMesh Pro](http://digitalnativestudios.com/textmeshpro/docs/)
-* Clear inspiration: [Enter the Gungeon](http://dodgeroll.com/)
+* Clear inspirations: [Enter the Gungeon](http://dodgeroll.com/), [Stardew Valley](https://www.stardewvalley.net/)

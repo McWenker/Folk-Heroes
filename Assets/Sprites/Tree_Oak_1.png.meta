@@ -1,0 +1,823 @@
+fileFormatVersion: 2
+guid: aa35ae2b54a8d1e46906253d79da79c4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8268317151922113452
+    second: Tree_Oak_1_0
+  - first:
+      213: 3878949502358836456
+    second: Tree_Oak_1_1
+  - first:
+      213: -8641863636450808609
+    second: Tree_Oak_1_2
+  - first:
+      213: -23461742169939747
+    second: Tree_Oak_1_3
+  - first:
+      213: 750349698387412269
+    second: Tree_Oak_1_4
+  - first:
+      213: 3902388315567524669
+    second: Tree_Oak_1_5
+  - first:
+      213: 4831652684473609207
+    second: Tree_Oak_1_6
+  - first:
+      213: -9101347693783114559
+    second: Tree_Oak_1_7
+  - first:
+      213: -4518483450849781434
+    second: Tree_Oak_1_8
+  - first:
+      213: 402326665623915669
+    second: Tree_Oak_1_9
+  - first:
+      213: 3604028323042704201
+    second: Tree_Oak_1_10
+  - first:
+      213: 4839937687933416549
+    second: Tree_Oak_1_11
+  - first:
+      213: 3667005471005044722
+    second: Tree_Oak_1_12
+  - first:
+      213: 163268904632856969
+    second: Tree_Oak_1_13
+  - first:
+      213: -921586740690890291
+    second: Tree_Oak_1_14
+  - first:
+      213: -544476470542149770
+    second: Tree_Oak_1_15
+  - first:
+      213: 3494718630260891366
+    second: Tree_Oak_1_16
+  - first:
+      213: -1198101838003324215
+    second: Tree_Oak_1_17
+  - first:
+      213: -235170198785100633
+    second: Tree_Oak_1_18
+  - first:
+      213: 6551627126863709025
+    second: Tree_Oak_1_19
+  - first:
+      213: -5431508985668090742
+    second: Tree_Oak_1_20
+  - first:
+      213: -3986576922158029713
+    second: Tree_Oak_1_21
+  - first:
+      213: 7664455902516581800
+    second: Tree_Oak_1_22
+  - first:
+      213: 1189244871889893461
+    second: Tree_Oak_1_23
+  - first:
+      213: 6671003426362622804
+    second: Tree_Oak_1_24
+  - first:
+      213: 6730127645585841141
+    second: Tree_Oak_1_25
+  - first:
+      213: 1950264957032798605
+    second: Tree_Oak_1_26
+  - first:
+      213: 1927428726719134711
+    second: Tree_Oak_1_27
+  - first:
+      213: 6123530363606000801
+    second: Tree_Oak_1_28
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.56, y: 0.04}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tree_Oak_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa50188b4b0e5c47abbfa873b17e1c0
+      internalID: 8268317151922113452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579a608cb545d9b4c91c5a737e56cf40
+      internalID: 3878949502358836456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d11f7b9a89cb874fa4c4e0149200a2f
+      internalID: -8641863636450808609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e3e1ad6f79f034da0f7adaef53247a
+      internalID: -23461742169939747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_4
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8aa439ae9b3b14cb2854990852da63
+      internalID: 750349698387412269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_5
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14fd6448aa3fa7f4fa51cd22bd5b7a50
+      internalID: 3902388315567524669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_6
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9afb9e17c37f42748a0bdb0390b0d0ac
+      internalID: 4831652684473609207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_7
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ee1be7cfd9da840bfa2478b0094bcb
+      internalID: -9101347693783114559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_8
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4676b437a05305e4d80077de9e91f007
+      internalID: -4518483450849781434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_9
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8130722498ed1447a6b905f2f34eacd
+      internalID: 402326665623915669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_10
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8437395ebf6d24da88d51f3434894e
+      internalID: 3604028323042704201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_11
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8f33a9e165e794eaf43f2c45b4d364
+      internalID: 4839937687933416549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_12
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29b0050fe1fee0479f3fb9f8523bd2e
+      internalID: 3667005471005044722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_13
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f296a768c9bb25a4aba5f70fc5f9a6d4
+      internalID: 163268904632856969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_14
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408a156a4cee3e148b95c13776108a2b
+      internalID: -921586740690890291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_15
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979b76c8139867c41bef3a8b28c60dab
+      internalID: -544476470542149770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_16
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea27f71a21d3be4bb2ff456f3762b50
+      internalID: 3494718630260891366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_17
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9fcf35d3356624d91494b97b7d7616
+      internalID: -1198101838003324215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_18
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168028aec99263742af695d979e6ce73
+      internalID: -235170198785100633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_19
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82758f1c0589f3b40b4767286b7350a3
+      internalID: 6551627126863709025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_20
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4565fee14dd032f4eae55df439840efb
+      internalID: -5431508985668090742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_21
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2596f8596885c45b7e1b95accc1cfa
+      internalID: -3986576922158029713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_22
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d9469221c41874894992ddbe1c90f7
+      internalID: 7664455902516581800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_23
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424ded83382faff40bb9bca8163659f5
+      internalID: 1189244871889893461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_24
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 318b9d3cd7129514eaa743c0c03d77fc
+      internalID: 6671003426362622804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_25
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af409c4ddb40a44dbef2b01cb0fa758
+      internalID: 6730127645585841141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_26
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4793b407e24774b40ad53a7cae456c7a
+      internalID: 1950264957032798605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_27
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c5419dcbc607c4e8ce2141f2e5ced5
+      internalID: 1927428726719134711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Oak_1_28
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.808915, y: 0.055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16198ff2fc71b044088fd0ddf1673c37
+      internalID: 6123530363606000801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

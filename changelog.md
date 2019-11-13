@@ -1,4 +1,11 @@
 # Changelog
+### 11/13/2019
+#### A Whole New World - Redux
+![Redux](DemoImages/MAINLOOP.gif?raw=true "quite a bit different looking")
+* After an 8-month hiatus I have returned to this project.
+* It has now taken on a wholly different identity, hoping now to capture a farming simulator atmosphere combined with action RPG
+* Consider this repo reactivated, Folk Heroes Redux!
+
 ### 3/3/2019
 #### A Whole New World
 ![FirstMap](DemoImages/FirstMapTest.gif?raw=true "don't get lost!")

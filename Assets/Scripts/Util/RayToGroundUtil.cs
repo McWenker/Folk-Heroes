@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static class RayToGroundUtil
@@ -7,7 +5,7 @@ public static class RayToGroundUtil
 	public static Vector3 FetchMousePointOnGround(float planeHeight)
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane hPlane = new Plane(Vector3.up, new Vector3(0, planeHeight, 0));
+        Plane hPlane = new Plane(Vector3.up, new Vector3(0, 0, planeHeight));
         float distance = 0;
 
         // if the ray hits the plane...
@@ -25,7 +23,7 @@ public static class RayToGroundUtil
         return Camera.main.ScreenPointToRay(Input.mousePosition);
     }
 
-    public static Selectable FetchFirstSelectableHit()
+    /*public static Selectable FetchFirstSelectableHit()
     {
         RaycastHit hitInfo;
         //Shoots a ray into the 3D world starting at our mouseposition
@@ -35,5 +33,5 @@ public static class RayToGroundUtil
             return hitInfo.collider.GetComponentInParent<Selectable>();
         }
         else return null;
-    }
+    }*/
 }

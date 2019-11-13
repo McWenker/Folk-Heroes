@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e4e4fc705376343a3e65b25d94f0e2, type: 3}
+  m_Name: Wet Dirt_Soil
+  m_EditorClassIdentifier: 
+  m_Sprites:
+  - {fileID: -3672044789891588187, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -3064986069646041454, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: 8300787480361218793, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -7495919419192253132, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -4829819034793726683, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -6682689505695266087, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -4248940125558314505, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -6958800867174064502, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -3798297300643219354, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: 3556578831253681002, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -1132779486278251976, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: 9007038941960272709, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: 2671972784841095476, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -105776808131906315, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  - {fileID: -7249108330782794049, guid: 02e5e9aff8ace324287a47ad67dfe4f1, type: 3}
+  friendlyTiles:
+  - {fileID: 11400000, guid: 60710b9be1ed49642a0ac9b860f9aca3, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  reversionTile: {fileID: 11400000, guid: 60710b9be1ed49642a0ac9b860f9aca3, type: 2}

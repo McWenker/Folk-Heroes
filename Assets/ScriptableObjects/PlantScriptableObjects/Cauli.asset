@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2361157e872881340914b3e5cccc0ed5, type: 3}
+  m_Name: Cauli
+  m_EditorClassIdentifier: 
+  name: Cauli
+  maxLife: 40
+  tiers:
+  - name: Seed
+    tierSprite: {fileID: -8489520011256558519, guid: eacdf88f82ca0674f99620fb185c42da,
+      type: 3}
+    deathSprite: {fileID: 0}
+    overflowStays: 0
+    overflowFactor: 0
+    growthThresh: 1
+    deathThresh: -1
+    stagnantDaysThresh: 5
+  - name: Sapling
+    tierSprite: {fileID: 8437489053447239430, guid: eacdf88f82ca0674f99620fb185c42da,
+      type: 3}
+    deathSprite: {fileID: 0}
+    overflowStays: 0
+    overflowFactor: 0
+    growthThresh: 1
+    deathThresh: -1
+    stagnantDaysThresh: 5
+  - name: Young
+    tierSprite: {fileID: 3746872173005877027, guid: eacdf88f82ca0674f99620fb185c42da,
+      type: 3}
+    deathSprite: {fileID: 0}
+    overflowStays: 0
+    overflowFactor: 0
+    growthThresh: 1
+    deathThresh: -1
+    stagnantDaysThresh: 5
+  - name: Starting Fruit
+    tierSprite: {fileID: 964055680579727038, guid: eacdf88f82ca0674f99620fb185c42da,
+      type: 3}
+    deathSprite: {fileID: 0}
+    overflowStays: 0
+    overflowFactor: 0
+    growthThresh: 1
+    deathThresh: -1
+    stagnantDaysThresh: 5
+  - name: Fruiting
+    tierSprite: {fileID: -8280963067373986038, guid: eacdf88f82ca0674f99620fb185c42da,
+      type: 3}
+    deathSprite: {fileID: 0}
+    overflowStays: 0
+    overflowFactor: 0
+    growthThresh: 1
+    deathThresh: -1
+    stagnantDaysThresh: 5
+  - name: Harvest
+    tierSprite: {fileID: -2481389934810902398, guid: eacdf88f82ca0674f99620fb185c42da,
+      type: 3}
+    deathSprite: {fileID: 0}
+    overflowStays: 0
+    overflowFactor: 0
+    growthThresh: 0
+    deathThresh: -1
+    stagnantDaysThresh: 20
+  wateredSoil: {fileID: 11400000, guid: a2bd0e64b5f29ca4d80cc09ccaaed808, type: 2}

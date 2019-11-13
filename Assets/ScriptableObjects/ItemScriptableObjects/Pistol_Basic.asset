@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db129aa558bede74292db2374e00822b, type: 3}
+  m_Name: Pistol_Basic
+  m_EditorClassIdentifier: 
+  itemName: Basic Iron Pistol
+  itemSprites:
+    inventorySprite: {fileID: 0}
+    leftHandSprite: {fileID: 0}
+    rightHandSprite: {fileID: 0}
+    flipSprites: 0
+  useTypes:
+  - name: Pop
+    uses:
+    - name: First Pop
+      leftHandSprites:
+      - {fileID: -231747144448901884, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -2988364615605376642, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: 1669361482722764005, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: 9008293562654419677, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -1726429621752937435, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -4923637884209175210, guid: 5306190683cd73349927708716030e94, type: 3}
+      rightHandSprites:
+      - {fileID: 6379079938903377574, guid: 00ee91c71eaf0134eb6e2ac7de624a50, type: 3}
+      - {fileID: 8236667729589634746, guid: 00ee91c71eaf0134eb6e2ac7de624a50, type: 3}
+      - {fileID: -5092133062569155455, guid: 00ee91c71eaf0134eb6e2ac7de624a50, type: 3}
+      - {fileID: -3595186629803298783, guid: 00ee91c71eaf0134eb6e2ac7de624a50, type: 3}
+      - {fileID: 635150839617812622, guid: 00ee91c71eaf0134eb6e2ac7de624a50, type: 3}
+      - {fileID: -6026117117917963147, guid: 00ee91c71eaf0134eb6e2ac7de624a50, type: 3}
+      keyFrame: 1
+      cooldown: 1
+      range: 3
+      effects:
+      - {fileID: 11400000, guid: 10c642bb84e4a4344a9aff72e9a94a56, type: 2}
+  maxRange: 5
+  resetTime: 1

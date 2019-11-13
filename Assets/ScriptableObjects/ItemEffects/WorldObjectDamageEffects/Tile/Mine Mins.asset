@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddeadb7ec320c042bb62c2fb134cb81, type: 3}
+  m_Name: Mine Mins
+  m_EditorClassIdentifier: 
+  objectDamage: 1
+  targets:
+  - targetType: 1
+    canTarget: 1
+  targetSolutions:
+  - {fileID: 11400000, guid: c3a72cc620948a643aec151d3276b1a7, type: 2}

@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db129aa558bede74292db2374e00822b, type: 3}
+  m_Name: Hammer_Basic
+  m_EditorClassIdentifier: 
+  itemName: Basic Iron Hammer
+  itemSprites:
+    inventorySprite: {fileID: 21300000, guid: fed5f7aaff4307141a5f3ba0fa93a38d, type: 3}
+    leftHandSprite: {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+    rightHandSprite: {fileID: 1918810734592978865, guid: 635c051c47b587c4e8b896186c40931e,
+      type: 3}
+    flipSprites: 0
+    wrapSwing: 0
+  useTypes:
+  - name: Rock Smash
+    uses:
+    - name: Rock Smach
+      leftHandSprites:
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      rightHandSprites:
+      - {fileID: -6026117117917963147, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: 5672519255562624048, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: 610447200702227176, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: -1798875614991075309, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: 3251893367541684173, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: 2000481836156953942, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: 5455688754017831607, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      keyFrame: 1
+      cooldown: 1
+      range: 1
+      effects:
+      - {fileID: 11400000, guid: 00f36cdb4c0188c42adae0659861485c, type: 2}
+      canBeHeld: 1
+      holdScaling:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      leftHandChargeSprites:
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      rightHandChargeSprites:
+      - {fileID: 1918810734592978865, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: 6379079938903377574, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: 8236667729589634746, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: -5092133062569155455, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: -3595186629803298783, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      - {fileID: 635150839617812622, guid: 635c051c47b587c4e8b896186c40931e, type: 3}
+      minHoldTime: 0
+      maxHoldTime: 1.3
+      notEnoughHold:
+        name: 
+        leftHandSprites: []
+        rightHandSprites: []
+        keyFrame: 0
+        cooldown: 0
+        range: 0
+        effects: []
+  maxRange: 0.8
+  resetTime: 1

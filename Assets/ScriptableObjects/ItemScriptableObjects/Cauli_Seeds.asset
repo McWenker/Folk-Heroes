@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db129aa558bede74292db2374e00822b, type: 3}
+  m_Name: Cauli_Seeds
+  m_EditorClassIdentifier: 
+  itemName: Cauli Seeds
+  itemSprites:
+    inventorySprite: {fileID: 21300000, guid: b85125179f7e311428c9b8f07f16930a, type: 3}
+    leftHandSprite: {fileID: -6724383649986841061, guid: 6263176afc80a304c935b68750b06c40,
+      type: 3}
+    rightHandSprite: {fileID: 1740866647190618355, guid: 4d20ffaf0433fb34994db09c4c2e3a67,
+      type: 3}
+    flipSprites: 0
+  useTypes:
+  - name: Plant
+    uses:
+    - name: Plant Cauli
+      leftHandSprites:
+      - {fileID: -6724383649986841061, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -6724383649986841061, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -6724383649986841061, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -6724383649986841061, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -6724383649986841061, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -6724383649986841061, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      - {fileID: -6724383649986841061, guid: 6263176afc80a304c935b68750b06c40, type: 3}
+      rightHandSprites:
+      - {fileID: 3274092444602612351, guid: 5ddba0722239a2c4c8a1059e4adf34b0, type: 3}
+      - {fileID: 7638794539993037352, guid: 5ddba0722239a2c4c8a1059e4adf34b0, type: 3}
+      - {fileID: -290479857042332495, guid: 5ddba0722239a2c4c8a1059e4adf34b0, type: 3}
+      - {fileID: -6872778531435616349, guid: 5ddba0722239a2c4c8a1059e4adf34b0, type: 3}
+      - {fileID: 6072809341984687671, guid: 5ddba0722239a2c4c8a1059e4adf34b0, type: 3}
+      - {fileID: 4601119742940831989, guid: 5ddba0722239a2c4c8a1059e4adf34b0, type: 3}
+      - {fileID: 7021646609964888065, guid: 5ddba0722239a2c4c8a1059e4adf34b0, type: 3}
+      keyFrame: 4
+      cooldown: 1
+      range: 1
+      effects:
+      - {fileID: 11400000, guid: 20cd09a4cd3670b4d88862d2c162283a, type: 2}
+  maxRange: 1
+  resetTime: 1

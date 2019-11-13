@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddb3a2cea149e84aa61e9fb64619c82, type: 3}
+  m_Name: Untill Soil to Dirt
+  m_EditorClassIdentifier: 
+  tilemapLayer: 0
+  tilesToChange:
+  - {fileID: 11400000, guid: 60710b9be1ed49642a0ac9b860f9aca3, type: 2}
+  changedTiles:
+  - {fileID: 11400000, guid: a217344100e457d4884f65243b404295, type: 2}
+  targetSolutions:
+  - {fileID: 11400000, guid: c3a72cc620948a643aec151d3276b1a7, type: 2}

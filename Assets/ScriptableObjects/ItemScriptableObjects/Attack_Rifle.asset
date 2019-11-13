@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db129aa558bede74292db2374e00822b, type: 3}
+  m_Name: Attack_Rifle
+  m_EditorClassIdentifier: 
+  itemName: Basic Attack Rifle
+  itemSprites:
+    inventorySprite: {fileID: 21300000, guid: 6b04aa59cddd4f34aa6053d1941d88d0, type: 3}
+    leftHandSprite: {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+    rightHandSprite: {fileID: 4828590128869792936, guid: fa1b0a4ae050e924a84ede595510aef4,
+      type: 3}
+    flipSprites: 0
+    wrapSwing: 0
+  useTypes:
+  - name: Single Shot
+    uses:
+    - name: Single
+      leftHandSprites:
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      rightHandSprites:
+      - {fileID: -6134506365276736846, guid: fa1b0a4ae050e924a84ede595510aef4, type: 3}
+      - {fileID: -6091477622963450976, guid: fa1b0a4ae050e924a84ede595510aef4, type: 3}
+      - {fileID: 7324002244509448077, guid: fa1b0a4ae050e924a84ede595510aef4, type: 3}
+      - {fileID: -2740717365972394506, guid: fa1b0a4ae050e924a84ede595510aef4, type: 3}
+      - {fileID: 6071917312919986272, guid: fa1b0a4ae050e924a84ede595510aef4, type: 3}
+      keyFrame: 1
+      cooldown: 0.2
+      range: 5
+      holds: []
+      effects:
+      - {fileID: 11400000, guid: 10c642bb84e4a4344a9aff72e9a94a56, type: 2}
+  maxRange: 5
+  resetTime: 1

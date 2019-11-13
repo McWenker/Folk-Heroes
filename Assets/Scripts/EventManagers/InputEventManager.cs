@@ -1,22 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InputEventManager : MonoBehaviour
 {
 	public delegate void IdleEventHandler(Object sender);
 	public delegate void MoveInputEventHandler(Object sender, Vector3 moveDir);
-	public delegate void MouseInputEventHandler(Object sender, int buttonFired);
+	public delegate void NumericOrMouseInputEventHandler(Object sender, int buttonFired);
 	public delegate void ControlStateInputEventHandler(Object sender);
 	public delegate void AbilityInputEventHandler(Object sender, string ability);
+	public delegate void MouseScrollInputEventHandler(Object sender, float direction);
 
 	public static event IdleEventHandler OnIdle;
     public static event MoveInputEventHandler OnMove;
-	public static event MouseInputEventHandler OnMouseDown;
-	public static event MouseInputEventHandler OnMouseUp;
-    public static event MouseInputEventHandler OnFire;
+	public static event NumericOrMouseInputEventHandler OnMouseDown;
+    public static event NumericOrMouseInputEventHandler OnMouseHold;
+	public static event NumericOrMouseInputEventHandler OnMouseUp;
 	public static event ControlStateInputEventHandler OnControlStateChange;
     public static event AbilityInputEventHandler OnAbilityUse;
+	public static event NumericOrMouseInputEventHandler OnActionBarPress;
+	public static event MouseScrollInputEventHandler OnScrollWheel;
 
 	public static void Move(Object sender, Vector3 moveDir)
     {
@@ -29,14 +30,19 @@ public class InputEventManager : MonoBehaviour
 		if(OnMouseDown != null) OnMouseDown(sender, buttonFired);
 	}
 
+	public static void MouseHold(Object sender, int buttonFired)
+	{
+		if(OnMouseHold != null) OnMouseHold(sender, buttonFired);
+	}
+
 	public static void MouseUp(Object sender, int buttonFired)
 	{
 		if(OnMouseUp != null) OnMouseUp(sender, buttonFired);
-	}
+	}	
 
-	public static void Fire(Object sender, int buttonFired)
+	public static void MouseScroll(Object sender, float direction)
 	{
-		if(OnFire != null) OnFire(sender, buttonFired);
+		if(OnScrollWheel != null) OnScrollWheel(sender, direction);
 	}
 
 	public static void ControlStateChange(Object sender)
@@ -47,5 +53,10 @@ public class InputEventManager : MonoBehaviour
 	public static void AbilityUse(Object sender, string ability)
 	{
 		if(OnAbilityUse != null) OnAbilityUse(sender, ability);
+	}
+
+	public static void ActionBarPress(Object sender, int button)
+	{
+		if(OnActionBarPress != null) OnActionBarPress(sender, button);
 	}
 }

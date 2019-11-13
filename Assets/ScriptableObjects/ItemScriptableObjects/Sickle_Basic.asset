@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db129aa558bede74292db2374e00822b, type: 3}
+  m_Name: Sickle_Basic
+  m_EditorClassIdentifier: 
+  itemName: Basic Iron Sickle
+  itemSprites:
+    inventorySprite: {fileID: 21300000, guid: 68635233f151c7d49bd88b4ca48b67c2, type: 3}
+    leftHandSprite: {fileID: 3468275622653009722, guid: 5306190683cd73349927708716030e94,
+      type: 3}
+    rightHandSprite: {fileID: 1918810734592978865, guid: 1194f06d090eb9d45b5c416c52abafc0,
+      type: 3}
+    flipSprites: 0
+  useTypes:
+  - name: Cut Flora
+    uses:
+    - name: Swing Sickle
+      leftHandSprites:
+      - {fileID: -231747144448901884, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -2988364615605376642, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: 1669361482722764005, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: 9008293562654419677, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -1726429621752937435, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -4923637884209175210, guid: 5306190683cd73349927708716030e94, type: 3}
+      rightHandSprites:
+      - {fileID: 6379079938903377574, guid: 1194f06d090eb9d45b5c416c52abafc0, type: 3}
+      - {fileID: 8236667729589634746, guid: 1194f06d090eb9d45b5c416c52abafc0, type: 3}
+      - {fileID: -5092133062569155455, guid: 1194f06d090eb9d45b5c416c52abafc0, type: 3}
+      - {fileID: -3595186629803298783, guid: 1194f06d090eb9d45b5c416c52abafc0, type: 3}
+      - {fileID: 635150839617812622, guid: 1194f06d090eb9d45b5c416c52abafc0, type: 3}
+      - {fileID: -6026117117917963147, guid: 1194f06d090eb9d45b5c416c52abafc0, type: 3}
+      keyFrame: 1
+      cooldown: 1
+      range: 1
+      effects:
+      - {fileID: 11400000, guid: 6661c987357391f47870cd883abacad1, type: 2}
+  maxRange: 1
+  resetTime: 1

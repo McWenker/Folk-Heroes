@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db129aa558bede74292db2374e00822b, type: 3}
+  m_Name: Rokkit_Launcher
+  m_EditorClassIdentifier: 
+  itemName: Rokkit Launcher
+  itemSprites:
+    inventorySprite: {fileID: 21300000, guid: fd1e3dbec8c5b0244b842ad7f83d300e, type: 3}
+    leftHandSprite: {fileID: 3468275622653009722, guid: 5306190683cd73349927708716030e94,
+      type: 3}
+    rightHandSprite: {fileID: -5349763735600760126, guid: c5a49424ded4e694f9b10b1b4bd16b46,
+      type: 3}
+    flipSprites: 1
+    wrapSwing: 0
+  useTypes:
+  - name: ROKKIT
+    uses:
+    - name: Rokkit!
+      leftHandSprites:
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      rightHandSprites:
+      - {fileID: 348595256662600341, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      - {fileID: 5923986098947558850, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      - {fileID: -6117447952609456798, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      - {fileID: 6301236216421003489, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      - {fileID: 5822952591821285533, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      keyFrame: 1
+      cooldown: 1
+      range: 10
+      effects:
+      - {fileID: 11400000, guid: c75a1d1e3362a894782aaf394cc64f48, type: 2}
+      canBeHeld: 1
+      holdScaling:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      leftHandChargeSprites:
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      - {fileID: 21300000, guid: 827ae06833f93724d803560df8dcfe7f, type: 3}
+      rightHandChargeSprites:
+      - {fileID: -5349763735600760126, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      - {fileID: -4047900416592386771, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      - {fileID: -5029020343694035572, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      - {fileID: -6914968258349935336, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      - {fileID: 1505456801177186523, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      - {fileID: 9214366114500502302, guid: c5a49424ded4e694f9b10b1b4bd16b46, type: 3}
+      minHoldTime: 0.3
+      maxHoldTime: 1.5
+      notEnoughHold:
+        name: 
+        leftHandSprites: []
+        rightHandSprites: []
+        keyFrame: 0
+        cooldown: 0
+        range: 0
+        effects: []
+  maxRange: 10
+  resetTime: 1

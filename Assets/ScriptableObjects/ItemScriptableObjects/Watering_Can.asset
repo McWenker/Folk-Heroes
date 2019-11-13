@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db129aa558bede74292db2374e00822b, type: 3}
+  m_Name: Watering_Can
+  m_EditorClassIdentifier: 
+  itemName: Watering Can
+  itemSprites:
+    inventorySprite: {fileID: 21300000, guid: 7565b381de34c4745a01f8f9159dc866, type: 3}
+    leftHandSprite: {fileID: 3468275622653009722, guid: 5306190683cd73349927708716030e94,
+      type: 3}
+    rightHandSprite: {fileID: 6379079938903377574, guid: bb97c63f1dcc89f4e87b25c2bc235819,
+      type: 3}
+    flipSprites: 1
+    wrapSwing: 0
+  useTypes:
+  - name: Water Soil
+    uses:
+    - name: Water
+      leftHandSprites:
+      - {fileID: 3468275622653009722, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -231747144448901884, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -2988364615605376642, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: 1669361482722764005, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: 9008293562654419677, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -1726429621752937435, guid: 5306190683cd73349927708716030e94, type: 3}
+      - {fileID: -4923637884209175210, guid: 5306190683cd73349927708716030e94, type: 3}
+      rightHandSprites:
+      - {fileID: 6379079938903377574, guid: bb97c63f1dcc89f4e87b25c2bc235819, type: 3}
+      - {fileID: 8236667729589634746, guid: bb97c63f1dcc89f4e87b25c2bc235819, type: 3}
+      - {fileID: -5092133062569155455, guid: bb97c63f1dcc89f4e87b25c2bc235819, type: 3}
+      - {fileID: -3595186629803298783, guid: bb97c63f1dcc89f4e87b25c2bc235819, type: 3}
+      - {fileID: 635150839617812622, guid: bb97c63f1dcc89f4e87b25c2bc235819, type: 3}
+      - {fileID: -6026117117917963147, guid: bb97c63f1dcc89f4e87b25c2bc235819, type: 3}
+      - {fileID: 5672519255562624048, guid: bb97c63f1dcc89f4e87b25c2bc235819, type: 3}
+      keyFrame: 5
+      cooldown: 1
+      range: 1
+      holds: []
+      effects:
+      - {fileID: 11400000, guid: d4b1bf83ed90b23439368c84d9f67d2c, type: 2}
+      - {fileID: 11400000, guid: 6fa6b1a424723dd4db9e992c4b7a5c92, type: 2}
+  maxRange: 1
+  resetTime: 1

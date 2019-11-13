@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1461e07516b3e46a9fcebc29302c49, type: 3}
+  m_Name: Pistol Slag
+  m_EditorClassIdentifier: 
+  speed: 12
+  chargeGraph:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  chargeMultiplier: 0
+  sway: 0.02
+  maxFlightDuration: 5
+  defaultSprites:
+  - {fileID: 3241412723919822131, guid: d6083c1e380f3024a9fd0afb060b1414, type: 3}
+  - {fileID: -4250057321174560981, guid: d6083c1e380f3024a9fd0afb060b1414, type: 3}
+  - {fileID: -4379115612135840403, guid: d6083c1e380f3024a9fd0afb060b1414, type: 3}
+  - {fileID: 6582871421454197940, guid: d6083c1e380f3024a9fd0afb060b1414, type: 3}
+  - {fileID: -3084224169954761650, guid: d6083c1e380f3024a9fd0afb060b1414, type: 3}
+  - {fileID: -9049320123308560155, guid: d6083c1e380f3024a9fd0afb060b1414, type: 3}
+  - {fileID: 4124071478615678888, guid: d6083c1e380f3024a9fd0afb060b1414, type: 3}
+  - {fileID: -4788480722114770731, guid: d6083c1e380f3024a9fd0afb060b1414, type: 3}
+  dudSprites:
+  - {fileID: 3241412723919822131, guid: d6083c1e380f3024a9fd0afb060b1414, type: 3}
+  effects:
+  - {fileID: 11400000, guid: 274def3eaecf8ae409f9ce5006e2290a, type: 2}
+  whoToIgnore:
+    serializedVersion: 2
+    m_Bits: 10496
