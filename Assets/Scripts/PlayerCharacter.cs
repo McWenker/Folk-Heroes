@@ -29,7 +29,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         //demo
         playerCharacterAnimator = GetComponent<PlayerCharacter_Animator>();
-        InputEventManager.OnMove += TryMove;
+        InputEventManager.OnMove += Movement;
         InputEventManager.OnAbilityUse += HandleDash;
         AnimationEventManager.OnItemChargeStart += Halt;
         AnimationEventManager.OnItemUseCompletion += UnHalt;
@@ -77,13 +77,7 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-    private bool CanMove(Vector3 dir, float distance)
-    {
-        Debug.DrawRay(rayPoint.position, dir*distance, Color.red, 0.8f);
-        return !Physics.Raycast(rayPoint.position, dir, distance, whoToCollide);
-    }
-
-    private void TryMove(Object sender, Vector3 baseMoveDir)
+    private void Movement(Object sender, Vector3 baseMoveDir)
     {
         if(!moveHalted)
         {
@@ -132,6 +126,12 @@ public class PlayerCharacter : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private bool CanMove(Vector3 dir, float distance)
+    {
+        Debug.DrawRay(rayPoint.position, dir*distance, Color.red, 0.8f);
+        return !Physics.Raycast(rayPoint.position, dir, distance, whoToCollide);
     }
 
     private IEnumerator DashCooldown()

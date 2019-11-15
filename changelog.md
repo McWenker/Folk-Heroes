@@ -1,4 +1,10 @@
 # Changelog
+### 11/14/2019
+#### StateMachine, Menu
+![Redux](DemoImages/menufunc.gif?raw=true "had a lot of fun with the sword animation")
+* Added in some very rudimentary StateMachine functionality
+* Tested ^ out with a new menu and some scene transitions
+
 ### 11/13/2019
 #### A Whole New World - Redux
 ![Redux](DemoImages/MAINLOOP.gif?raw=true "quite a bit different looking")

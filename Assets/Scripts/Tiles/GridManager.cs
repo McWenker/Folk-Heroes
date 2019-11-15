@@ -33,6 +33,7 @@ public class GridManager : MonoBehaviour
 					}					
 				}
 			}
+			UpdateStaticGrid();
 		}		
 	}
 
@@ -51,6 +52,7 @@ public class GridManager : MonoBehaviour
 		GetWorldTiles();
 		TimeEventManager.OnDayEnd += RevertTiles;
 		GridEventManager.OnWorldObjectRemove += RemoveObjectInCell;
+		UpdateStaticGrid();
 	}
 
 	// Use this for initialization
@@ -117,6 +119,11 @@ public class GridManager : MonoBehaviour
         }
         return null;
     }
+
+	private void UpdateStaticGrid()
+	{
+		StaticGridManager.Tiles = tiles;
+	}
 
 	protected void OnDrawGizmosSelected()
     {

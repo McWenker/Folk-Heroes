@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridEventManager : MonoBehaviour
+public class GridEventManager
 {
     public delegate void GridChangeEvent(Object sender, Vector3Int gridLoc);
     public static event GridChangeEvent OnWorldObjectRemove;
