@@ -3,9 +3,10 @@
 public class PlantObject : WorldObject
 {
     PlantPoints points;
-    [SerializeField] PlantScriptableObject data;
     PlantTiers currentTier;
     PlantObject_Animator animator;
+
+    PlantScriptableObject castData;
 
     int daysAlive;
     int daysStagnant;
@@ -16,7 +17,7 @@ public class PlantObject : WorldObject
 
     public override void TileData(WorldTile thisTile)
     {
-        if(thisTile.TileBase == data.wateredSoil)
+        if(thisTile.TileBase == castData.wateredSoil)
             Water(1);
     }
 
@@ -26,14 +27,16 @@ public class PlantObject : WorldObject
         Debug.Log("Water level: " + waterLevel, gameObject);
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         animator = GetComponent<PlantObject_Animator>();
         points = GetComponent<PlantPoints>();
         if(points == null)
             points = gameObject.AddComponent<PlantPoints>();
+        castData = (PlantScriptableObject)data;
         TimeEventManager.OnDayEnd += DayChange;
-        currentTier = data.tiers[tierIndex];
+        currentTier = castData.tiers[tierIndex];
         //subscribe DayChange to day-change event
     }
 
@@ -55,11 +58,11 @@ public class PlantObject : WorldObject
                     points.Set(transform, extra/currentTier.overflowFactor);
                 else
                     points.Set(transform, 0);
-                if(tierIndex+1 < data.tiers.Length)
+                if(tierIndex+1 < castData.tiers.Length)
                 {
                     ++tierIndex;
-                    currentTier = data.tiers[tierIndex];
-                    animator.SpriteChange(data.tiers[tierIndex].tierSprite);
+                    currentTier = castData.tiers[tierIndex];
+                    animator.SpriteChange(castData.tiers[tierIndex].tierSprite);
                     daysStagnant = 0;
                 }                
             }
@@ -67,7 +70,7 @@ public class PlantObject : WorldObject
             {
                 points.Set(transform, 0);
                 points.LockOrUnlock(transform, true);
-                animator.SpriteChange(data.tiers[tierIndex].deathSprite);
+                animator.SpriteChange(castData.tiers[tierIndex].deathSprite);
             }
             else
                 ++daysStagnant;
@@ -79,7 +82,7 @@ public class PlantObject : WorldObject
 
     private bool IsPlantGrowth(out int overKill)
     {
-        if(points.Value >= data.tiers[tierIndex].growthThresh)
+        if(points.Value >= castData.tiers[tierIndex].growthThresh)
         {
             overKill = points.Value - currentTier.growthThresh;
             return true;
@@ -90,7 +93,7 @@ public class PlantObject : WorldObject
 
     private bool IsPlantDeath()
     {
-        if(points.Value <= data.tiers[tierIndex].deathThresh || daysStagnant >= data.tiers[tierIndex].stagnantDaysThresh || daysAlive >= data.maxLife)
+        if(points.Value <= castData.tiers[tierIndex].deathThresh || daysStagnant >= castData.tiers[tierIndex].stagnantDaysThresh || daysAlive >= castData.maxLife)
         {
             return true;
         }
@@ -99,6 +102,6 @@ public class PlantObject : WorldObject
 
     private void UpdatePlant()
     {
-        currentTier = data.tiers[tierIndex];
+        currentTier = castData.tiers[tierIndex];
     }
 }

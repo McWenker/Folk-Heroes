@@ -10,9 +10,9 @@ public class DamageEffect : Effect
 
     public override void DoEffect(Vector3 effectLocation, LayerMask whatIsTarget, float chargePercent)
     {
-        Debug.Log(chargePercent + ", " + (int)(chargeGraph.Evaluate(chargePercent)*chargeMultiplier));
         int damage = baseDamage;
-        damage += (int)(chargeGraph.Evaluate(chargePercent)*chargeMultiplier);
+        if(chargePercent > 0)
+            damage += (int)(chargeGraph.Evaluate(chargePercent)*chargeMultiplier);
         
         for(int i = 0; i < targetSolutions.Length; ++i)
         {

@@ -8,4 +8,6 @@ public abstract class EffectTargetingSolution<T> : ScriptableObject
     public abstract List<T> GetTargets(Vector3 startLocation);
 
     public abstract List<T> GetTargets(Vector3 startLocation, LayerMask whatToHit);
+
+    public abstract List<T> GetTargets(Vector3 startLocation, LayerMask whatToHit, int maxTargets);
 }

@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dddeadb7ec320c042bb62c2fb134cb81, type: 3}
-  m_Name: Timber Chop
+  m_Script: {fileID: 11500000, guid: c86d95e9917a13f47a7dc45ea62cbd14, type: 3}
+  m_Name: DEMO_Tree_Oak
   m_EditorClassIdentifier: 
-  objectDamage: 1
-  targets:
+  hasPostDeath: 1
+  targetability:
   - targetType: 0
     canTarget: 1
-  targetSolutions:
-  - {fileID: 11400000, guid: c3a72cc620948a643aec151d3276b1a7, type: 2}
+  itemProducts: []

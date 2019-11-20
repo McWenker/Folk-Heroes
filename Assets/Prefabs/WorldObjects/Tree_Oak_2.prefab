@@ -48,10 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e127c877faf404686a6933e98146ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasPostDeath: 1
-  targetability:
-  - targetType: 0
-    canTarget: 1
+  data: {fileID: 11400000, guid: e70d01f3d9d3d8747875d744ee880fd9, type: 2}
 --- !u!114 &6036443738275203172
 MonoBehaviour:
   m_ObjectHideFlags: 0

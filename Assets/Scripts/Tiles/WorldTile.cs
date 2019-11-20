@@ -12,5 +12,7 @@ public class WorldTile {
 
     public string Name { get; set; }
 
+    public WorldObjectScriptableObject WorldObjectData { get; set; }
+
     public WorldObject WorldObject { get; set; }
 }

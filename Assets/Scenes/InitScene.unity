@@ -150,6 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3007b7d3cee3394eb0dfa5bf8cf960d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastDestinationName: init
+  playerPrefab: {fileID: 4565215374523750201, guid: 3d48b047083ec774782868fa624c10ef,
+    type: 3}
+  playControllerPrefab: {fileID: 3517353378932104613, guid: 261801549d63c27458508c1a9b3d3523,
+    type: 3}
+  gameplayUIPrefab: {fileID: 7726605500347015147, guid: d242efda6f81d0e49880b6e045812896,
+    type: 3}
 --- !u!4 &1114640957
 Transform:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class Tile_RadialTargetingSolution : Tile_TargetingSolution
         Vector3Int startTileLoc = Vector3Int.FloorToInt(startLocation);
         startTileLoc = new Vector3Int(startTileLoc.x, 0, startTileLoc.z);
 
-        var tiles = GridManager.instance.tiles;
+        var tiles = GridManager.instance.groundTiles;
 
         // based on effect, this may target the base tiles, the tile's WorldObject, enemies, etc!      
         Vector3Int tileLoc;
@@ -45,6 +45,33 @@ public class Tile_RadialTargetingSolution : Tile_TargetingSolution
                 {
                     retList.Remove(w);
                 }
+            }
+        }
+        return retList;
+    }
+
+    public override List<WorldTile> GetTargets(Vector3 startLocation, LayerMask whatToHit, int maxTargets)
+    {
+        int counter = 0;
+        List<WorldTile> retList = GetTargets(startLocation);
+        foreach(WorldTile w in GetTargets(startLocation))
+        {
+            if(w.WorldObjectData == null)
+                retList.Remove(w);
+            else
+            {
+                if (whatToHit != (whatToHit | (1 << w.WorldObject.gameObject.layer)))
+                {
+                    retList.Remove(w);
+                }
+            }
+        }
+        foreach(WorldTile w in retList)
+        {
+            ++counter;
+            if(counter > maxTargets)
+            {
+                retList.Remove(w);
             }
         }
         return retList;

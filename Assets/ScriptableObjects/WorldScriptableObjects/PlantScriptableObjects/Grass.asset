@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2361157e872881340914b3e5cccc0ed5, type: 3}
+  m_Name: Grass
+  m_EditorClassIdentifier: 
+  hasPostDeath: 0
+  targetability:
+  - targetType: 2
+    canTarget: 1
+  itemProducts: []
+  maxLife: 0
+  tiers:
+  - name: Full Grass
+    tierSprite: {fileID: -1347532211411968617, guid: c1374e6edc6a3d146b7628cdea7ab900,
+      type: 3}
+    deathSprite: {fileID: 0}
+    overflowStays: 0
+    overflowFactor: 0
+    growthThresh: 0
+    deathThresh: -10
+    stagnantDaysThresh: 50
+  wateredSoil: {fileID: 0}

@@ -2,9 +2,8 @@
 using UnityEngine.Tilemaps;
 using UnityEditor;
 
-public class PlantScriptableObject : ScriptableObject
+public class PlantScriptableObject : WorldObjectScriptableObject
 {
-    public new string name;
     public int maxLife;
     public PlantTiers[] tiers;
 

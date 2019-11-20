@@ -2,24 +2,24 @@
 
 public class WorldObject_Animator : MonoBehaviour
 {
-    SpriteAnimator anim;
-    [SerializeField] SpriteRenderer shadow;
-    [SerializeField] Sprite[] damageFrameArray;
-    [SerializeField] Sprite[] deathFrameArray;
-    [SerializeField] int shadowTrigger;
-    [SerializeField] Sprite postDeathSprite;
-    [SerializeField] Sprite[] postDeathFrameArray;
-    [SerializeField] float frameRate;
-    private bool isDeathAnim;
+    protected SpriteAnimator anim;
+    [SerializeField] protected SpriteRenderer shadow;
+    [SerializeField] protected Sprite[] damageFrameArray;
+    [SerializeField] protected Sprite[] deathFrameArray;
+    [SerializeField] protected int shadowTrigger;
+    [SerializeField] protected Sprite postDeathSprite;
+    [SerializeField] protected Sprite[] postDeathFrameArray;
+    [SerializeField] protected float frameRate;
+    protected bool isDeathAnim;
 
-    private void Awake()
+    protected void Awake()
     {
         anim = GetComponentInChildren<SpriteAnimator>();
         AnimationEventManager.OnDamageTaken += Damage;
         AnimationEventManager.OnDeath += Death;
     }
 
-    private void Damage(Object sender)
+    protected void Damage(Object sender)
     {
         if(this != null && sender.GetType() == typeof(Health) && sender == GetComponent<Health>() && !isDeathAnim)
         {
@@ -27,7 +27,7 @@ public class WorldObject_Animator : MonoBehaviour
         }
     }
 
-    private void Death(Object sender)
+    protected void Death(Object sender)
     {
         if(this != null && sender.GetType() == typeof(Health) && sender == GetComponent<Health>())
         {
@@ -56,7 +56,7 @@ public class WorldObject_Animator : MonoBehaviour
         }        
     }
 
-    private void DeathAnimComplete()
+    protected void DeathAnimComplete()
     {
         if(this != null && postDeathSprite != null)
             anim.SetSprite(this.transform, postDeathSprite);

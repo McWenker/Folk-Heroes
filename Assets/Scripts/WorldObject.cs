@@ -2,11 +2,13 @@
 
 public class WorldObject : MonoBehaviour
 {
-    [SerializeField] Item[] itemProducts;
-    [SerializeField] private bool hasPostDeath;
+    [SerializeField] protected WorldObjectScriptableObject data;
     private bool isPostDeath;
-    [SerializeField] private TileEffectTargetStruct[] targetability;
 
+    public WorldObjectScriptableObject Data
+    {
+        get { return data; }
+    }
     public bool IsPostDeath
     {
         get { return isPostDeath; }
@@ -14,7 +16,7 @@ public class WorldObject : MonoBehaviour
 
     public TileEffectTargetStruct[] Targetability
     {
-        get { return targetability; }
+        get { return data.targetability; }
     }
 
     // called when an worldobject is spawned in a tile, to give the worldobject information
@@ -24,18 +26,20 @@ public class WorldObject : MonoBehaviour
 
     }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         AnimationEventManager.OnDeathAnimComplete += DeathAnimationComplete;
+        
     }
 
     private void DeathAnimationComplete(Object sender)
     {
         if(this != null && sender == gameObject)
         {
-            if(!hasPostDeath || isPostDeath)
+            if(!data.hasPostDeath || isPostDeath)
             {
-                GridEventManager.WorldObjectRemove(this, Vector3Int.FloorToInt(transform.position));
+                Vector3 ensureZero = new Vector3(transform.position.x, 0, transform.position.z);// sigh, UnityEditor
+                GridEventManager.WorldObjectRemove(this, Vector3Int.FloorToInt(ensureZero));
                 Destroy(gameObject);
                 return;
             }

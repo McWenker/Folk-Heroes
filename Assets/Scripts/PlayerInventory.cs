@@ -13,12 +13,18 @@ public class PlayerInventory : MonoBehaviour
     private bool isInventoryFull;
     private Item activeItem;
     [SerializeField] Item emptyItem;
+    public Item EmptyItem
+    {
+        get { return emptyItem; }
+    }
+
     private Item[] bagList;
     [SerializeField] private Item[] testActionBarList;
     public bool IsInventoryFull { get { return isInventoryFull; }}
 
     void Awake()
     {
+        actionBars = FindObjectOfType<ActionBarController>();
         bagList = new Item[bagSize];
         InputEventManager.OnActionBarPress += SwapActiveAction;
         InputEventManager.OnScrollWheel += ScrollInventory;
@@ -40,7 +46,6 @@ public class PlayerInventory : MonoBehaviour
 
     void ScrollInventory(Object sender, float direction)
     {
-        Debug.Log(direction);
         int newIndex = activeActionIndex + (direction > 0f ? 1 : -1);
         if(newIndex < 0)
         {

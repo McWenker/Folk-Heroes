@@ -26,8 +26,7 @@ public class Resource : MonoBehaviour
     {
         if(canChange)
             currentValue = (int)Mathf.Clamp(currentValue - valueToDecrease, minValue, maxValue);
-    }
-    
+    }    
 
     protected virtual void Regenerate()
     {

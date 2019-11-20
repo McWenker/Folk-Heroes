@@ -82,6 +82,7 @@ public class PlayerHands : MonoBehaviour
         InventoryEventManager.OnItemSwap += ItemSwap;
         AnimationEventManager.OnItemUseStart += Lock;
         AnimationEventManager.OnItemUseCompletion += UnLock;
+        equippedItem = GetComponent<PlayerInventory>().EmptyItem;
         animator = GetComponent<PlayerHands_Animator>();        
     }
 

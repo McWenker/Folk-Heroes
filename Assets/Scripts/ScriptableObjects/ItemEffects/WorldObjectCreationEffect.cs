@@ -16,10 +16,11 @@ public class WorldObjectCreationEffect : Effect
             {
                 if(legalTiles.Contains(w.TileBase) || legalTiles.Length == 0)
                 {
-                    if(w.WorldObject == null)
+                    if(w.WorldObjectData == null)
                     {
                         w.WorldObject = Instantiate(objectToCreate.gameObject, w.WorldLocation + (GridManager.TileOffset), Quaternion.identity).GetComponent<WorldObject>();
-                        w.WorldObject.gameObject.transform.SetParent(GridManager.instance.objectTilemap.gameObject.transform);
+                        w.WorldObjectData = w.WorldObject.Data;
+                        w.WorldObject.transform.SetParent(GridManager.instance.objectTilemap.gameObject.transform);
                         w.WorldObject.TileData(w);
                     }
                 }                

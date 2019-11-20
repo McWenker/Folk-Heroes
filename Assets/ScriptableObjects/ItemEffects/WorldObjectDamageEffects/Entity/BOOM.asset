@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54cec7df5e8e7445982f1ac859423e8, type: 3}
   m_Name: BOOM
   m_EditorClassIdentifier: 
+  chargeGraph:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  chargeMultiplier: 0
+  maxTargets: 15
   objectDamage: 5
   targets:
   - targetType: 0

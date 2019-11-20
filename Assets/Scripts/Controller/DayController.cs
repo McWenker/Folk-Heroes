@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DayController : MonoBehaviour
 {
-    [SerializeField] int startHour;
-    [SerializeField] float howLongIsGameMinuteInSeconds;
+    [SerializeField] int startHour = 6;
+    [SerializeField] float howLongIsGameMinuteInSeconds = 1f;
     [SerializeField] ClockendarController clock;
     [SerializeField] SunController sun;
 
@@ -53,13 +54,24 @@ public class DayController : MonoBehaviour
 
     private void Awake()
     {
+        SceneManager.sceneLoaded += AssignValues;
         hour = startHour;
-        sun.SetStart(startHour);
         minute = 0;
-        runClock = true;
-        clock.UpdateClock(hour, minute);
-        sun.UpdateFacing(hour, minute);
-        StartCoroutine(RunClock());
+    }
+
+    private void AssignValues(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name != "MainMenu" && scene.name != "InitScene")
+        {
+            clock = FindObjectOfType<ClockendarController>();
+            sun = FindObjectOfType<SunController>();
+            sun.SetStart(startHour);
+            runClock = true;
+            clock.UpdateClock(hour, minute);
+            sun.UpdateFacing(hour, minute);
+            StartCoroutine(RunClock());
+        }
+        
     }
 
     private IEnumerator RunClock()

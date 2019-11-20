@@ -44,7 +44,7 @@ MonoBehaviour:
       cooldown: 1
       range: 1
       effects:
-      - {fileID: 11400000, guid: 00f36cdb4c0188c42adae0659861485c, type: 2}
+      - {fileID: 11400000, guid: f2f3689636f0ae142a43f4a8a6db074e, type: 2}
       canBeHeld: 1
       holdScaling:
         serializedVersion: 2

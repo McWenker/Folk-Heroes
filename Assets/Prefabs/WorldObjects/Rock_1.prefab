@@ -256,10 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e127c877faf404686a6933e98146ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasPostDeath: 0
-  targetability:
-  - targetType: 1
-    canTarget: 1
+  data: {fileID: 11400000, guid: f951747f32ab1194091aca874f5b7327, type: 2}
 --- !u!114 &5638029717360759896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e280e5930303404aa7b7cbefc248cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shadow: {fileID: 0}
+  shadow: {fileID: 629735991096562811}
   damageFrameArray:
   - {fileID: -2515339362117706479, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
   - {fileID: 4534554471996968086, guid: bdf990becd188d948817bdc32ee224c8, type: 3}

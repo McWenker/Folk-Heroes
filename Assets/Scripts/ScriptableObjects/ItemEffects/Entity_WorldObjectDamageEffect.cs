@@ -12,16 +12,15 @@ public class Entity_WorldObjectDamageEffect : Effect
     public override void DoEffect(Vector3 effectLocation, LayerMask whatIsTarget, float chargePercent)
     {
         int damage = objectDamage;
-        damage += (int)(chargeGraph.Evaluate(chargePercent)*chargeMultiplier);
-        Debug.Log(damage);
+        if(chargePercent > 0)
+            damage += (int)(chargeGraph.Evaluate(chargePercent)*chargeMultiplier);
 
         for(int i = 0; i < targetSolutions.Length; ++i)
         {
             if(targetSolutions[i].GetTargets(effectLocation, whatIsTarget) != null)
             {
-                foreach(Transform t in targetSolutions[i].GetTargets(effectLocation, whatIsTarget))
+                foreach(Transform t in targetSolutions[i].GetTargets(effectLocation, whatIsTarget, maxTargets))
                 {
-                    Debug.Log(effectLocation, t);
                     if(t.GetComponent<WorldObject>() != null)
                     {
                         if(IsValidTarget(t.GetComponent<WorldObject>()) && t.GetComponent<Health>() != null)
@@ -43,7 +42,7 @@ public class Entity_WorldObjectDamageEffect : Effect
         Vector3Int centerTileLoc = Vector3Int.FloorToInt(location);
         centerTileLoc = new Vector3Int(centerTileLoc.x, 0, centerTileLoc.z); 
 
-        WorldObject tileWorldObject = GridManager.instance.tiles[centerTileLoc].WorldObject;
+        WorldObject tileWorldObject = GridManager.instance.objectTiles[centerTileLoc].WorldObject;
 
         if(tileWorldObject != null && tileWorldObject.GetComponent<Health>() != null)
             returnList.Add(tileWorldObject);
@@ -62,7 +61,7 @@ public class Entity_WorldObjectDamageEffect : Effect
                     else if((Math.Abs(i) + Mathf.Abs(j)) < gridRadius)
                     {
                         tileLocation = new Vector3Int(centerTileLoc.x + i, 0, centerTileLoc.z + j);
-                        tileWorldObject = GridManager.instance.tiles[tileLocation].WorldObject;
+                        tileWorldObject = GridManager.instance.objectTiles[tileLocation].WorldObject;
                         if(tileWorldObject != null && tileWorldObject.GetComponent<Health>() != null)
                             returnList.Add(tileWorldObject);
                     }                

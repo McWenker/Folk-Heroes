@@ -35,11 +35,12 @@ public class PlayerCharacter : MonoBehaviour
         AnimationEventManager.OnItemUseCompletion += UnHalt;
         layerMask = 1 << gameObject.layer;
         layerMask = ~layerMask;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Halt(Object sender, Triggers use, ItemSprites spriteInfo)
     {
-        if(transform == (Transform)sender)
+        if(transform == (Transform)sender && this != null)
         {
             moveHalted = true;
         }
@@ -47,8 +48,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private void UnHalt(Object sender)
     {
-        Debug.Log(sender);
-        if(transform == (Transform)sender)
+        if(transform == (Transform)sender && this != null)
         {
             moveHalted = false;
         }
@@ -56,7 +56,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private void HandleDash(Object sender, string keyPressed)
     {
-        if (keyPressed == "Space")
+        if (keyPressed == "Space" && this != null)
         {
             if(!dashCooldown /*&& energyPool._Energy >= dashCost*/)
             {
@@ -79,23 +79,26 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Movement(Object sender, Vector3 baseMoveDir)
     {
-        if(!moveHalted)
+        if(this != null)
         {
-            if(TryMove(baseMoveDir, speed*Time.deltaTime*distCoeff))
-                playerCharacterAnimator.PlayWalkingAnimation(this, baseMoveDir, false);
-            
-            else
-                playerCharacterAnimator.PlayIdleAnimation(this);
-        }
+            if(!moveHalted)
+            {
+                if(TryMove(baseMoveDir, speed*Time.deltaTime*distCoeff))
+                    playerCharacterAnimator.PlayWalkingAnimation(this, baseMoveDir, false);
+                
+                else
+                    playerCharacterAnimator.PlayIdleAnimation(this);
+            }
 
-        else
-        {            
-            if(TryMove(baseMoveDir, (speed*Time.deltaTime*distCoeff)/4))
-                playerCharacterAnimator.PlayWalkingAnimation(this, baseMoveDir, true);
-            
             else
-                playerCharacterAnimator.PlayIdleAnimation(this);
-        }
+            {            
+                if(TryMove(baseMoveDir, (speed*Time.deltaTime*distCoeff)/4))
+                    playerCharacterAnimator.PlayWalkingAnimation(this, baseMoveDir, true);
+                
+                else
+                    playerCharacterAnimator.PlayIdleAnimation(this);
+            }
+        }        
     }
 
     private bool TryMove(Vector3 baseMoveDir, float distance)
@@ -138,5 +141,13 @@ public class PlayerCharacter : MonoBehaviour
     {
         yield return new WaitForSeconds(0.7f);
         dashCooldown = false;
+    }    
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<SceneChanger>() != null)
+        {
+            other.GetComponent<SceneChanger>().ChangeScene();
+        }
     }
 }

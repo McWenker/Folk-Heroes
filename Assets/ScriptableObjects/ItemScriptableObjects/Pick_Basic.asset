@@ -20,6 +20,7 @@ MonoBehaviour:
     rightHandSprite: {fileID: 1918810734592978865, guid: 15ced8be1f291534eb67e4be89ce3629,
       type: 3}
     flipSprites: 0
+    wrapSwing: 0
   useTypes:
   - name: Mine
     uses:
@@ -42,6 +43,25 @@ MonoBehaviour:
       cooldown: 1
       range: 1
       effects:
-      - {fileID: 11400000, guid: 48bf9e9afbde38348a1e992553a90462, type: 2}
+      - {fileID: 11400000, guid: b6c5ea5e69256de4a9003e2aca68e389, type: 2}
+      canBeHeld: 0
+      holdScaling:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      leftHandChargeSprites: []
+      rightHandChargeSprites: []
+      minHoldTime: 0
+      maxHoldTime: 0
+      notEnoughHold:
+        name: 
+        leftHandSprites: []
+        rightHandSprites: []
+        keyFrame: 0
+        cooldown: 0
+        range: 0
+        effects: []
   maxRange: 1
   resetTime: 1

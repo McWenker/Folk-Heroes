@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dddeadb7ec320c042bb62c2fb134cb81, type: 3}
+  m_Script: {fileID: 11500000, guid: f54cec7df5e8e7445982f1ac859423e8, type: 3}
   m_Name: Smash Rock
   m_EditorClassIdentifier: 
   chargeGraph:
@@ -37,9 +37,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   chargeMultiplier: 2
+  maxTargets: 1
   objectDamage: 1
   targets:
   - targetType: 1
     canTarget: 1
   targetSolutions:
-  - {fileID: 11400000, guid: c3a72cc620948a643aec151d3276b1a7, type: 2}
+  - {fileID: 11400000, guid: 94736ff4807e5c04097daaf131f6f215, type: 2}

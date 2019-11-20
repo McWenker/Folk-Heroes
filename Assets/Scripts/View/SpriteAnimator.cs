@@ -52,7 +52,7 @@ public class SpriteAnimator : MonoBehaviour
             timer -= frameRate;
             currentFrame = (currentFrame + 1) % frameArray.Length;
 
-            if(isTrigger && currentFrame == triggerFrame)
+            if(isTrigger && currentFrame == triggerFrame && onTrigger != null)
                 onTrigger();
 
             if (!isLoop && currentFrame == 0)
@@ -73,10 +73,8 @@ public class SpriteAnimator : MonoBehaviour
 
     public void SetSprite(Transform sender, Sprite newSprite)
     {
-        Debug.Log(transform.IsChildOf(sender));
         if(transform.IsChildOf(sender))
         {         
-            Debug.Log("huh!!");   
             if(isPlaying)
                 StopPlaying(true);
             spriteRenderer.sprite = newSprite;
