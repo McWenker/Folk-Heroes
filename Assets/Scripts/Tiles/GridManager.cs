@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class GridManager : MonoBehaviour
 {
 	public GridLayout grid;
+	GameObject emptyWorldObjectPrefab;
     public static GridManager instance;
 	public static Vector3 TileOffset = new Vector3(0.5f, 0f, 0.5f);
 	public Tilemap groundTilemap;
@@ -16,6 +17,11 @@ public class GridManager : MonoBehaviour
 	public Dictionary<Vector3, WorldTile> objectTiles;
 
 	Vector3Int position;
+
+	public void WorldObjectPrefab(GameObject emptyWorldObjectPrefab)
+	{
+		this.emptyWorldObjectPrefab = emptyWorldObjectPrefab;
+	}
 
 	public void InitSceneGrid(string sceneName)
 	{
@@ -109,7 +115,7 @@ public class GridManager : MonoBehaviour
 			/*if (!tileMap.HasTile(localPlace){
 				continue;
 			}*/
-			var tile = new WorldTile
+			var tile = new WorldTile()
 			{
 				LocalPlace = localPlace,
 				WorldLocation = Vector3Int.RoundToInt(groundTile.CellToWorld(localPlace)),
@@ -117,7 +123,8 @@ public class GridManager : MonoBehaviour
 				TilemapMember = tileMap,
 				Name = localPlace.x + "," + localPlace.y,
 				WorldObject = tileMap == instance.objectTilemap ? GetObjectInCell(Vector3Int.RoundToInt(groundTile.CellToWorld(localPlace))) : null,
-				WorldObjectData = (tileMap == instance.objectTilemap && GetObjectInCell(Vector3Int.RoundToInt(groundTile.CellToWorld(localPlace))) != null) ? GetObjectInCell(Vector3Int.RoundToInt(groundTile.CellToWorld(localPlace))).Data : null
+				DefaultWorldObjectData = (tileMap == instance.objectTilemap && GetObjectInCell(Vector3Int.RoundToInt(groundTile.CellToWorld(localPlace))) != null) ? GetObjectInCell(Vector3Int.RoundToInt(groundTile.CellToWorld(localPlace))).Data : null,
+				WaterLevel = 0
 			};
 			if(tileDict.TryGetValue(tile.WorldLocation, out WorldTile tryTile))
 				tryTile = tile;
@@ -144,30 +151,52 @@ public class GridManager : MonoBehaviour
 					WorldObject thisObj = GetObjectInCell(worldLoc);
 					if(thisObj != null)
 					{
-						if(tryTile.WorldObjectData == null)
+						if(tryTile.DefaultWorldObjectData == null)
 						{						
 							Destroy(GetObjectInCell(worldLoc).gameObject);
 							RemoveObjectInCell(worldLoc);
 						}
-						else if(thisObj.Data != tryTile.WorldObjectData)
+						else if(thisObj.Data != tryTile.DefaultWorldObjectData)
 						{
-							// call method on WorldObject to make it change to reflect tryTile.WorldObjectData
+							// call method on WorldObject to make it change to reflect tryTile.DefaultWorldObjectData
+							ReflectObjectData(thisObj, tryTile);
 						}
-
-					}					
+					}
+					else if(tryTile.DefaultWorldObjectData != null)
+					{
+						// call method to create a WorldObject at this tile and have it reflect tryTile.DefaultWorldObjectData
+						GameObject gameObj = Instantiate(emptyWorldObjectPrefab, tryTile.WorldLocation + TileOffset, Quaternion.identity);
+						if(tryTile.DefaultWorldObjectData is PlantScriptableObject)
+						{
+							Destroy(gameObj.GetComponent<WorldObject>());
+							thisObj = gameObj.AddComponent<PlantObject>();
+						}
+						else
+							thisObj = gameObject.GetComponent<WorldObject>();
+                        thisObj.transform.SetParent(GridManager.instance.objectTilemap.gameObject.transform);
+						ReflectObjectData(thisObj, tryTile);
+					}	
 				}
 			}
 		}
+	}
+
+	private void ReflectObjectData(WorldObject thisObj, WorldTile tryTile)
+	{
+		thisObj.name = tryTile.DefaultWorldObjectData.name;
+		thisObj.TileData(tryTile);
+        tryTile.WorldObject = thisObj;
 	}
 
 	private void RemoveObjectInCell(Vector3Int position)
 	{
 		if(instance.objectTiles.TryGetValue(position, out WorldTile wTile))
 		{
-			if(wTile.WorldObjectData != null)
+			if(wTile.DefaultWorldObjectData != null)
 			{
-				wTile.WorldObjectData = null;
+				wTile.DefaultWorldObjectData = null;
 				wTile.WorldObject = null;
+				wTile.Parameters.Clear();
 			}
 		}
 	}
@@ -196,12 +225,6 @@ public class GridManager : MonoBehaviour
 			}
         }
         return null;
-    }
-
-	protected void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawCube(position, Vector3.one);
     }
 }
 

@@ -12,6 +12,11 @@ public class SpriteOutline : MonoBehaviour {
 
     private SpriteRenderer spriteRenderer;
 
+    public void SetOutline(Color color)
+    {
+        outlineColor = color;
+    }
+
     void OnEnable() {
         spriteRenderer = GetComponent<SpriteRenderer>();
 

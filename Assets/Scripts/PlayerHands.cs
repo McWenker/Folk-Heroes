@@ -40,7 +40,29 @@ public class PlayerHands : MonoBehaviour
 
     private void BeginMouse(Object sender, int buttonFired)
     {
+        if(buttonFired == 1)
+        {
+            if(MouseOverInteractable())
+                return;
+        }
         equippedItem.BeginMouse(transform, pointInWorld, rightHand, buttonFired);
+    }
+
+    private bool MouseOverInteractable()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        {
+            if(Vector3.Distance(hit.collider.gameObject.transform.position, transform.position) <= 1f)
+            {
+                if(hit.collider.gameObject.GetComponent<Interactable>() != null)
+                {
+                    hit.collider.gameObject.GetComponent<Interactable>().Interact();
+                    return true;
+                }
+            }            
+        }
+        return false;
     }
 
     private void HoldMouse(Object sender, int buttonFired)

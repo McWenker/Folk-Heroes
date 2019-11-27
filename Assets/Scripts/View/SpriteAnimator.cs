@@ -11,7 +11,7 @@ public class SpriteAnimator : MonoBehaviour
     private float timer;
     [SerializeField] private float frameRate = .1f;
     private SpriteRenderer spriteRenderer;
-    private bool isLoop = false;
+    [SerializeField] private bool isLoop = false;
     private bool isTrigger = false;
     private bool isPlaying = true;
     private int triggerFrame;

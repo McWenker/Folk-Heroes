@@ -29,7 +29,6 @@ public class DayController : MonoBehaviour
             if(hour >= 24)
             {
                 hour = 1;
-                PassDay();
             }
         }
     }
@@ -47,14 +46,18 @@ public class DayController : MonoBehaviour
             }
         }
     }
-    public void PassDay()
+    void PassDay(Object sender)
     {
-        TimeEventManager.DayEnd(this);
+        hour = startHour;
+        minute = 0;
+        clock.UpdateClock(hour, minute);
+        sun.UpdateFacing(hour, minute);
     }
 
     private void Awake()
     {
         SceneManager.sceneLoaded += AssignValues;
+        TimeEventManager.OnDayEnd += PassDay;
         hour = startHour;
         minute = 0;
     }

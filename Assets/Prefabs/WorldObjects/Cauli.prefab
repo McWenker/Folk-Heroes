@@ -162,8 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284ac9f4d185c334aad1a41c4841c4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasPostDeath: 0
-  targetability: []
   data: {fileID: 11400000, guid: ad3997580d3d8ea418e93fd33053c9de, type: 2}
 --- !u!114 &3873392213028772410
 MonoBehaviour:
@@ -174,10 +172,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7042582365933596450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa7ceeee65b8d747a366f7aa8262b95, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e280e5930303404aa7b7cbefc248cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2909667399950567212}
+  shadow: {fileID: 0}
+  damageFrameArray: []
+  deathFrameArray: []
+  shadowTrigger: 0
+  postDeathSprite: {fileID: 0}
+  postDeathFrameArray: []
+  frameRate: 0
 --- !u!114 &2182685907278761719
 MonoBehaviour:
   m_ObjectHideFlags: 0

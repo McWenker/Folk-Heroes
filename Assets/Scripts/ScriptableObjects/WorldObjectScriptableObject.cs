@@ -5,9 +5,21 @@ using UnityEditor;
 
 public class WorldObjectScriptableObject : ScriptableObject
 {    
+    [SerializeField] public Sprite sprite;
+    [SerializeField] public Collider collider;
     [SerializeField] public bool hasPostDeath;
     [SerializeField] public TileEffectTargetStruct[] targetability;
+    [SerializeField] public int health;
     [SerializeField] public Item[] itemProducts;
+
+    [SerializeField] public Sprite[] damageFrameArray;
+    [SerializeField] public Sprite[] deathFrameArray;
+    [SerializeField] public Vector3[] shadowParams;
+    [SerializeField] public int shadowTrigger;
+    [SerializeField] public Sprite postDeathSprite;
+    [SerializeField] public Sprite[] postDeathFrameArray;
+    [SerializeField] public float frameRate;
+    [SerializeField] public Color outlineColor;
 
     #if UNITY_EDITOR   
     [MenuItem("Assets/Create/WorldObjects/GenericObjects")]

@@ -12,8 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86d95e9917a13f47a7dc45ea62cbd14, type: 3}
   m_Name: Rock_Small
   m_EditorClassIdentifier: 
+  sprite: {fileID: 4390033149433182506, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  collider: {fileID: 4993992396689007513, guid: 4806f091ec0920043bd53e5ec7a224dd,
+    type: 3}
   hasPostDeath: 0
   targetability:
   - targetType: 1
     canTarget: 1
+  health: 3
   itemProducts: []
+  damageFrameArray:
+  - {fileID: -2515339362117706479, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  - {fileID: 4534554471996968086, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  - {fileID: 6462702315353288349, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  - {fileID: -6847391447721763016, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  deathFrameArray:
+  - {fileID: 1753475395082687965, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  - {fileID: -2023883100159709697, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  - {fileID: 8492372081967865185, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  - {fileID: -6647065985886111376, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  - {fileID: 515872711304471001, guid: bdf990becd188d948817bdc32ee224c8, type: 3}
+  shadowParams:
+  - {x: 0, y: 0, z: -0.06}
+  - {x: 2.02, y: 1.74, z: 1}
+  shadowTrigger: 4
+  postDeathSprite: {fileID: 0}
+  postDeathFrameArray: []
+  frameRate: 0.1
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}

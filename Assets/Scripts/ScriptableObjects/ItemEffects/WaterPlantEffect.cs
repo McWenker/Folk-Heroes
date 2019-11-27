@@ -11,11 +11,8 @@ public class WaterPlantEffect : Effect
         {
             foreach(WorldTile w in targetSolutions[i].GetTargets(effectLocation))
             {
-                if(w.WorldObject != null)
-                {
-                    if(w.WorldObject.GetComponent<PlantObject>() != null)
-                        w.WorldObject.GetComponent<PlantObject>().Water(waterAmount);
-                }                
+                WorldTile objW = GridManager.instance.objectTiles[w.WorldLocation];
+                objW.Water(waterAmount);               
             }
         }
     }

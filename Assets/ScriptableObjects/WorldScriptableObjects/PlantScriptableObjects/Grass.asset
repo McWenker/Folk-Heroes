@@ -12,17 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2361157e872881340914b3e5cccc0ed5, type: 3}
   m_Name: Grass
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  collider: {fileID: 0}
   hasPostDeath: 0
   targetability:
   - targetType: 2
     canTarget: 1
+  health: 0
   itemProducts: []
+  damageFrameArray: []
+  deathFrameArray: []
+  shadowParams: []
+  shadowTrigger: 0
+  postDeathSprite: {fileID: 0}
+  postDeathFrameArray: []
+  frameRate: 0.1
+  outlineColor: {r: 0, g: 0.6037736, b: 0.010174301, a: 1}
   maxLife: 0
   tiers:
   - name: Full Grass
     tierSprite: {fileID: -1347532211411968617, guid: c1374e6edc6a3d146b7628cdea7ab900,
       type: 3}
     deathSprite: {fileID: 0}
+    idealWaterLevel: 0
+    droughtTolerance: 0
+    floodTolerance: 0
     overflowStays: 0
     overflowFactor: 0
     growthThresh: 0

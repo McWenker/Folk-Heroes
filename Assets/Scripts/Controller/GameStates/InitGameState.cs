@@ -23,6 +23,7 @@ public class InitGameState : GameState
     void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
         grid.InitSceneGrid(scene.name);
+        grid.WorldObjectPrefab(owner.EmptyWorldObject);
         Instantiate(owner.GameplayUIPrefab, Vector3.zero, Quaternion.identity);
         Transform playController = Instantiate(owner.PlayControllerPrefab, Vector3.zero, Quaternion.identity).transform;
         playController.parent = owner.transform;

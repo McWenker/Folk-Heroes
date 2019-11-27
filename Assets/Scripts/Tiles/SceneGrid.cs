@@ -41,7 +41,7 @@ public class SceneGrid
         this.tiles[2] = tiles[2];
         foreach(KeyValuePair<Vector3, WorldTile> kvp in tiles[2])
         {
-            Debug.Log(kvp.Key + ": " + kvp.Value.WorldLocation + ", " + kvp.Value.WorldObject + ", " + kvp.Value.WorldObjectData);
+            Debug.Log(kvp.Key + ": " + kvp.Value.WorldLocation + ", " + kvp.Value.WorldObject + ", " + kvp.Value.DefaultWorldObjectData);
         }
     }
 }

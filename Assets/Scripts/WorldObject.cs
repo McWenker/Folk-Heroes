@@ -4,6 +4,7 @@ public class WorldObject : MonoBehaviour
 {
     [SerializeField] protected WorldObjectScriptableObject data;
     private bool isPostDeath;
+    protected WorldObject_Animator animator;
 
     public WorldObjectScriptableObject Data
     {
@@ -13,7 +14,6 @@ public class WorldObject : MonoBehaviour
     {
         get { return isPostDeath; }
     }
-
     public TileEffectTargetStruct[] Targetability
     {
         get { return data.targetability; }
@@ -23,13 +23,19 @@ public class WorldObject : MonoBehaviour
     // like previous waterings, magic effects, etc
     public virtual void TileData(WorldTile thisTile)
     {
-
+        data = thisTile.DefaultWorldObjectData;
+        
+		animator.GetData
+			(data.damageFrameArray, data.deathFrameArray,
+			data.shadowTrigger, data.postDeathSprite, data.postDeathFrameArray,
+			data.frameRate, data.shadowParams, data.outlineColor);
+        animator.SetSprite(data.sprite);
     }
 
     protected virtual void Awake()
     {
         AnimationEventManager.OnDeathAnimComplete += DeathAnimationComplete;
-        
+        animator = GetComponent<WorldObject_Animator>();
     }
 
     private void DeathAnimationComplete(Object sender)

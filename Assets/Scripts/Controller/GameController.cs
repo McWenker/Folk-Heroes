@@ -10,6 +10,7 @@ public class GameController : StateMachine
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject playControllerPrefab;
     [SerializeField] GameObject gameplayUIPrefab;
+    [SerializeField] GameObject emptyWorldObject;
     public InputController Input
     {
         get { return input; }
@@ -30,6 +31,11 @@ public class GameController : StateMachine
     public GameObject GameplayUIPrefab
     {
         get { return gameplayUIPrefab; }
+    }
+
+    public GameObject EmptyWorldObject
+    {
+        get { return emptyWorldObject; }
     }
 
     void Start()

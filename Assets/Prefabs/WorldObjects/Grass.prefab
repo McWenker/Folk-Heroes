@@ -57,20 +57,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 190279413636506574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa7ceeee65b8d747a366f7aa8262b95, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e280e5930303404aa7b7cbefc248cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shadow: {fileID: 0}
   damageFrameArray: []
-  deathFrameArray:
-  - {fileID: -7645372005702169758, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
-  - {fileID: 6891631753638271631, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
-  - {fileID: 475435623110610922, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
-  - {fileID: 5299400320964040512, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
+  deathFrameArray: []
   shadowTrigger: 0
   postDeathSprite: {fileID: 0}
   postDeathFrameArray: []
-  frameRate: 0.1
+  frameRate: 0
 --- !u!65 &8868350522013779809
 BoxCollider:
   m_ObjectHideFlags: 0

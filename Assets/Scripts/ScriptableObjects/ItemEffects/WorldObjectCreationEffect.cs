@@ -16,12 +16,19 @@ public class WorldObjectCreationEffect : Effect
             {
                 if(legalTiles.Contains(w.TileBase) || legalTiles.Length == 0)
                 {
-                    if(w.WorldObjectData == null)
+                    WorldTile objW = GridManager.instance.objectTiles[w.WorldLocation];
+                    if(objW.DefaultWorldObjectData == null)
                     {
-                        w.WorldObject = Instantiate(objectToCreate.gameObject, w.WorldLocation + (GridManager.TileOffset), Quaternion.identity).GetComponent<WorldObject>();
-                        w.WorldObjectData = w.WorldObject.Data;
-                        w.WorldObject.transform.SetParent(GridManager.instance.objectTilemap.gameObject.transform);
-                        w.WorldObject.TileData(w);
+                        objW.WorldObject = Instantiate(objectToCreate.gameObject, w.WorldLocation + (GridManager.TileOffset), Quaternion.identity).GetComponent<WorldObject>();
+                        objW.DefaultWorldObjectData = objectToCreate.Data;
+                        if(objectToCreate is PlantObject)
+                        {
+                            objW.DynamicWorldObjectData = new PlantObjectData(objectToCreate.Data);
+                        }
+                        else
+                            objW.DynamicWorldObjectData = new WorldObjectData(objectToCreate.Data);
+                        objW.WorldObject.transform.SetParent(GridManager.instance.objectTilemap.gameObject.transform);
+                        objW.WorldObject.TileData(objW);
                     }
                 }                
             }

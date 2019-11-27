@@ -157,6 +157,8 @@ MonoBehaviour:
     type: 3}
   gameplayUIPrefab: {fileID: 7726605500347015147, guid: d242efda6f81d0e49880b6e045812896,
     type: 3}
+  emptyWorldObject: {fileID: 8515272796713263402, guid: e85d1e3749761e049815655d871d273d,
+    type: 3}
 --- !u!4 &1114640957
 Transform:
   m_ObjectHideFlags: 0

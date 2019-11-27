@@ -12,13 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2361157e872881340914b3e5cccc0ed5, type: 3}
   m_Name: Cauli
   m_EditorClassIdentifier: 
-  name: Cauli
+  sprite: {fileID: -8489520011256558519, guid: eacdf88f82ca0674f99620fb185c42da, type: 3}
+  collider: {fileID: 0}
+  hasPostDeath: 0
+  targetability:
+  - targetType: 2
+    canTarget: 1
+  health: 1
+  itemProducts: []
+  damageFrameArray: []
+  deathFrameArray: []
+  shadowParams: []
+  shadowTrigger: 0
+  postDeathSprite: {fileID: 0}
+  postDeathFrameArray: []
+  frameRate: 0.1
+  outlineColor: {r: 0, g: 0.6037736, b: 0.010174301, a: 1}
   maxLife: 40
   tiers:
   - name: Seed
     tierSprite: {fileID: -8489520011256558519, guid: eacdf88f82ca0674f99620fb185c42da,
       type: 3}
     deathSprite: {fileID: 0}
+    idealWaterLevel: 1
+    droughtTolerance: -2
+    floodTolerance: 1
     overflowStays: 0
     overflowFactor: 0
     growthThresh: 1
@@ -28,6 +46,9 @@ MonoBehaviour:
     tierSprite: {fileID: 8437489053447239430, guid: eacdf88f82ca0674f99620fb185c42da,
       type: 3}
     deathSprite: {fileID: 0}
+    idealWaterLevel: 1
+    droughtTolerance: -2
+    floodTolerance: 3
     overflowStays: 0
     overflowFactor: 0
     growthThresh: 1
@@ -37,24 +58,33 @@ MonoBehaviour:
     tierSprite: {fileID: 3746872173005877027, guid: eacdf88f82ca0674f99620fb185c42da,
       type: 3}
     deathSprite: {fileID: 0}
+    idealWaterLevel: 1
+    droughtTolerance: -2
+    floodTolerance: 3
     overflowStays: 0
     overflowFactor: 0
     growthThresh: 1
     deathThresh: -1
     stagnantDaysThresh: 5
-  - name: Starting Fruit
+  - name: Starting Flower
     tierSprite: {fileID: 964055680579727038, guid: eacdf88f82ca0674f99620fb185c42da,
       type: 3}
     deathSprite: {fileID: 0}
+    idealWaterLevel: 1
+    droughtTolerance: -2
+    floodTolerance: 3
     overflowStays: 0
     overflowFactor: 0
     growthThresh: 1
     deathThresh: -1
     stagnantDaysThresh: 5
-  - name: Fruiting
+  - name: Flowering
     tierSprite: {fileID: -8280963067373986038, guid: eacdf88f82ca0674f99620fb185c42da,
       type: 3}
     deathSprite: {fileID: 0}
+    idealWaterLevel: 1
+    droughtTolerance: -2
+    floodTolerance: 3
     overflowStays: 0
     overflowFactor: 0
     growthThresh: 1
@@ -64,9 +94,13 @@ MonoBehaviour:
     tierSprite: {fileID: -2481389934810902398, guid: eacdf88f82ca0674f99620fb185c42da,
       type: 3}
     deathSprite: {fileID: 0}
+    idealWaterLevel: 0
+    droughtTolerance: 0
+    floodTolerance: 0
     overflowStays: 0
     overflowFactor: 0
     growthThresh: 0
     deathThresh: -1
     stagnantDaysThresh: 20
+  wateredSoilGrowth: 10
   wateredSoil: {fileID: 11400000, guid: a2bd0e64b5f29ca4d80cc09ccaaed808, type: 2}

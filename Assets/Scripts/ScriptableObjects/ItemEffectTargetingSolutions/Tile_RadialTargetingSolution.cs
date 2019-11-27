@@ -56,7 +56,7 @@ public class Tile_RadialTargetingSolution : Tile_TargetingSolution
         List<WorldTile> retList = GetTargets(startLocation);
         foreach(WorldTile w in GetTargets(startLocation))
         {
-            if(w.WorldObjectData == null)
+            if(w.DefaultWorldObjectData == null)
                 retList.Remove(w);
             else
             {

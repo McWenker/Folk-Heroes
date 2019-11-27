@@ -6,6 +6,7 @@ public class PlantScriptableObject : WorldObjectScriptableObject
 {
     public int maxLife;
     public PlantTiers[] tiers;
+    public float wateredSoilGrowth;
 
     public TileBase wateredSoil;
 

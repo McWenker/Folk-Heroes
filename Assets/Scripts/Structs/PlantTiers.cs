@@ -7,6 +7,9 @@ public class PlantTiers
     public Sprite tierSprite;
     public Sprite deathSprite;
     //public PlantProduct tierProduct;
+    public int idealWaterLevel;
+    public int droughtTolerance;
+    public int floodTolerance;
     public bool overflowStays;
     public int overflowFactor;
     public int growthThresh;
