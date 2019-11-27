@@ -84,7 +84,7 @@ public class GridManager : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
-		GameplayEventManager.OnSceneChange += SaveGrid;
+		GameplayEventManager.OnSceneChangeParams += SaveGrid;
 		TimeEventManager.OnDayEnd += RevertTiles;
 		GridEventManager.OnWorldObjectRemove += RemoveObjectInCell;
 	}
@@ -196,7 +196,6 @@ public class GridManager : MonoBehaviour
 			{
 				wTile.DefaultWorldObjectData = null;
 				wTile.WorldObject = null;
-				wTile.Parameters.Clear();
 			}
 		}
 	}

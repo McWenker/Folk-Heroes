@@ -40,7 +40,7 @@ public class GameController : StateMachine
 
     void Start()
 	{
-        GameplayEventManager.OnSceneChange += SceneDestination;
+        GameplayEventManager.OnSceneChangeParams += SceneDestination;
         DontDestroyOnLoad(this.gameObject);
         input = GetComponent<InputController>() != null ? GetComponent<InputController>() : gameObject.AddComponent<InputController>();
         input.enabled = false;

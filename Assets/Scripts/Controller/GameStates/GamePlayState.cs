@@ -32,7 +32,7 @@ public class GamePlayState : GameState
         }
     }
 
-    void PauseInput(Object sender, int sceneIndex, string dest)
+    void PauseInput(Object sender)
     {
         owner.Input.enabled = false;
     }

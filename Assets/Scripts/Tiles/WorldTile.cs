@@ -21,8 +21,6 @@ public class WorldTile {
 
     public int WaterLevel { get; set; }
 
-    public Dictionary<string, int> Parameters { get; set; }
-
     public WorldTile()
     {
         DynamicWorldObjectData = new WorldObjectData(DefaultWorldObjectData);

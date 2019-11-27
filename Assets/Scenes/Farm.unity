@@ -9245,6 +9245,7 @@ MonoBehaviour:
   frameArray: []
   destroyOnComplete: 0
   frameRate: 0.1
+  isLoop: 0
 --- !u!4 &770293024 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3498534496498656460, guid: de9c2f2663347fa4aa3b942eae9f9dfe,
@@ -10483,6 +10484,7 @@ MonoBehaviour:
   frameArray: []
   destroyOnComplete: 0
   frameRate: 0.1
+  isLoop: 0
 --- !u!4 &1020990385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4993992396689007518, guid: 4806f091ec0920043bd53e5ec7a224dd,
@@ -11438,6 +11440,7 @@ MonoBehaviour:
   frameArray: []
   destroyOnComplete: 0
   frameRate: 0.1
+  isLoop: 0
 --- !u!1001 &1225618051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12370,6 +12373,7 @@ MonoBehaviour:
   frameArray: []
   destroyOnComplete: 0
   frameRate: 0.1
+  isLoop: 0
 --- !u!114 &1396354564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13920,7 +13924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757082833}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5.5, y: 6.5, z: 0}
+  m_LocalPosition: {x: 5.71, y: 6.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1155512466}

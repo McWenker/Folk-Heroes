@@ -8,9 +8,10 @@ public class SceneTransition : MonoBehaviour
     Animator animator;
     void Awake()
     {
-        GameplayEventManager.OnSceneChange += SceneChange;
+        GameplayEventManager.OnSceneChangeParams += SceneChange;
         SceneManager.sceneLoaded += AfterChange;
         animator = GetComponent<Animator>();
+        StartCoroutine(TransitionThenPlay());
     }
 
     private void SceneChange(Object sender, int sceneIndex, string destination)

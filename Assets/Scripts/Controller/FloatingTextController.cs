@@ -7,7 +7,6 @@ public class FloatingTextController : MonoBehaviour {
     private void Initialize()
     {
         canvas = GameObject.Find("UI(Clone)/World Canvas");
-        Debug.Log(canvas);
         if (!popupText)
             popupText = Resources.Load<FloatingText>("UI/PopupTextParent");
     }

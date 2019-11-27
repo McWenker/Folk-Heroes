@@ -23,7 +23,13 @@ public class SpriteAnimator : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        GameplayEventManager.OnSceneChange += SceneChangeHalt;
         loopCounter = -1;
+    }
+
+    private void SceneChangeHalt(UnityEngine.Object sender)
+    {
+        StopPlaying(true);
     }
 
     private void StopPlaying(bool hardStop)
