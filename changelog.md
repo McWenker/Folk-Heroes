@@ -1,7 +1,15 @@
 # Changelog
+### 11/27/2019
+#### Scene Change Improvements, House
+![Cabin](DemoImages/cabinloop.gif?raw=true "it's a fixer upper, with a lot of country charm")
+* Lots of wrestling with the GridManager to have it account for added WorldObjects and other player changes
+* Improved appearance and architecture of scene changing
+* Day changes now occur via bed, plants properly grow even when out-of-scene
+* Added a nifty new cabin and some interactable lighting features
+
 ### 11/14/2019
 #### StateMachine, Menu
-![Redux](DemoImages/menufunc.gif?raw=true "had a lot of fun with the sword animation")
+![Menu](DemoImages/menufunc.gif?raw=true "had a lot of fun with the sword animation")
 * Added in some very rudimentary StateMachine functionality
 * Tested ^ out with a new menu and some scene transitions
 

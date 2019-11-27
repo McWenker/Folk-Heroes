@@ -17,15 +17,18 @@ The Order of Folk Heroes is a loose organization of powerful adventurers that se
 ## Okay... what does a Folk Hero do though?
 ### Farming
 ![Farming](DemoImages/farm.gif?raw=true "Some plants will also be a little pickier...")
+
 The Folk of Shadow's Glen will rely on the player to provide sustenance for their village. Following the norm of farming games, the player will be able to sell their crops for money or in exchange for goods. However, the player will also need to be stockpiling food and supplies for the winter... when they will need everything they can scrounge.
 
 ### Fighting
 ![Fighting](DemoImages/punch.gif?raw=true "Fists, swords, bombs, guns, lightning...")
+
 But most of all, the Folk Hero must protect Shadow's Glen at all cost. Your predecessor fell in battle to defeat the wicked Avatar of last winter... will you live where they fell?
 
 In addition to their own arsenal and badassery, the Folk Hero will have access to an ever-growing retinue of guards, robots, turrets, traps, and more. Perhaps, with enough preparation, the Folk of Shadow's Glen can know a relative peace once more.
 
 ## Folk Heroes is a very early WIP, expect this page to grow with it
+![Relax](DemoImages/cabinloop.gif?raw=true "*Sips tea*")
 
 ## Changelog
 The changelog has been moved, and is now available [here.](changelog.md)
