@@ -195,6 +195,7 @@ MonoBehaviour:
   frameArray: []
   destroyOnComplete: 0
   frameRate: 0.1
+  isLoop: 0
 --- !u!1 &4993992396689007512
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +209,7 @@ GameObject:
   - component: {fileID: 8831409931306256103}
   - component: {fileID: 5638029717360759896}
   - component: {fileID: 1831288406787748025}
+  - component: {fileID: -1116574511301431047}
   m_Layer: 0
   m_Name: Rock_1
   m_TagString: Untagged
@@ -299,3 +301,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minValue: 0
   maxValue: 3
+--- !u!208 &-1116574511301431047
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4993992396689007512}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.4, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.03110665, y: 0, z: 0}
+  m_TimeToStationary: 0.5

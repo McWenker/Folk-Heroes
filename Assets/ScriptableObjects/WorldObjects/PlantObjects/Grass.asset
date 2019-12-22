@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2361157e872881340914b3e5cccc0ed5, type: 3}
   m_Name: Grass
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: -1347532211411968617, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
   collider: {fileID: 0}
   hasPostDeath: 0
   targetability:
@@ -21,7 +21,11 @@ MonoBehaviour:
   health: 0
   itemProducts: []
   damageFrameArray: []
-  deathFrameArray: []
+  deathFrameArray:
+  - {fileID: -7645372005702169758, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
+  - {fileID: 6891631753638271631, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
+  - {fileID: 475435623110610922, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
+  - {fileID: 5299400320964040512, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
   shadowParams: []
   shadowTrigger: 0
   postDeathSprite: {fileID: 0}
@@ -42,4 +46,5 @@ MonoBehaviour:
     growthThresh: 0
     deathThresh: -10
     stagnantDaysThresh: 50
+  wateredSoilGrowth: 0
   wateredSoil: {fileID: 0}

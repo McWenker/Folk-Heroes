@@ -62,11 +62,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shadow: {fileID: 0}
   damageFrameArray: []
-  deathFrameArray: []
+  deathFrameArray:
+  - {fileID: -7645372005702169758, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
+  - {fileID: 6891631753638271631, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
+  - {fileID: 475435623110610922, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
+  - {fileID: 5299400320964040512, guid: c1374e6edc6a3d146b7628cdea7ab900, type: 3}
   shadowTrigger: 0
   postDeathSprite: {fileID: 0}
   postDeathFrameArray: []
-  frameRate: 0
+  frameRate: 0.1
 --- !u!65 &8868350522013779809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209,3 +213,4 @@ MonoBehaviour:
   frameArray: []
   destroyOnComplete: 0
   frameRate: 0.1
+  isLoop: 0
